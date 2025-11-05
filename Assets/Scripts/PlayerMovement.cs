@@ -1,12 +1,18 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;
 
     private Rigidbody2D rb;
-    private Transform tf;    private Animator anim;
+    public CinemachineCamera vcam;  // drag your vcam here
+    public float zoomOut = 6f;
+    public float zoomSpeed = .5f;
+    public float zoomIn = 3f;
+    private Transform tf;    
+    private Animator anim;
     private bool isFacingRight = true;
     private InputAction moveAction;
     private InputAction interactAction;
@@ -43,6 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (rowing)
         {
+            vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed);
             targetRaftVelocity = moveValue * raftSpeed;
             if (targetRaftVelocity != Vector2.zero) raftRB.linearVelocity = Vector2.Lerp(raftRB.linearVelocity, targetRaftVelocity, raftAccel);
             else raftRB.linearVelocity = Vector2.Lerp(raftRB.linearVelocity, targetRaftVelocity, raftDeAccel);
@@ -51,6 +58,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed);
             raftRB.linearVelocity = Vector2.Lerp(raftRB.linearVelocity, Vector2.zero, raftDeAccel);
             rb.linearVelocity = (moveValue * moveSpeed) + raftRB.linearVelocity;
             if (moveValue != Vector2.zero)
