@@ -74,11 +74,11 @@ MonoBehaviour:
   Shark:
     serializedVersion: 2
     m_Bits: 64
-  respawnRange: 5
+  attackRange: 1
   outOfRange: 10
+  respawnRange: 5
   circleMin: 5
   circleMax: 10
-  attackRange: 1
   divergeRange: 5
   divergeWeight: 0.5
   speed: 1.9
@@ -114,7 +114,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
