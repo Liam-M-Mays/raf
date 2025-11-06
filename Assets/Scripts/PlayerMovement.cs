@@ -11,8 +11,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Vector2 currentVelocity;
     [SerializeField] private float currentDragForce;
 
-    [Header("Player Movement")]
+    [Header("Player")]
     public float moveSpeed = 5f;
+    public GameObject playerSprite;
 
     [Header("Camera")]
     public CinemachineCamera vcam;
@@ -22,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("Raft")]
     public Rigidbody2D raftRB;
+    public Animator raftAnim;
     public PaddleStats paddleStats;
     public RaftStats raftStats;
     public EnvironmentStats environmentStats;
@@ -141,6 +143,20 @@ public class PlayerMovement : MonoBehaviour
         if (rowing)
         {
             HandleRowingMode();
+            switch (moveValue.x)
+            {
+                case 1:
+                    raftAnim.SetTrigger("PaddleRight");
+                    break;
+                case -1:
+                    raftAnim.SetTrigger("PaddleLeft");
+                    break;
+                case 0:
+                    if (moveValue.y != 0) {
+                        raftAnim.SetTrigger("PaddleRight");
+                    }
+                    break;
+            }
         }
         else
         {
@@ -186,6 +202,11 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleRowingMode()
     {
+        // turn off the player sprite
+        playerSprite.SetActive(false);
+
+        raftAnim.SetBool("Paddle", true);
+
         // Zoom out camera
         vcam.Lens.OrthographicSize = Mathf.Lerp(
             vcam.Lens.OrthographicSize,
@@ -203,6 +224,10 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleWalkingMode()
     {
+        // turn on the player sprite
+        playerSprite.SetActive(true);
+        raftAnim.SetBool("Paddle", false);
+
         // Zoom in camera
         vcam.Lens.OrthographicSize = Mathf.Lerp(
             vcam.Lens.OrthographicSize,
