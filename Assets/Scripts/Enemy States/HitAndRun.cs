@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class HitAndRun : State
+[CreateAssetMenu(menuName = "AI/States/HitAndRun")]
+public class HitAndRun : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    public float approachDistance = 12f; // Distance to approach from
+    public float divergeRange = 2; public float divergeWeight = 1; public float approachDistance = 12f; // Distance to approach from
     public float retreatDistance = 15f; // Distance to retreat to
     public float strikeSpeed = 2.5f; // Speed multiplier during strike
     public float strikeCooldown = 2f; // Time between strikes
@@ -15,7 +16,7 @@ using System;
     private MovementType currentMovementType;
     private float cooldownTimer;
     private Vector2 retreatPosition;
-    
+
     private enum MovementType
     {
         Approach,   // Move to striking distance
@@ -27,7 +28,7 @@ using System;
 
     private float v;
 
-    public HitAndRun(){}
+    public HitAndRun() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -38,11 +39,11 @@ using System;
         v = maxSpeed;
         cooldownTimer = 0f;
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
@@ -53,11 +54,11 @@ using System;
             // ─────────────────────────── Approach ────────────────────────
             case MovementType.Approach:
                 anim.SetBool("Moving", true);
-                
+
                 // Move to approach distance
                 Vector2 dirToTarget = ((Vector2)target.position - (Vector2)self.position).normalized;
                 Vector2 approachPos = (Vector2)target.position - dirToTarget * approachDistance;
-                
+
                 targ = applyDivergence(approachPos);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed * 0.7f);
@@ -76,7 +77,7 @@ using System;
             // ─────────────────────────── Strike ──────────────────────────
             case MovementType.Strike:
                 anim.SetBool("Moving", true);
-                
+
                 // Fast strike toward player
                 targ = applyDivergence((Vector2)target.position);
                 dist = Vector2.Distance(self.position, targ);
@@ -109,7 +110,7 @@ using System;
             // ─────────────────────────── Retreat ──────────────────────────
             case MovementType.Retreat:
                 anim.SetBool("Moving", true);
-                
+
                 // Quickly move away
                 targ = applyDivergence(retreatPosition);
                 dist = Vector2.Distance(self.position, targ);
@@ -129,20 +130,20 @@ using System;
             // ─────────────────────────── Wait ────────────────────────────
             case MovementType.Wait:
                 anim.SetBool("Moving", true);
-                
+
                 cooldownTimer -= Time.deltaTime;
-                
+
                 // Circle at distance while cooling down
                 Vector2 currentOffset = (Vector2)self.position - (Vector2)target.position;
                 float currentAngle = Mathf.Atan2(currentOffset.y, currentOffset.x);
                 float circleRadius = Mathf.Max(retreatDistance, currentOffset.magnitude);
-                
+
                 float targetAngle = currentAngle + (maxSpeed / circleRadius) * 0.5f;
                 Vector2 circlePos = (Vector2)target.position + new Vector2(
                     Mathf.Cos(targetAngle) * circleRadius,
                     Mathf.Sin(targetAngle) * circleRadius
                 );
-                
+
                 targ = applyDivergence(circlePos);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed * 0.5f);
@@ -158,7 +159,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -176,7 +177,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

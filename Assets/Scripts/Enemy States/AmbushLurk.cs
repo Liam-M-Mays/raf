@@ -1,10 +1,11 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class AmbushLurk : State
+[CreateAssetMenu(menuName = "AI/States/AmbushLurk")]
+public class AmbushLurk : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
     public float divergeRange = 2; public float divergeWeight = 1;
     public float lurkDistance = 15f; // Distance to maintain while lurking
@@ -15,7 +16,7 @@ using System;
     private MovementType currentMovementType;
     private float lurkTimer;
     private Vector2 lurkPosition;
-    
+
     private enum MovementType
     {
         Lurk,       // Stay at distance, slowly repositioning
@@ -26,7 +27,7 @@ using System;
 
     private float v;
 
-    public AmbushLurk(){}
+    public AmbushLurk() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -38,11 +39,11 @@ using System;
         lurkTimer = lurkTime;
         PickLurkPosition();
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
@@ -53,9 +54,9 @@ using System;
             // ─────────────────────────── Lurk ────────────────────────────
             case MovementType.Lurk:
                 anim.SetBool("Moving", true);
-                
+
                 lurkTimer -= Time.deltaTime;
-                
+
                 // Move to lurk position slowly
                 targ = applyDivergence(lurkPosition);
                 dist = Vector2.Distance(self.position, targ);
@@ -83,7 +84,7 @@ using System;
             // ─────────────────────────── Charge ──────────────────────────
             case MovementType.Charge:
                 anim.SetBool("Moving", true);
-                
+
                 targ = applyDivergence((Vector2)target.position);
                 dist = Vector2.Distance(self.position, targ);
                 v = maxSpeed * 1.5f; // Extra fast charge
@@ -113,11 +114,11 @@ using System;
             // ─────────────────────────── Retreat ─────────────────────────
             case MovementType.Retreat:
                 anim.SetBool("Moving", true);
-                
+
                 // Move away from target
                 Vector2 retreatDir = ((Vector2)self.position - (Vector2)target.position).normalized;
                 Vector2 retreatTarget = (Vector2)target.position + retreatDir * retreatDistance;
-                
+
                 targ = applyDivergence(retreatTarget);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed);
@@ -136,7 +137,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -156,7 +157,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

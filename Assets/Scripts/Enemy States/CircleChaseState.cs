@@ -1,10 +1,11 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class CircleChase : State
+[CreateAssetMenu(menuName = "AI/States/CircleChase")]
+public class CircleChase : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
     public float divergeRange = 2; public float divergeWeight = 1;
     public float circleMin = 1; public float circleMax = 5;
@@ -18,11 +19,13 @@ using System;
         Circle,      // Circle the player
     }
 
+    public float direction;
+
 
     private float v;
     private float circleRange = 10f;
 
-    public CircleChase(){}
+    public CircleChase() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -31,6 +34,7 @@ using System;
         target = GameObject.FindGameObjectWithTag("Raft").transform;
         anim = _anim;
         v = maxSpeed;
+        direction = Mathf.Sign(RandRange(-1f, 1f));
     }
     public override void OnExit()
     {
@@ -77,7 +81,7 @@ using System;
 
                 // Where should I be going (advance angle at speed/circleRange)?
                 float rotationSpeed = maxSpeed / circleRange;
-                float targetAngle = currentAngle + (rotationSpeed * 0.5f);
+                float targetAngle = currentAngle + (rotationSpeed * 0.5f * direction);
 
                 // Compute target point on the circle
                 Vector2 circlePos = (Vector2)target.position + new Vector2(
@@ -121,7 +125,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

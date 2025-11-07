@@ -1,19 +1,20 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class ZigzagApproach : State
+[CreateAssetMenu(menuName = "AI/States/ZigzagApproach")]
+public class ZigzagApproach : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    public float zigzagAmplitude = 5f; // How wide the zigzag
+    public float divergeRange = 2; public float divergeWeight = 1; public float zigzagAmplitude = 5f; // How wide the zigzag
     public float zigzagFrequency = 2f; // How fast it zigzags
     private Animator anim;
     private LayerMask Shark;
     private MovementType currentMovementType;
     private float zigzagTimer;
     private int zigzagDirection = 1;
-    
+
     private enum MovementType
     {
         Zigzag,     // Zigzag toward player
@@ -22,7 +23,7 @@ using System;
 
     private float v;
 
-    public ZigzagApproach(){}
+    public ZigzagApproach() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -33,11 +34,11 @@ using System;
         v = maxSpeed;
         zigzagTimer = 0f;
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
@@ -48,19 +49,19 @@ using System;
             // ─────────────────────────── Zigzag ──────────────────────────
             case MovementType.Zigzag:
                 anim.SetBool("Moving", true);
-                
+
                 zigzagTimer += Time.deltaTime * zigzagFrequency;
-                
+
                 // Calculate direction to target
                 Vector2 directionToTarget = ((Vector2)target.position - (Vector2)self.position).normalized;
-                
+
                 // Calculate perpendicular direction for zigzag
                 Vector2 perpendicular = new Vector2(-directionToTarget.y, directionToTarget.x);
-                
+
                 // Apply zigzag offset using sine wave
                 float zigzagOffset = Mathf.Sin(zigzagTimer) * zigzagAmplitude;
                 Vector2 zigzagTarget = (Vector2)target.position + perpendicular * zigzagOffset;
-                
+
                 targ = applyDivergence(zigzagTarget);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed);
@@ -88,7 +89,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -99,7 +100,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

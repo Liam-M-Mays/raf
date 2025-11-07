@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class DirectChase : State
+[CreateAssetMenu(menuName = "AI/States/DirectChase")]
+public class DirectChase : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    private Animator anim;
+    public float divergeRange = 2; public float divergeWeight = 1; private Animator anim;
     private LayerMask Shark;
     private MovementType currentMovementType;
     private enum MovementType
@@ -18,7 +19,7 @@ using System;
 
     private float v;
 
-    public DirectChase(){}
+    public DirectChase() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -97,7 +98,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

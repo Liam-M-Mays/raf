@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class RamCharge : State
+[CreateAssetMenu(menuName = "AI/States/RamCharge")]
+public class RamCharge : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    public float chargeDistance = 15f; // How far back to position before charging
+    public float divergeRange = 2; public float divergeWeight = 1; public float chargeDistance = 15f; // How far back to position before charging
     public float chargeWindupTime = 1f; // Time to wait before charging
     public float chargeCooldown = 3f; // Time between charges
     private Animator anim;
@@ -15,7 +16,7 @@ using System;
     private float chargeTimer;
     private Vector2 chargeDirection;
     private Vector2 chargeStartPos;
-    
+
     private enum MovementType
     {
         Position,   // Move to charging position
@@ -29,7 +30,7 @@ using System;
     private float windupTimer;
     private float cooldownTimer;
 
-    public RamCharge(){}
+    public RamCharge() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -40,11 +41,11 @@ using System;
         v = maxSpeed;
         cooldownTimer = 0f;
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
@@ -55,11 +56,11 @@ using System;
             // ─────────────────────────── Position ────────────────────────
             case MovementType.Position:
                 anim.SetBool("Moving", true);
-                
+
                 // Move to position behind current location relative to target
                 Vector2 dirToTarget = ((Vector2)target.position - (Vector2)self.position).normalized;
                 Vector2 positionTarget = (Vector2)target.position - dirToTarget * chargeDistance;
-                
+
                 targ = applyDivergence(positionTarget);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed * 0.8f);
@@ -81,10 +82,10 @@ using System;
             // ─────────────────────────── Windup ──────────────────────────
             case MovementType.Windup:
                 windupTimer -= Time.deltaTime;
-                
+
                 // Stay still during windup
                 // Could add a visual tell here
-                
+
                 if (windupTimer <= 0f)
                 {
                     currentMovementType = MovementType.Charge;
@@ -96,10 +97,10 @@ using System;
             // ─────────────────────────── Charge ──────────────────────────
             case MovementType.Charge:
                 anim.SetBool("Moving", true);
-                
+
                 // Charge in straight line
                 Vector2 chargeTarget = (Vector2)self.position + chargeDirection * 100f;
-                
+
                 v = maxSpeed * 2.5f; // Very fast charge
                 self.position = Vector2.MoveTowards(self.position, chargeTarget, v * Time.deltaTime);
 
@@ -135,20 +136,20 @@ using System;
             // ─────────────────────────── Cooldown ────────────────────────
             case MovementType.Cooldown:
                 anim.SetBool("Moving", true);
-                
+
                 cooldownTimer -= Time.deltaTime;
-                
+
                 // Circle around player during cooldown
                 Vector2 currentOffset = (Vector2)self.position - (Vector2)target.position;
                 float currentAngle = Mathf.Atan2(currentOffset.y, currentOffset.x);
                 float circleRadius = Mathf.Max(10f, currentOffset.magnitude);
-                
+
                 float targetAngle = currentAngle + (maxSpeed / circleRadius) * 0.3f;
                 Vector2 circlePos = (Vector2)target.position + new Vector2(
                     Mathf.Cos(targetAngle) * circleRadius,
                     Mathf.Sin(targetAngle) * circleRadius
                 );
-                
+
                 targ = applyDivergence(circlePos);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed * 0.6f);
@@ -164,7 +165,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -175,7 +176,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

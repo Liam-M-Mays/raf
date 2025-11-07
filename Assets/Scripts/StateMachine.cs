@@ -11,18 +11,21 @@ public class StateMachine
         current = next;
         current?.OnEnter(self, anim);
     }
-    public void Tick() => current?.OnUpdate(); 
-    public void LateTick() => current?.OnLateUpdate(); 
+    public void Tick() => current?.OnUpdate();
+    public void LateTick() => current?.OnLateUpdate();
 }
 
 
-[Serializable]
-public abstract class State
+public abstract class State : ScriptableObject
 {
     public abstract void OnEnter(Transform _self, Animator _anim);
     public abstract void OnUpdate();
     public abstract void OnLateUpdate();
     public abstract void OnExit();
+
+    public virtual State CreateRuntimeInstance() => Instantiate(this);
+
+    protected float RandRange(float l, float h) => UnityEngine.Random.Range(l, h);
+
 }
 
-public class SubclassSelectorAttribute : PropertyAttribute {}

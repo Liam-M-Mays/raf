@@ -1,19 +1,20 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class PackHunter : State
+[CreateAssetMenu(menuName = "AI/States/PackHunter")]
+public class PackHunter : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    public float packDistance = 8f; // Preferred distance from pack center
+    public float divergeRange = 2; public float divergeWeight = 1; public float packDistance = 8f; // Preferred distance from pack center
     public float formationSpacing = 3f; // Space between pack members
     private Animator anim;
     private LayerMask Shark;
     private MovementType currentMovementType;
     private Vector2 packCenter;
     private float angleInPack;
-    
+
     private enum MovementType
     {
         FormUp,     // Get into formation
@@ -23,7 +24,7 @@ using System;
 
     private float v;
 
-    public PackHunter(){}
+    public PackHunter() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -32,20 +33,20 @@ using System;
         target = GameObject.FindGameObjectWithTag("Raft").transform;
         anim = _anim;
         v = maxSpeed;
-        
+
         // Assign a position in the pack based on instance ID
         angleInPack = (self.GetInstanceID() % 8) * (Mathf.PI * 2f / 8f);
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
         float dist;
-        
+
         CalculatePackCenter();
 
         switch (currentMovementType)
@@ -53,13 +54,13 @@ using System;
             // ─────────────────────────── Form Up ─────────────────────────
             case MovementType.FormUp:
                 anim.SetBool("Moving", true);
-                
+
                 // Calculate formation position
                 Vector2 formationPos = packCenter + new Vector2(
                     Mathf.Cos(angleInPack) * formationSpacing,
                     Mathf.Sin(angleInPack) * formationSpacing
                 );
-                
+
                 targ = applyDivergence(formationPos);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed * 0.7f);
@@ -78,17 +79,17 @@ using System;
             // ─────────────────────────── Pack Chase ──────────────────────
             case MovementType.PackChase:
                 anim.SetBool("Moving", true);
-                
+
                 // Move toward player while maintaining formation
                 Vector2 dirToTarget = ((Vector2)target.position - packCenter).normalized;
                 Vector2 packFormationPos = packCenter + new Vector2(
                     Mathf.Cos(angleInPack) * formationSpacing,
                     Mathf.Sin(angleInPack) * formationSpacing
                 );
-                
+
                 // Blend between formation position and moving toward target
                 Vector2 chaseTarget = Vector2.Lerp(packFormationPos, (Vector2)target.position, 0.3f);
-                
+
                 targ = applyDivergence(chaseTarget);
                 dist = Vector2.Distance(self.position, targ);
                 v = Mathf.Clamp(dist * speed, 0f, maxSpeed);
@@ -119,7 +120,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -133,7 +134,7 @@ using System;
             packCenter = (Vector2)self.position;
             return;
         }
-        
+
         Vector2 sum = Vector2.zero;
         int count = 0;
         foreach (var h in hits)
@@ -141,7 +142,7 @@ using System;
             sum += (Vector2)h.transform.position;
             count++;
         }
-        
+
         packCenter = sum / count;
     }
 
@@ -151,7 +152,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

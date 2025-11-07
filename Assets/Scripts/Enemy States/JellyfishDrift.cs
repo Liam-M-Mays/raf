@@ -1,12 +1,13 @@
 using UnityEngine;
 using System;
 
-[Serializable] public class JellyfishDrift : State
+[CreateAssetMenu(menuName = "AI/States/JellyfishDrift")]
+public class JellyfishDrift : State
 {
     private Transform self, target;
-    public float maxSpeed = 2; public float speed  = 1;
+    public float maxSpeed = 2; public float speed = 1;
     public float attackRange = 1; public float outOfRange = 10; public float respawnRange = 8;
-    public float divergeRange = 2; public float divergeWeight = 1;    public float pulseStrength = 2f; // Strength of each pulse
+    public float divergeRange = 2; public float divergeWeight = 1; public float pulseStrength = 2f; // Strength of each pulse
     public float pulseInterval = 1.5f; // Time between pulses
     public float driftSpeed = 0.5f; // Speed of passive drift
     private Animator anim;
@@ -15,7 +16,7 @@ using System;
     private float pulseTimer;
     private Vector2 driftDirection;
     private bool isPulsing;
-    
+
     private enum MovementType
     {
         Drift,      // Slowly drift with occasional pulses
@@ -25,7 +26,7 @@ using System;
 
     private float v;
 
-    public JellyfishDrift(){}
+    public JellyfishDrift() { }
     public override void OnEnter(Transform _self, Animator _anim)
     {
         Shark = LayerMask.GetMask("Shark");
@@ -37,11 +38,11 @@ using System;
         pulseTimer = pulseInterval;
         PickNewDriftDirection();
     }
-    
+
     public override void OnExit()
     {
     }
-    
+
     public override void OnUpdate()
     {
         Vector2 targ;
@@ -52,9 +53,9 @@ using System;
             // ─────────────────────────── Drift ───────────────────────────
             case MovementType.Drift:
                 anim.SetBool("Moving", true);
-                
+
                 pulseTimer -= Time.deltaTime;
-                
+
                 // Slowly drift in current direction
                 Vector2 driftTarget = (Vector2)self.position + driftDirection * 10f;
                 targ = applyDivergence(driftTarget);
@@ -68,7 +69,7 @@ using System;
                 }
 
                 // No flipping - jellyfish don't need to face direction
-                
+
                 // Pulse toward player occasionally
                 if (pulseTimer <= 0f)
                 {
@@ -87,11 +88,11 @@ using System;
             // ─────────────────────────── Pulse ───────────────────────────
             case MovementType.Pulse:
                 anim.SetBool("Moving", true);
-                
+
                 // Quick pulse toward player
                 Vector2 dirToPlayer = ((Vector2)target.position - (Vector2)self.position).normalized;
                 Vector2 pulseTarget = (Vector2)self.position + dirToPlayer * pulseStrength;
-                
+
                 targ = applyDivergence(pulseTarget);
                 dist = Vector2.Distance(self.position, targ);
                 v = maxSpeed;
@@ -125,7 +126,7 @@ using System;
                 break;
         }
     }
-    
+
     public override void OnLateUpdate()
     {
     }
@@ -144,7 +145,7 @@ using System;
         scaler.x *= -1f;
         self.localScale = scaler;
     }
-    
+
     Vector2 applyDivergence(Vector2 original)
     {
         Vector2 newTarget = original;

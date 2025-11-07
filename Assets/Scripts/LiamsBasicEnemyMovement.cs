@@ -4,11 +4,21 @@ public class LiamsBasicEnemyMovement : MonoBehaviour
 {
     private Animator anim;
     private StateMachine sm = new StateMachine();
-    [SerializeReference, SubclassSelector] public State moveState;
+    public State moveState;
 
-    void Start()
+
+    void Awake()
     {
         anim = GetComponent<Animator>();
+    }
+
+    public void Configure(LiamSharkDefault runtimeState)
+    {
+        moveState = runtimeState.movementState.CreateRuntimeInstance();
+    }
+    
+    void Start()
+    {
         sm.ChangeState(moveState, transform, anim);
     }
 
