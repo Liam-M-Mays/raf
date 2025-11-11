@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b241d3c96bd63444daaf3d8321f1512e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  currencyMultiplier: 2
+  currencyMultiplier: 5
   bossFrequency: 3
   standardWavePool:
   - {fileID: 11400000, guid: cfe6d9ba0267dd044a48d81b5e9f08fa, type: 2}

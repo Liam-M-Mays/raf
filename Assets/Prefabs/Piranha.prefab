@@ -45,10 +45,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2177139864062627669}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334088a18a281d84bbc6f197c1083821, type: 3}
+  m_Script: {fileID: 11500000, guid: fbcc73d7a3c734f8fa7b38c8d5d18c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MasonsEnemyBrain
-  moveState: {fileID: 0}
 --- !u!95 &6046348995148153406
 Animator:
   serializedVersion: 7
