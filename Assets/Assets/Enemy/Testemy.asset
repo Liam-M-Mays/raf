@@ -1,0 +1,176 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b52617c20a9e4d78a85165c230a59b5, type: 3}
+  m_Name: Testemy
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySO
+  Behaviors:
+    Ambuush:
+      rid: 7550195915060674817
+    Circle:
+      rid: 7550195915060674818
+    Direct:
+      rid: 7550195915060674819
+    Jellyfish:
+      rid: 7550195915060674820
+    Pack:
+      rid: 7550195915060674821
+    Ram:
+      rid: 7550195915060674822
+    ZigZag:
+      rid: 7550195915060674823
+  cost: 0
+  prefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
+  spawnRadius: 20
+  color: {r: 1, g: 1, b: 1, a: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7550195915060674817
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674824
+    - rid: 7550195915060674818
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+        weight: 1
+        config:
+          rid: 7550195915060674825
+    - rid: 7550195915060674819
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674826
+    - rid: 7550195915060674820
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674827
+    - rid: 7550195915060674821
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674828
+    - rid: 7550195915060674822
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674829
+    - rid: 7550195915060674823
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550195915060674830
+    - rid: 7550195915060674824
+      type: {class: AmbushLurkBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        lurkDistance: 15
+        lurkTime: 3
+        retreatDistance: 20
+    - rid: 7550195915060674825
+      type: {class: CircleChaseBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 1.5
+        speed: 2
+        attackRange: 0.5
+        outOfRange: 30
+        respawnRange: 20
+        divergeRange: 0.8
+        divergeWeight: 2
+        OrbitDistance: 4
+        randDir: 1
+        direction: 1
+        zigzagAmplitude: 10
+        zigzagFrequency: 3
+        chargeDistance: 2
+        chargeWindupTime: 1
+        chargeCooldown: 2
+    - rid: 7550195915060674826
+      type: {class: DirectChaseBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+    - rid: 7550195915060674827
+      type: {class: JellyfishDriftBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        pulseStrength: 2
+        pulseInterval: 1.5
+        driftSpeed: 0.5
+    - rid: 7550195915060674828
+      type: {class: PackHunterBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        packDistance: 8
+        formationSpacing: 3
+    - rid: 7550195915060674829
+      type: {class: RamChargeBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        chargeDistance: 15
+        chargeWindupTime: 1
+        chargeCooldown: 3
+    - rid: 7550195915060674830
+      type: {class: ZigzagApproachBehaviorCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 1.5
+        speed: 1
+        attackRange: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        zigzagAmplitude: 5
+        zigzagFrequency: 2

@@ -14,8 +14,8 @@ public class SpawnManager : MonoBehaviour
         Vector2 offset = Random.insideUnitCircle.normalized * enemy.spawnRadius;
         Vector3 spawnPos = (Vector3)((Vector2)raft.position + offset);
 
-        MasonsEnemyBrain enemyBrain = Instantiate(enemy.prefab, spawnPos, Quaternion.identity)
-            .GetComponent<MasonsEnemyBrain>();
+        LiamEnemyBrain enemyBrain = Instantiate(enemy.prefab, spawnPos, Quaternion.identity)
+            .GetComponent<LiamEnemyBrain>();
 
         enemyBrain.Configure(enemy);
     }

@@ -612,9 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43935f19805114e8cae4c94db2007724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  SharkPrefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
-  sharkConfig: {fileID: 11400000, guid: a407f641e994e44c9a45b4aee5f73877, type: 2}
-  spawnRadius: 15
+  config: {fileID: 11400000, guid: 2f16481f6590946b49950f5a12ec98b2, type: 2}
 --- !u!4 &1091211431
 Transform:
   m_ObjectHideFlags: 0
@@ -690,9 +688,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2575800871408687900, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5077543882066780417, guid: 4385b06984f014041a03116fd7552b74, type: 3}
       propertyPath: m_Name
       value: Matress
+      objectReference: {fileID: 0}
+    - target: {fileID: 5077543882066780417, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5077543882066780417, guid: 4385b06984f014041a03116fd7552b74, type: 3}
       propertyPath: m_TagString
@@ -718,9 +724,25 @@ PrefabInstance:
       propertyPath: m_MaskInteraction
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6675878564845436282, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6732036507405149256, guid: 4385b06984f014041a03116fd7552b74, type: 3}
       propertyPath: m_SortingOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7204796545837393663, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7712363648364043603, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289446506146993640, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -825,7 +847,7 @@ PrefabInstance:
       objectReference: {fileID: 443244673}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: paddleStats.maxSpeed
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: paddleStats.paddleForce

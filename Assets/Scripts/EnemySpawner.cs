@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Linq;
+using System.Collections.Generic;
 public class EnemySpawner : MonoBehaviour
 {
-    public GameObject SharkPrefab; 
-    public LiamSharkDefault sharkConfig;
-
+    public EnemySO config;
     private Transform raft;
-    public float spawnRadius = 15f;
-
     private InputAction spawn;
 
     void Start()
@@ -24,14 +22,18 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    public void SpawnShark()
+   
+
+    public void SpawnShark() 
     {
-        Vector2 offset = Random.insideUnitCircle.normalized * spawnRadius;
-        Vector3 spawnPos = (Vector3)((Vector2)raft.position + offset);
+        
+        Vector2 offset = Random.insideUnitCircle.normalized * config.spawnRadius;
+        Vector3 spawnPos = raft.position + (Vector3)offset;
 
-        LiamsBasicEnemyMovement enemy = Instantiate(SharkPrefab, spawnPos, Quaternion.identity)
-            .GetComponent<LiamsBasicEnemyMovement>();
+        LiamEnemyBrain enemy = Instantiate(config.prefab, spawnPos, Quaternion.identity)
+            .GetComponent<LiamEnemyBrain>();
 
-        enemy.Configure(sharkConfig);
+        enemy.Configure(config);
     }
+
 }
