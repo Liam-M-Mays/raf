@@ -27,7 +27,7 @@ MonoBehaviour:
       rid: 7550195915060674822
     ZigZag:
       rid: 7550195915060674823
-  cost: 0
+  cost: 1
   prefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
   spawnRadius: 20
   color: {r: 1, g: 1, b: 1, a: 1}
