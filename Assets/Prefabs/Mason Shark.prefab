@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &210006346862396152
+--- !u!1 &4315848241224846800
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,55 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 929794028207902701}
-  - component: {fileID: 8957816504961369382}
-  - component: {fileID: 909310379744381661}
-  - component: {fileID: 5886278542965953210}
-  - component: {fileID: 6368090543689187532}
+  - component: {fileID: 5731719624765986960}
+  - component: {fileID: 795756777447396440}
+  - component: {fileID: 7385862582685665009}
+  - component: {fileID: 1923972803311185211}
+  - component: {fileID: 5467033184888532366}
   m_Layer: 6
-  m_Name: Liams Shark
+  m_Name: Mason Shark
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &929794028207902701
+--- !u!4 &5731719624765986960
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 4315848241224846800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.841, y: 1.22373, z: 0}
+  m_LocalPosition: {x: -0.96257, y: 0.86818, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1170125965986089929}
+  - {fileID: 5047110451366122660}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8957816504961369382
+--- !u!114 &795756777447396440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4315848241224846800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334088a18a281d84bbc6f197c1083821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasonsEnemyBrain
+  moveState: {fileID: 0}
+--- !u!95 &7385862582685665009
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 4315848241224846800}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e418ed87b550f75459256822aad33fd5, type: 2}
@@ -58,26 +71,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &909310379744381661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbcc73d7a3c734f8fa7b38c8d5d18c49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiamsBasicEnemyMovement
-  moveState: {fileID: 0}
---- !u!58 &5886278542965953210
+--- !u!58 &1923972803311185211
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 4315848241224846800}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -107,14 +107,14 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.03}
   m_Radius: 0.3248862
---- !u!50 &6368090543689187532
+--- !u!50 &5467033184888532366
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 4315848241224846800}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1 &443039046711675225
+--- !u!1 &5811419567658121620
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +142,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1170125965986089929}
-  - component: {fileID: 8714101270084337898}
+  - component: {fileID: 5047110451366122660}
+  - component: {fileID: 1830757983898462863}
   m_Layer: 0
   m_Name: Shark Sprite
   m_TagString: Untagged
@@ -151,28 +151,28 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1170125965986089929
+--- !u!4 &5047110451366122660
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443039046711675225}
+  m_GameObject: {fileID: 5811419567658121620}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 929794028207902701}
+  m_Father: {fileID: 5731719624765986960}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8714101270084337898
+--- !u!212 &1830757983898462863
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443039046711675225}
+  m_GameObject: {fileID: 5811419567658121620}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &210006346862396152
+--- !u!1 &2177139864062627669
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,58 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 929794028207902701}
-  - component: {fileID: 8957816504961369382}
-  - component: {fileID: 909310379744381661}
-  - component: {fileID: 5886278542965953210}
-  - component: {fileID: 6368090543689187532}
+  - component: {fileID: 7118951246131354225}
+  - component: {fileID: 7956844717061111715}
+  - component: {fileID: 6046348995148153406}
+  - component: {fileID: 5087171872104124234}
+  - component: {fileID: 5210538723506732825}
   m_Layer: 6
-  m_Name: Liams Shark
+  m_Name: Piranha
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &929794028207902701
+--- !u!4 &7118951246131354225
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 2177139864062627669}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.841, y: 1.22373, z: 0}
+  m_LocalPosition: {x: -3.56881, y: 1.4608, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1170125965986089929}
+  - {fileID: 2528011611531792294}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8957816504961369382
+--- !u!114 &7956844717061111715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177139864062627669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 334088a18a281d84bbc6f197c1083821, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MasonsEnemyBrain
+  moveState: {fileID: 0}
+--- !u!95 &6046348995148153406
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 2177139864062627669}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e418ed87b550f75459256822aad33fd5, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8b5b01128ddaf2149bc0a8a62bd8b4bf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -58,26 +71,13 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &909310379744381661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbcc73d7a3c734f8fa7b38c8d5d18c49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LiamsBasicEnemyMovement
-  moveState: {fileID: 0}
---- !u!58 &5886278542965953210
+--- !u!58 &5087171872104124234
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 2177139864062627669}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -107,14 +107,14 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: -0.03}
   m_Radius: 0.3248862
---- !u!50 &6368090543689187532
+--- !u!50 &5210538723506732825
 Rigidbody2D:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210006346862396152}
+  m_GameObject: {fileID: 2177139864062627669}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!1 &443039046711675225
+--- !u!1 &5404895207697418235
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,37 +142,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1170125965986089929}
-  - component: {fileID: 8714101270084337898}
+  - component: {fileID: 2528011611531792294}
+  - component: {fileID: 8534180551033324823}
   m_Layer: 0
-  m_Name: Shark Sprite
+  m_Name: Piranha Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1170125965986089929
+--- !u!4 &2528011611531792294
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443039046711675225}
+  m_GameObject: {fileID: 5404895207697418235}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 929794028207902701}
+  m_Father: {fileID: 7118951246131354225}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8714101270084337898
+--- !u!212 &8534180551033324823
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443039046711675225}
+  m_GameObject: {fileID: 5404895207697418235}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
