@@ -93,7 +93,7 @@ public class SharkDefault : IBehavior
         // Attack Check
         if (UtilityNodes.IsInAttackRange(ctx) || (isAttacking && Vector2.Distance(attackStart, (Vector2)ctx.lastPosition) <= ctx.attackRangeMax))
         {
-            if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.Execute(ctx);
+            if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.SlowExecute(ctx);
             if (!isAttacking)
             {
                 attackTimer = config.attackTimer;
@@ -133,7 +133,7 @@ public class SharkDefault : IBehavior
             {
                 if (RaftTracker.addSelf(this) && !UtilityNodes.Obstructed(ctx))
                 {
-                    DirectChaseMovement.Execute(ctx);
+                    DirectChaseMovement.SlowExecute(ctx);
                     ActionNodes.Attack(ctx);
                 }
                 else

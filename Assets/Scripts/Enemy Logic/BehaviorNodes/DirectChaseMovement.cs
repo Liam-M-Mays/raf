@@ -7,15 +7,27 @@ public static class DirectChaseMovement
 {
     public static void Execute(BehaviorContext ctx, bool setAnimation = true)
     {
-        
+
         // Apply divergence to avoid other sharks
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, ctx.target.position);
-        
+
         // Move towards target with distance-based speed
         float dist = Vector2.Distance(ctx.self.position, targetPos);
         float velocity = Mathf.Clamp(dist * ctx.speed + 1f, 0f, ctx.maxSpeed);
         ctx.self.position = Vector2.MoveTowards(ctx.self.position, targetPos, velocity * ctx.deltaTime);
         ctx.currentVelocity = velocity;
+
+        // Update facing
+        UtilityNodes.UpdateFacing(ctx);
+    }
+    
+    public static void SlowExecute(BehaviorContext ctx, bool setAnimation = true)
+    {
+        
+        // Apply divergence to avoid other sharks
+        Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, ctx.target.position);
+        
+        ctx.self.position = Vector2.MoveTowards(ctx.self.position, targetPos, 0.7f * ctx.deltaTime);
         
         // Update facing
         UtilityNodes.UpdateFacing(ctx);
