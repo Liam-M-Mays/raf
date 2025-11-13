@@ -7,12 +7,9 @@ using System.Reflection;
 [System.Serializable]
 public class BehaviorOptions
 {
-    [SerializeReference] public BehaviorOption Ambuush = new BehaviorOption { config = new AmbushLurkBehaviorCfg() };
-    [SerializeReference] public BehaviorOption Circle = new BehaviorOption { config = new CircleChaseBehaviorCfg() };
-    [SerializeReference] public BehaviorOption Direct = new BehaviorOption { config = new DirectChaseBehaviorCfg() };
-    [SerializeReference] public BehaviorOption Jellyfish = new BehaviorOption { config = new JellyfishDriftBehaviorCfg() };
+    [SerializeReference] public BehaviorOption SharkDefault = new BehaviorOption { config = new SharkDefaultCfg() };
     [SerializeReference] public BehaviorOption Pack = new BehaviorOption { config = new PackHunterBehaviorCfg() };
-    [SerializeReference] public BehaviorOption Ram = new BehaviorOption { config = new RamChargeBehaviorCfg() };
+    [SerializeReference] public BehaviorOption HammerDefault = new BehaviorOption { config = new HammerDefaultCfg() };
     [SerializeReference] public BehaviorOption ZigZag = new BehaviorOption { config = new ZigzagApproachBehaviorCfg() };
 
 

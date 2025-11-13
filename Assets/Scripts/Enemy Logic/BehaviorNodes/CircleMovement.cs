@@ -31,6 +31,7 @@ public static class CircleMovement
         // Calculate current offset and clamp orbit radius
         Vector2 currentOffset = (Vector2)ctx.self.position - (Vector2)ctx.target.position;
         data.circleRadius = Mathf.Clamp(currentOffset.magnitude, minRadius, maxRadius);
+        data.circleRadius = Mathf.Max(data.circleRadius - 0.1f, minRadius);
         
         // Get current angle on circle
         data.currentAngle = Mathf.Atan2(currentOffset.y, currentOffset.x);

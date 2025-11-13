@@ -16,9 +16,10 @@ public class BehaviorContext
     public float maxSpeed;
     public float speed;
     public float currentVelocity;
-    
+
     // Range parameters
     public float attackRange;
+    public float attackRangeMax;
     public float outOfRange;
     public float respawnRange;
     

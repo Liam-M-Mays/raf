@@ -7,10 +7,6 @@ public static class DirectChaseMovement
 {
     public static void Execute(BehaviorContext ctx, bool setAnimation = true)
     {
-        if (setAnimation)
-        {
-            ActionNodes.SetMoving(ctx, true);
-        }
         
         // Apply divergence to avoid other sharks
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, ctx.target.position);

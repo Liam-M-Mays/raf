@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbcc73d7a3c734f8fa7b38c8d5d18c49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LiamsBasicEnemyMovement
-  moveState: {fileID: 0}
 --- !u!58 &5886278542965953210
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -105,8 +104,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.03}
-  m_Radius: 0.3248862
+  m_Offset: {x: 0, y: -0.15}
+  m_Radius: 0.2
 --- !u!50 &6368090543689187532
 Rigidbody2D:
   serializedVersion: 5
@@ -120,7 +119,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 0.5
-  m_LinearDamping: 0
+  m_LinearDamping: 5
   m_AngularDamping: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}

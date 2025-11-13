@@ -17,12 +17,8 @@ public static class ChargeMovement
     /// <summary>
     /// Position behind target for charge windup
     /// </summary>
-    public static void PositionForCharge(BehaviorContext ctx, float chargeDistance, bool setAnimation = true)
+    public static void PositionForCharge(BehaviorContext ctx, float chargeDistance)
     {
-        if (setAnimation)
-        {
-            ActionNodes.SetMoving(ctx, true);
-        }
         
         // Move to a point behind the target
         Vector2 dirToTarget = ((Vector2)ctx.target.position - (Vector2)ctx.self.position).normalized;
@@ -30,13 +26,10 @@ public static class ChargeMovement
         
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, positionTarget);
         UtilityNodes.MoveTowards(ctx, targetPos, 0.8f); // Slower positioning
-        
+
         UtilityNodes.UpdateFacing(ctx);
     }
     
-    /// <summary>
-    /// Wind up before charging (pause/anticipation)
-    /// </summary>
     public static bool Windup(BehaviorContext ctx, float windupTime)
     {
         ChargeData data = ctx.customData as ChargeData;
@@ -48,7 +41,6 @@ public static class ChargeMovement
             ctx.customData = data;
         }
         
-        ActionNodes.SetMoving(ctx, false);
 
         data.windupTimer -= ctx.deltaTime;
         
@@ -62,15 +54,12 @@ public static class ChargeMovement
         return false; // Still winding up
     }
     
-    /// <summary>
-    /// Execute the charge
-    /// </summary>
+
     public static bool ExecuteCharge(BehaviorContext ctx, float chargeSpeed, float maxChargeDistance)
     {
         ChargeData data = ctx.customData as ChargeData;
         if (data == null) return true; // No charge data, end charge
         
-        ActionNodes.SetMoving(ctx, true);
         
         // Charge straight ahead at high speed
         Vector2 chargeTarget = (Vector2)ctx.self.position + data.chargeDirection * 100f;

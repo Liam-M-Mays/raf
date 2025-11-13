@@ -3,12 +3,12 @@ using UnityEngine;
 using System;
 
 [Serializable]
-public class CircleChaseBehaviorCfg : BehaviorCfg
+public class SharkDefaultCfg : BehaviorCfg
 {
-    [Header("Circle Chase – Tunables")]
     public float maxSpeed = 2f;
     public float speed = 1f;
     public float attackRange = 1f;
+    public float attackRangeMax = 1f;
     public float outOfRange = 10f;
     public float respawnRange = 8f;
     public float divergeRange = 2f;
@@ -16,6 +16,9 @@ public class CircleChaseBehaviorCfg : BehaviorCfg
 
     [Header("Orbiting")]
     public float OrbitDistance = 5f;
+    public float OrbitMax = 1f;
+    public float OrbitRange = 0.5f;
+    public float attackTimer = 3f;
     public bool randDir = false;
     public float direction = 1f; // +1 or -1; you were randomizing this earlier
 
@@ -23,27 +26,21 @@ public class CircleChaseBehaviorCfg : BehaviorCfg
     [Min(0f)] public float zigzagAmplitude = 5f; // how wide the zigzag
     [Min(0f)] public float zigzagFrequency = 2f; // how fast it zigzags
 
-     [Header("Charge")]
-    [Min(0f)] public float chargeDistance  = 15f; // how far back to position before charging
-    [Min(0f)] public float chargeWindupTime= 1f;  // wait before charging
-    [Min(0f)] public float chargeCooldown  = 3f;  // time between charges
-
-    public override IBehavior CreateRuntimeBehavior() => new CircleChaseBehavior_Modular(this);
+    public override IBehavior CreateRuntimeBehavior() => new SharkDefault(this);
 }
 
-public class CircleChaseBehavior_Modular : IBehavior
+public class SharkDefault : IBehavior
 {
     private BehaviorContext ctx;
-    private CircleChaseBehaviorCfg config;
+    private SharkDefaultCfg config;
 
     // State tracking
     private bool isAttacking = false;
-    private bool charging = false;
     private float circleDirection;
     private float orbit;
-    private bool obs = true;
+    private float attackTimer;
     
-    public CircleChaseBehavior_Modular(CircleChaseBehaviorCfg cfg)
+    public SharkDefault(SharkDefaultCfg cfg)
     {
         config = cfg;
     }
@@ -57,19 +54,19 @@ public class CircleChaseBehavior_Modular : IBehavior
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
         ctx.attackRange = config.attackRange;
+        ctx.attackRangeMax = config.attackRangeMax;
         ctx.outOfRange = config.outOfRange;
         ctx.respawnRange = config.respawnRange;
         ctx.divergeRange = config.divergeRange;
         ctx.divergeWeight = config.divergeWeight;
-
-        // Set circle direction
+        attackTimer = config.attackTimer;
+        // Set orbit direction and distance
         if (config.randDir)
         {
             circleDirection = (UnityEngine.Random.value < 0.5f) ? -1f : 1f;
-            orbit = config.OrbitDistance + (circleDirection/2f);
         }
-        else
-            circleDirection = config.direction;
+        else circleDirection = config.direction;
+        orbit = config.OrbitDistance + (UnityEngine.Random.Range(0.2f, 0.2f+config.OrbitRange)*circleDirection);
     }
     
     public void OnExit()
@@ -81,59 +78,70 @@ public class CircleChaseBehavior_Modular : IBehavior
     {
         // Update per-frame data
         ctx.UpdateFrame();
-        
-        // Check if out of range first
+
+        // Respawn Check
         if (UtilityNodes.IsOutOfRange(ctx))
         {
             RaftTracker.removeSelf(this);
             ActionNodes.Respawn(ctx, ctx.respawnRange);
             isAttacking = false;
+            attackTimer = config.attackTimer;
             return;
         }
-        // Check if in attack range
-        if (UtilityNodes.IsInAttackRange(ctx))
+        
+        // Attack Check
+        if (UtilityNodes.IsInAttackRange(ctx) || (isAttacking && UtilityNodes.IsInAttackMax(ctx)))
         {
             if (!isAttacking)
             {
-                obs = true;
+                attackTimer = config.attackTimer;
+                
                 ActionNodes.Attack(ctx);
                 isAttacking = true;
+                attackTimer = config.attackTimer;
             }
         }
         else
         {
-            // Not in attack range
+            // Not in attack range // -----> maybe move this function into attack node itself. 
             if (isAttacking)
             {
-                RaftTracker.removeSelf(this);
+                if (ctx.distanceToTarget < orbit)
+                {
+                    Vector2 orbitTarget = UtilityNodes.TargetOnOrbit(ctx, orbit);
+                    ZigzagMovement.ExecuteTarget(ctx, orbitTarget, config.zigzagAmplitude, config.zigzagFrequency);
+                    attackTimer = config.attackTimer;
+                }
                 ActionNodes.StopAttack(ctx);
-                obs = true;
+                RaftTracker.removeSelf(this);
+                
                 isAttacking = false;
             }
-            if (ctx.distanceToTarget > 5) ZigzagMovement.Execute(ctx, config.zigzagAmplitude, config.zigzagFrequency);
-            else if (!UtilityNodes.obstructed(ctx) || !obs)
+            if (ctx.distanceToTarget > orbit)
             {
-                if (RaftTracker.atRaft(this))
-                {
-                    obs = false;
-                    if (!charging) charging = ChargeMovement.Windup(ctx, config.chargeWindupTime);
-                    else
-                    {
-                        charging = !ChargeMovement.ExecuteCharge(ctx, 2.5f, orbit);
-                    }
-                }
-                else
-                {
-                    obs = true;
-                    RaftTracker.removeSelf(this);
-                    CircleMovement.Execute(ctx, orbit, orbit+1f, circleDirection);
-                }
+                ZigzagMovement.Execute(ctx, config.zigzagAmplitude, config.zigzagFrequency);
+                attackTimer = config.attackTimer;
+            }
+            else if (attackTimer > 0f)
+            {
+                CircleMovement.Execute(ctx, orbit, orbit + config.OrbitMax, circleDirection);
+                attackTimer -= ctx.deltaTime;
+                Debug.Log(attackTimer);
             }
             else
             {
-                RaftTracker.removeSelf(this);
-                CircleMovement.Execute(ctx, orbit, orbit+1f, circleDirection);
-            }  
+                if (RaftTracker.addSelf(this) && !UtilityNodes.Obstructed(ctx))
+                {
+                    DirectChaseMovement.Execute(ctx);
+                    ActionNodes.Attack(ctx);
+                }
+                else
+                {
+                    RaftTracker.removeSelf(this);
+                    attackTimer = config.attackTimer;
+                    ActionNodes.StopAttack(ctx);
+                }
+            }
         }
     }
     
