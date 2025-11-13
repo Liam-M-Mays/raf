@@ -61,8 +61,8 @@ MonoBehaviour:
       data:
         maxSpeed: 2
         speed: 1
-        attackRange: 1
-        attackRangeMax: 1
+        attackRange: 0.5
+        attackRangeMax: 2
         outOfRange: 30
         respawnRange: 20
         divergeRange: 2

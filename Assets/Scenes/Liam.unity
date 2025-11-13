@@ -612,7 +612,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43935f19805114e8cae4c94db2007724, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  config: {fileID: 11400000, guid: 64872f4d55ffe44a395827daa2e09dc3, type: 2}
+  config: {fileID: 11400000, guid: faa4a951334fe4d2d9d27ed3b060ee9e, type: 2}
 --- !u!4 &1091211431
 Transform:
   m_ObjectHideFlags: 0

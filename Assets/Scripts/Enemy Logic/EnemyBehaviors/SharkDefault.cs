@@ -39,6 +39,7 @@ public class SharkDefault : IBehavior
     private float circleDirection;
     private float orbit;
     private float attackTimer;
+    private Vector2 attackStart;
     
     public SharkDefault(SharkDefaultCfg cfg)
     {
@@ -90,12 +91,13 @@ public class SharkDefault : IBehavior
         }
         
         // Attack Check
-        if (UtilityNodes.IsInAttackRange(ctx) || (isAttacking && UtilityNodes.IsInAttackMax(ctx)))
+        if (UtilityNodes.IsInAttackRange(ctx) || (isAttacking && Vector2.Distance(attackStart, (Vector2)ctx.lastPosition) <= ctx.attackRangeMax))
         {
+            if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.Execute(ctx);
             if (!isAttacking)
             {
                 attackTimer = config.attackTimer;
-                
+                attackStart = (Vector2)ctx.lastPosition;
                 ActionNodes.Attack(ctx);
                 isAttacking = true;
                 attackTimer = config.attackTimer;
@@ -126,7 +128,6 @@ public class SharkDefault : IBehavior
             {
                 CircleMovement.Execute(ctx, orbit, orbit + config.OrbitMax, circleDirection);
                 attackTimer -= ctx.deltaTime;
-                Debug.Log(attackTimer);
             }
             else
             {
