@@ -1,0 +1,1539 @@
+fileFormatVersion: 2
+guid: 5e0df210ffdec6242b4482071e58a8b9
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1081705366298067615
+    second: BossShark_Attack_Movement_0
+  - first:
+      213: -6162932065982479039
+    second: BossShark_Attack_Movement_1
+  - first:
+      213: -7795754983307405631
+    second: BossShark_Attack_Movement_2
+  - first:
+      213: -6741920044207357635
+    second: BossShark_Attack_Movement_3
+  - first:
+      213: -1560397769381819841
+    second: BossShark_Attack_Movement_4
+  - first:
+      213: -5385680430100649625
+    second: BossShark_Attack_Movement_5
+  - first:
+      213: -3591094002148003107
+    second: BossShark_Attack_Movement_6
+  - first:
+      213: 4609174357162910747
+    second: BossShark_Attack_Movement_7
+  - first:
+      213: 321448487426954584
+    second: BossShark_Attack_Movement_8
+  - first:
+      213: 4313034339682713469
+    second: BossShark_Attack_Movement_9
+  - first:
+      213: -2728187537565662018
+    second: BossShark_Attack_Movement_10
+  - first:
+      213: 5136911528113491733
+    second: BossShark_Attack_Movement_11
+  - first:
+      213: 6000549887019551132
+    second: BossShark_Attack_Movement_12
+  - first:
+      213: 7483088225789127153
+    second: BossShark_Attack_Movement_13
+  - first:
+      213: -4918482673266984078
+    second: BossShark_Attack_Movement_14
+  - first:
+      213: -2054359365549990265
+    second: BossShark_Attack_Movement_15
+  - first:
+      213: -1375041443858783162
+    second: BossShark_Attack_Movement_16
+  - first:
+      213: -9174831323132634910
+    second: BossShark_Attack_Movement_17
+  - first:
+      213: 3853938948048121475
+    second: BossShark_Attack_Movement_18
+  - first:
+      213: -862527824551977597
+    second: BossShark_Attack_Movement_19
+  - first:
+      213: 1220817492856243494
+    second: BossShark_Attack_Movement_20
+  - first:
+      213: -613695166737305598
+    second: BossShark_Attack_Movement_21
+  - first:
+      213: 4594603560820140494
+    second: BossShark_Attack_Movement_22
+  - first:
+      213: 4474644947055184035
+    second: BossShark_Attack_Movement_23
+  - first:
+      213: -5007800845772367298
+    second: BossShark_Attack_Movement_24
+  - first:
+      213: -1665059114649800739
+    second: BossShark_Attack_Movement_25
+  - first:
+      213: 7873245952144951416
+    second: BossShark_Attack_Movement_26
+  - first:
+      213: 7416108760990175884
+    second: BossShark_Attack_Movement_27
+  - first:
+      213: 3568257592869469102
+    second: BossShark_Attack_Movement_28
+  - first:
+      213: 8325226211308466270
+    second: BossShark_Attack_Movement_29
+  - first:
+      213: 1218500522694709889
+    second: BossShark_Attack_Movement_30
+  - first:
+      213: -7474232861990118551
+    second: BossShark_Attack_Movement_31
+  - first:
+      213: -6594914478250297258
+    second: BossShark_Attack_Movement_32
+  - first:
+      213: -420739863695175039
+    second: BossShark_Attack_Movement_33
+  - first:
+      213: -213016701105634960
+    second: BossShark_Attack_Movement_34
+  - first:
+      213: -5662515430063698846
+    second: BossShark_Attack_Movement_35
+  - first:
+      213: 6541992049127879737
+    second: BossShark_Attack_Movement_36
+  - first:
+      213: 5653482024859120123
+    second: BossShark_Attack_Movement_37
+  - first:
+      213: 1920307384299722412
+    second: BossShark_Attack_Movement_38
+  - first:
+      213: 7987157148753012522
+    second: BossShark_Attack_Movement_39
+  - first:
+      213: -8487214200804235780
+    second: BossShark_Attack_Movement_40
+  - first:
+      213: -607626068433413135
+    second: BossShark_Attack_Movement_41
+  - first:
+      213: -7067171674391456131
+    second: BossShark_Attack_Movement_42
+  - first:
+      213: 8544780929703952317
+    second: BossShark_Attack_Movement_43
+  - first:
+      213: 8707030925640465387
+    second: BossShark_Attack_Movement_44
+  - first:
+      213: -2335595707896844013
+    second: BossShark_Attack_Movement_45
+  - first:
+      213: 2268580313622922270
+    second: BossShark_Attack_Movement_46
+  - first:
+      213: 1240703623645637128
+    second: BossShark_Attack_Movement_47
+  - first:
+      213: 7310036974535485364
+    second: BossShark_Attack_Movement_48
+  - first:
+      213: -1518527880238886796
+    second: BossShark_Attack_Movement_49
+  - first:
+      213: 6266966307934540568
+    second: BossShark_Attack_Movement_50
+  - first:
+      213: 6571670060417965603
+    second: BossShark_Attack_Movement_51
+  - first:
+      213: 5463831710760720584
+    second: BossShark_Attack_Movement_52
+  - first:
+      213: -5503095997474020119
+    second: BossShark_Attack_Movement_53
+  - first:
+      213: -1459912061540678631
+    second: BossShark_Attack_Movement_54
+  - first:
+      213: 1554397740253289445
+    second: BossShark_Attack_Movement_55
+  - first:
+      213: -4011519522121820413
+    second: BossShark_Attack_Movement_56
+  - first:
+      213: -4072640106247287242
+    second: BossShark_Attack_Movement_57
+  - first:
+      213: -1788750669671890552
+    second: BossShark_Attack_Movement_58
+  - first:
+      213: -6553074176215061866
+    second: BossShark_Attack_Movement_59
+  - first:
+      213: 8146431743119878958
+    second: BossShark_Attack_Movement_60
+  - first:
+      213: 6291140409489667671
+    second: BossShark_Attack_Movement_61
+  - first:
+      213: -795957878498597166
+    second: BossShark_Attack_Movement_62
+  - first:
+      213: 2191550510560706975
+    second: BossShark_Attack_Movement_63
+  - first:
+      213: 8421687579712173693
+    second: BossShark_Attack_Movement_64
+  - first:
+      213: 1042848703237608307
+    second: BossShark_Attack_Movement_65
+  - first:
+      213: -1108082072469148917
+    second: BossShark_Attack_Movement_66
+  - first:
+      213: -4133524265187583494
+    second: BossShark_Attack_Movement_67
+  - first:
+      213: 460645629382225534
+    second: BossShark_Attack_Movement_68
+  - first:
+      213: -7074984955551563617
+    second: BossShark_Attack_Movement_69
+  - first:
+      213: 6026955212644044245
+    second: BossShark_Attack_Movement_70
+  - first:
+      213: 7422604507268005669
+    second: BossShark_Attack_Movement_71
+  - first:
+      213: 8675678803890395579
+    second: BossShark_Attack_Movement_72
+  - first:
+      213: 2734859582598325239
+    second: BossShark_Attack_Movement_73
+  - first:
+      213: -3559761858177001597
+    second: BossShark_Attack_Movement_74
+  - first:
+      213: 7832387546257013932
+    second: BossShark_Attack_Movement_75
+  - first:
+      213: 3212573021998693979
+    second: BossShark_Attack_Movement_76
+  - first:
+      213: -1641457076122210104
+    second: BossShark_Attack_Movement_77
+  - first:
+      213: -5277619482072471306
+    second: BossShark_Attack_Movement_78
+  - first:
+      213: 7561982941068417735
+    second: BossShark_Attack_Movement_79
+  - first:
+      213: 3251288238550095042
+    second: BossShark_Attack_Movement_80
+  - first:
+      213: 7036920126401435312
+    second: BossShark_Attack_Movement_81
+  - first:
+      213: -3185878092854157100
+    second: BossShark_Attack_Movement_82
+  - first:
+      213: -2163035021834834626
+    second: BossShark_Attack_Movement_83
+  - first:
+      213: 4361132630836867147
+    second: BossShark_Attack_Movement_84
+  - first:
+      213: 8248569693745521683
+    second: BossShark_Attack_Movement_85
+  - first:
+      213: 2202241019133684293
+    second: BossShark_Attack_Movement_86
+  - first:
+      213: -7689776024774370930
+    second: BossShark_Attack_Movement_87
+  - first:
+      213: 7371217835708517553
+    second: BossShark_Attack_Movement_88
+  - first:
+      213: -4201328216088116475
+    second: BossShark_Attack_Movement_89
+  - first:
+      213: -9044910610965235239
+    second: BossShark_Attack_Movement_90
+  - first:
+      213: -4722667517824807185
+    second: BossShark_Attack_Movement_91
+  - first:
+      213: 1246353698691904761
+    second: BossShark_Attack_Movement_92
+  - first:
+      213: -567836560694910103
+    second: BossShark_Attack_Movement_93
+  - first:
+      213: -6523008261214092000
+    second: BossShark_Attack_Movement_94
+  - first:
+      213: -6071281835361128592
+    second: BossShark_Attack_Movement_95
+  - first:
+      213: -3122079789613222811
+    second: BossShark_Attack_Movement_96
+  - first:
+      213: -8228070825761034344
+    second: BossShark_Attack_Movement_97
+  - first:
+      213: -3729014581528308544
+    second: BossShark_Attack_Movement_98
+  - first:
+      213: -8446782426004897004
+    second: BossShark_Attack_Movement_99
+  - first:
+      213: 2315176697992612973
+    second: BossShark_Attack_Movement_100
+  - first:
+      213: -3106772874151414406
+    second: BossShark_Attack_Movement_101
+  - first:
+      213: 6317937810576511470
+    second: BossShark_Attack_Movement_102
+  - first:
+      213: 3576365956374186101
+    second: BossShark_Attack_Movement_103
+  - first:
+      213: -692239951932711125
+    second: BossShark_Attack_Movement_104
+  - first:
+      213: 6318718870591327510
+    second: BossShark_Attack_Movement_105
+  - first:
+      213: -9184300805927515255
+    second: BossShark_Attack_Movement_106
+  - first:
+      213: -2621234925335234424
+    second: BossShark_Attack_Movement_107
+  - first:
+      213: 8430138525125357839
+    second: BossShark_Attack_Movement_108
+  - first:
+      213: 6688543937840715848
+    second: BossShark_Attack_Movement_109
+  - first:
+      213: -1937119650896806681
+    second: BossShark_Attack_Movement_110
+  - first:
+      213: -7865279078997394189
+    second: BossShark_Attack_Movement_111
+  - first:
+      213: -1334456876514022957
+    second: BossShark_Attack_Movement_112
+  - first:
+      213: -4345198354680401441
+    second: BossShark_Attack_Movement_113
+  - first:
+      213: -1835754712544331850
+    second: BossShark_Attack_Movement_114
+  - first:
+      213: -7819552605221129091
+    second: BossShark_Attack_Movement_115
+  - first:
+      213: -7993243834113651643
+    second: BossShark_Attack_Movement_116
+  - first:
+      213: -1428130892677171220
+    second: BossShark_Attack_Movement_117
+  - first:
+      213: -4222347052481303935
+    second: BossShark_Attack_Movement_118
+  - first:
+      213: 3949653865925679379
+    second: BossShark_Attack_Movement_119
+  - first:
+      213: -1557724899230612735
+    second: BossShark_Attack_Movement_120
+  - first:
+      213: 3618667211232482757
+    second: BossShark_Attack_Movement_121
+  - first:
+      213: -1978233092000133117
+    second: BossShark_Attack_Movement_122
+  - first:
+      213: -3725733415615047496
+    second: BossShark_Attack_Movement_123
+  - first:
+      213: -6008538716252703445
+    second: BossShark_Attack_Movement_124
+  - first:
+      213: -2449439076049444913
+    second: BossShark_Attack_Movement_125
+  - first:
+      213: 5799606607505037851
+    second: BossShark_Attack_Movement_126
+  - first:
+      213: -303872397511123350
+    second: BossShark_Attack_Movement_127
+  - first:
+      213: 243603997085293689
+    second: BossShark_Attack_Movement_128
+  - first:
+      213: -970813286150104079
+    second: BossShark_Attack_Movement_129
+  - first:
+      213: 9131070113815620944
+    second: BossShark_Attack_Movement_130
+  - first:
+      213: -4130207038129066448
+    second: BossShark_Attack_Movement_131
+  - first:
+      213: -6411545284379672392
+    second: BossShark_Attack_Movement_132
+  - first:
+      213: 5132436385493126627
+    second: BossShark_Attack_Movement_133
+  - first:
+      213: 7087938211126564871
+    second: BossShark_Attack_Movement_134
+  - first:
+      213: -7251494591535012185
+    second: BossShark_Attack_Movement_135
+  - first:
+      213: -6524325652622856979
+    second: BossShark_Attack_Movement_136
+  - first:
+      213: -7891707813786104895
+    second: BossShark_Attack_Movement_137
+  - first:
+      213: 292705730093211159
+    second: BossShark_Attack_Movement_138
+  - first:
+      213: -5475406658262254474
+    second: BossShark_Attack_Movement_139
+  - first:
+      213: 5007298935048271517
+    second: BossShark_Attack_Movement_140
+  - first:
+      213: 5454732417314734405
+    second: BossShark_Attack_Movement_141
+  - first:
+      213: 8805832378994126670
+    second: BossShark_Attack_Movement_142
+  - first:
+      213: 6830440205370332693
+    second: BossShark_Attack_Movement_143
+  - first:
+      213: -6344387080159385416
+    second: BossShark_Attack_Movement_144
+  - first:
+      213: -6272751979790382731
+    second: BossShark_Attack_Movement_145
+  - first:
+      213: 4357908346406680254
+    second: BossShark_Attack_Movement_146
+  - first:
+      213: -2189412775139951932
+    second: BossShark_Attack_Movement_147
+  - first:
+      213: -119652750761910187
+    second: BossShark_Attack_Movement_148
+  - first:
+      213: 1848848184918616734
+    second: BossShark_Attack_Movement_149
+  - first:
+      213: 6819210456841033682
+    second: BossShark_Attack_Movement_150
+  - first:
+      213: -4758384582285659760
+    second: BossShark_Attack_Movement_151
+  - first:
+      213: 6383990413283978921
+    second: BossShark_Attack_Movement_152
+  - first:
+      213: -4628894524252781981
+    second: BossShark_Attack_Movement_153
+  - first:
+      213: 6169035685036319505
+    second: BossShark_Attack_Movement_154
+  - first:
+      213: -7778691144262918262
+    second: BossShark_Attack_Movement_155
+  - first:
+      213: 3913896593648824423
+    second: BossShark_Attack_Movement_156
+  - first:
+      213: -3959727366016040941
+    second: BossShark_Attack_Movement_157
+  - first:
+      213: 6796737655245910417
+    second: BossShark_Attack_Movement_158
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 16384
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_0
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16d7b2253b20df0f0800000000000000
+      internalID: -1081705366298067615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 145004840fdd87aa0800000000000000
+      internalID: -6162932065982479039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_2
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c61bf7752aefc390800000000000000
+      internalID: -7795754983307405631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_3
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d314fe4a073ef62a0800000000000000
+      internalID: -6741920044207357635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_4
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3a4faffe7a585ae0800000000000000
+      internalID: -1560397769381819841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_5
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 769e312fe283245b0800000000000000
+      internalID: -5385680430100649625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_6
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd2beee080fd92ec0800000000000000
+      internalID: -3591094002148003107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_7
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b14e88a48a317ff30800000000000000
+      internalID: 4609174357162910747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_8
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8559baa32b3067400800000000000000
+      internalID: 321448487426954584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_9
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7f79d861e9fadb30800000000000000
+      internalID: 4313034339682713469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_10
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb440ce93e7832ad0800000000000000
+      internalID: -2728187537565662018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_11
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51f40db71d9f94740800000000000000
+      internalID: 5136911528113491733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_12
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c998fc8745c364350800000000000000
+      internalID: 6000549887019551132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_13
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9a111281549d760800000000000000
+      internalID: 7483088225789127153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_14
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27bf102611a0ebbb0800000000000000
+      internalID: -4918482673266984078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_15
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78e556f9a037d73e0800000000000000
+      internalID: -2054359365549990265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_16
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6446b53971fdaece0800000000000000
+      internalID: -1375041443858783162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_17
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e85d8e95837ca080800000000000000
+      internalID: -9174831323132634910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_18
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e6370ed01fb7530800000000000000
+      internalID: 3853938948048121475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_19
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38d50b0738fa704f0800000000000000
+      internalID: -862527824551977597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_20
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6258745aa0731f010800000000000000
+      internalID: 1220817492856243494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_21
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200bf325f77bb77f0800000000000000
+      internalID: -613695166737305598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_22
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9ed66689f43cf30800000000000000
+      internalID: 4594603560820140494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_23
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a888352fd1291e30800000000000000
+      internalID: 4474644947055184035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_24
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3a56d9c9a7b08ab0800000000000000
+      internalID: -5007800845772367298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_25
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 600
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddfa54d9e8584e8e0800000000000000
+      internalID: -1665059114649800739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_26
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878c1eeaa73634d60800000000000000
+      internalID: 7873245952144951416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_27
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c825b7a30af4be660800000000000000
+      internalID: 7416108760990175884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_28
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eab3312106ff48130800000000000000
+      internalID: 3568257592869469102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_29
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e50ffc75125298370800000000000000
+      internalID: 8325226211308466270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_30
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18298ddf4cbf8e010800000000000000
+      internalID: 1218500522694709889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_31
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96b178cefc0364890800000000000000
+      internalID: -7474232861990118551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_32
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 400
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6587fcf29382a74a0800000000000000
+      internalID: -6594914478250297258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1825a99b25b392af0800000000000000
+      internalID: -420739863695175039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_34
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 200
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0718f5f50763b0df0800000000000000
+      internalID: -213016701105634960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26c82e7b734ba61b0800000000000000
+      internalID: -5662515430063698846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_36
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93472b39b13d9ca50800000000000000
+      internalID: 6541992049127879737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_37
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf1b8cbb2f3357e40800000000000000
+      internalID: 5653482024859120123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_38
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca69ebc446d46aa10800000000000000
+      internalID: 1920307384299722412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BossShark_Attack_Movement_39
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2725a8eb1518de60800000000000000
+      internalID: 7987157148753012522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Empty
+      rect:
+        serializedVersion: 2
+        x: 1666
+        y: 344
+        width: 263
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 116c1e0df75ed124397237ea2adfdf9b
+      internalID: 374590519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 99ebf98dd7420164d98aa6a3f59c7eff
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":200.0,"y":200.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      BossShark_Attack_Movement_0: -1081705366298067615
+      BossShark_Attack_Movement_1: -6162932065982479039
+      BossShark_Attack_Movement_10: -2728187537565662018
+      BossShark_Attack_Movement_11: 5136911528113491733
+      BossShark_Attack_Movement_12: 6000549887019551132
+      BossShark_Attack_Movement_13: 7483088225789127153
+      BossShark_Attack_Movement_14: -4918482673266984078
+      BossShark_Attack_Movement_15: -2054359365549990265
+      BossShark_Attack_Movement_16: -1375041443858783162
+      BossShark_Attack_Movement_17: -9174831323132634910
+      BossShark_Attack_Movement_18: 3853938948048121475
+      BossShark_Attack_Movement_19: -862527824551977597
+      BossShark_Attack_Movement_2: -7795754983307405631
+      BossShark_Attack_Movement_20: 1220817492856243494
+      BossShark_Attack_Movement_21: -613695166737305598
+      BossShark_Attack_Movement_22: 4594603560820140494
+      BossShark_Attack_Movement_23: 4474644947055184035
+      BossShark_Attack_Movement_24: -5007800845772367298
+      BossShark_Attack_Movement_25: -1665059114649800739
+      BossShark_Attack_Movement_26: 7873245952144951416
+      BossShark_Attack_Movement_27: 7416108760990175884
+      BossShark_Attack_Movement_28: 3568257592869469102
+      BossShark_Attack_Movement_29: 8325226211308466270
+      BossShark_Attack_Movement_3: -6741920044207357635
+      BossShark_Attack_Movement_30: 1218500522694709889
+      BossShark_Attack_Movement_31: -7474232861990118551
+      BossShark_Attack_Movement_32: -6594914478250297258
+      BossShark_Attack_Movement_33: -420739863695175039
+      BossShark_Attack_Movement_34: -213016701105634960
+      BossShark_Attack_Movement_35: -5662515430063698846
+      BossShark_Attack_Movement_36: 6541992049127879737
+      BossShark_Attack_Movement_37: 5653482024859120123
+      BossShark_Attack_Movement_38: 1920307384299722412
+      BossShark_Attack_Movement_39: 7987157148753012522
+      BossShark_Attack_Movement_4: -1560397769381819841
+      BossShark_Attack_Movement_5: -5385680430100649625
+      BossShark_Attack_Movement_6: -3591094002148003107
+      BossShark_Attack_Movement_7: 4609174357162910747
+      BossShark_Attack_Movement_8: 321448487426954584
+      BossShark_Attack_Movement_9: 4313034339682713469
+      Empty: 374590519
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
