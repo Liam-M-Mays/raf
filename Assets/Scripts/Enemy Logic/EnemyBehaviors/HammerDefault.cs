@@ -6,7 +6,6 @@ using System;
 [Serializable]
 public class HammerDefaultCfg : BehaviorCfg
 {
-    [Header("Ram Charge – Tunables")]
     [Min(0f)] public float maxSpeed        = 2f;
     [Min(0f)] public float speed           = 1f;
 

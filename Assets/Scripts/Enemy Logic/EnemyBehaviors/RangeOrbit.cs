@@ -5,7 +5,6 @@ using System;
 [Serializable]
 public class RangeOrbitCfg : BehaviorCfg
 {
-    [Header("Direct Chase – Tunables")]
     public float maxSpeed = 2f;
     public float speed = 1f;
     public float attackRange = 1f;
@@ -79,7 +78,6 @@ public class RangeOrbit : IBehavior
         }
         
         CircleMovement.Execute(ctx, orbit, orbit + config.OrbitMax, circleDirection);
-        
     }
     
     public void OnLateUpdate() 

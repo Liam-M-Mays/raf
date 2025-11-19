@@ -17,8 +17,6 @@ public class ClickControl : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void OnCik()
     {
-        Debug.Log("click");
-
         if (cam == null) cam = Camera.main;
 
         // Raycast from mouse position
@@ -27,7 +25,7 @@ public class ClickControl : MonoBehaviour
 
         if (hit.collider != null)
         {
-            Destroy(hit.collider.gameObject);
+            if (hit.collider.CompareTag("Enemy")) Destroy(hit.collider.gameObject);
         }
 
     }

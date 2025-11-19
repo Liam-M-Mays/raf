@@ -42,7 +42,7 @@ public static class LurkMovement
             PickLurkPosition(ctx, data, lurkDistance);
         }
         
-        UtilityNodes.UpdateFacing(ctx);
+        UtilityNodes.UpdateFacing(ctx, Vector2.zero);
     }
     
     /// <summary>
@@ -74,6 +74,6 @@ public static class LurkMovement
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, retreatTarget);
         UtilityNodes.MoveTowards(ctx, targetPos);
         
-        UtilityNodes.UpdateFacing(ctx);
+        UtilityNodes.UpdateFacing(ctx, Vector2.zero);
     }
 }

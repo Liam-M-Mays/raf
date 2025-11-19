@@ -5,7 +5,6 @@ using System;
 [Serializable]
 public class DirectCfg : BehaviorCfg
 {
-    [Header("Direct Chase – Tunables")]
     public float maxSpeed = 2f;
     public float speed = 1f;
     public float attackRange = 1f;

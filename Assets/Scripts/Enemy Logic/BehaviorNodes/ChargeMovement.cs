@@ -25,9 +25,8 @@ public static class ChargeMovement
         Vector2 positionTarget = (Vector2)ctx.target.position - dirToTarget * chargeDistance;
         
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, positionTarget);
+        UtilityNodes.UpdateFacing(ctx, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos, 0.8f); // Slower positioning
-
-        UtilityNodes.UpdateFacing(ctx);
     }
     
     public static bool Windup(BehaviorContext ctx, float windupTime)
@@ -64,9 +63,9 @@ public static class ChargeMovement
         // Charge straight ahead at high speed
         Vector2 chargeTarget = (Vector2)ctx.self.position + data.chargeDirection * 100f;
         float velocity = ctx.maxSpeed * chargeSpeed;
+        UtilityNodes.UpdateFacing(ctx, chargeTarget);
         ctx.self.position = Vector2.MoveTowards(ctx.self.position, chargeTarget, velocity * ctx.deltaTime);
         
-        UtilityNodes.UpdateFacing(ctx);
         
         // Check if charge should end
         float distanceTraveled = Vector2.Distance(ctx.self.position, data.chargeStartPos);
@@ -107,9 +106,9 @@ public static class ChargeMovement
         );
         
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, circlePos);
+        UtilityNodes.UpdateFacing(ctx, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos, 0.6f); // Slower during cooldown
         
-        UtilityNodes.UpdateFacing(ctx);
         
         return data.cooldownTimer <= 0f; // Return true when cooldown is complete
     }

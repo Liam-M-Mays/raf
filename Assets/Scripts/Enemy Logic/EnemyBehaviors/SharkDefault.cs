@@ -111,7 +111,7 @@ public class SharkDefault : IBehavior
                 
                 isAttacking = false;
             }
-            if (ctx.distanceToTarget > orbit)
+            if (ctx.distanceToTarget > orbit+config.OrbitMax)
             {
                 ZigzagMovement.Execute(ctx, config.zigzagAmplitude, config.zigzagFrequency);
                 attackTimer = config.attackTimer;

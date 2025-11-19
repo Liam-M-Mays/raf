@@ -45,7 +45,7 @@ public static class PackFormationMovement
         float dist = Vector2.Distance(ctx.self.position, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos, 0.7f); // Slower for formation
         
-        UtilityNodes.UpdateFacing(ctx);
+        UtilityNodes.UpdateFacing(ctx, Vector2.zero);
         
         // Check if in formation
         if (dist < 1f)
@@ -94,7 +94,7 @@ public static class PackFormationMovement
         // Slowly rotate pack formation for dynamic movement
         data.angleInPack += ctx.deltaTime * 0.5f;
         
-        UtilityNodes.UpdateFacing(ctx);
+        UtilityNodes.UpdateFacing(ctx, Vector2.zero);
     }
     
     private static void CalculatePackCenter(BehaviorContext ctx, PackData data)

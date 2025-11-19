@@ -39,7 +39,7 @@ public static class ZigzagMovement
         UtilityNodes.MoveTowards(ctx, targetPos);
 
         // Update facing
-        UtilityNodes.UpdateFacing(ctx);
+        UtilityNodes.UpdateFacing(ctx, Vector2.zero);
     }
     
     public static void ExecuteTarget(BehaviorContext ctx, Vector2 target, float amplitude, float frequency, bool setAnimation = true)
@@ -68,9 +68,7 @@ public static class ZigzagMovement
         
         // Apply divergence and move
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, zigzagTarget);
+        UtilityNodes.UpdateFacing(ctx, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos);
-        
-        // Update facing
-        UtilityNodes.UpdateFacing(ctx);
     }
 }

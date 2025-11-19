@@ -45,9 +45,10 @@ public static class CircleMovement
         
         // Apply divergence and move
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, circlePos);
+        UtilityNodes.UpdateFacing(ctx, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos);
         
         // Update facing
-        UtilityNodes.UpdateFacing(ctx);
+        
     }
 }

@@ -39,20 +39,17 @@ public static class UtilityNodes
     /// <summary>
     /// Flip sprite to face target
     /// </summary>
-    public static void UpdateFacing(BehaviorContext ctx)
+    public static void UpdateFacing(BehaviorContext ctx, Vector2 target)
     {
-        bool shouldFaceRight = ctx.self.position.x < ctx.target.position.x;
+        bool shouldFaceRight = ctx.self.position.x <= target.x;
         bool isFacingRight = ctx.self.localScale.x > 0;
         
-        if (shouldFaceRight != isFacingRight)
+        if (shouldFaceRight != isFacingRight )//&& Vector2.Distance(target, (Vector2)ctx.self.position) > 0.75)
         {
             Flip(ctx);
         }
     }
-    
-    /// <summary>
-    /// Flip the sprite horizontally
-    /// </summary>
+
     public static void Flip(BehaviorContext ctx)
     {
         Vector3 scaler = ctx.self.localScale;
