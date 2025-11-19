@@ -10,58 +10,88 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b52617c20a9e4d78a85165c230a59b5, type: 3}
-  m_Name: Shark
+  m_Name: OrbitTest
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   Behaviors:
     SharkDefault:
-      rid: 7550196008830369929
+      rid: 7550196143538307208
     Orbit:
-      rid: 7550196143538307220
+      rid: 7550196143538307209
     HammerDefault:
-      rid: 7550196008830369931
+      rid: 7550196143538307210
     Direct:
-      rid: 7550196143538307162
-  cost: 1
+      rid: 7550196143538307211
+  cost: 0
   prefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
-  spawnRadius: 20
-  color: {r: 1, g: 1, b: 1, a: 1}
+  spawnRadius: 10
+  color: {r: 0.8722427, g: 0.16140087, b: 0.8773585, a: 1}
   references:
     version: 2
     RefIds:
-    - rid: 7550196008830369929
-      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
-      data:
-        enabled: 1
-        weight: 1
-        config:
-          rid: 7550196008830369933
-    - rid: 7550196008830369931
+    - rid: 7550196143538307208
       type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
       data:
         enabled: 0
         weight: 1
         config:
-          rid: 7550196008830369935
-    - rid: 7550196008830369933
+          rid: 7550196143538307212
+    - rid: 7550196143538307209
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+        weight: 1
+        config:
+          rid: 7550196143538307213
+    - rid: 7550196143538307210
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196143538307214
+    - rid: 7550196143538307211
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196143538307215
+    - rid: 7550196143538307212
       type: {class: SharkDefaultCfg, ns: , asm: Assembly-CSharp}
       data:
         maxSpeed: 2
         speed: 1
-        attackRange: 0.5
-        attackRangeMax: 5
+        attackRange: 1
+        attackRangeMax: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        OrbitDistance: 5
+        OrbitMax: 1
+        OrbitRange: 0.5
+        attackTimer: 3
+        randDir: 0
+        direction: 1
+        zigzagAmplitude: 5
+        zigzagFrequency: 2
+    - rid: 7550196143538307213
+      type: {class: RangeOrbitCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 1.2
+        speed: 1
+        attackRange: 1
+        attackRangeMax: 1
         outOfRange: 30
         respawnRange: 20
         divergeRange: 2
         divergeWeight: 1
-        OrbitDistance: 4
-        OrbitMax: 6
-        OrbitRange: 0.5
-        attackTimer: 3
+        OrbitDistance: 3
+        OrbitMax: 5
+        OrbitRange: 1
         randDir: 1
         direction: 1
-        zigzagAmplitude: 5
-        zigzagFrequency: 2
-    - rid: 7550196008830369935
+    - rid: 7550196143538307214
       type: {class: HammerDefaultCfg, ns: , asm: Assembly-CSharp}
       data:
         maxSpeed: 2
@@ -80,14 +110,7 @@ MonoBehaviour:
         attackTimer: 3
         randDir: 0
         direction: 1
-    - rid: 7550196143538307162
-      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
-      data:
-        enabled: 0
-        weight: 1
-        config:
-          rid: 7550196143538307163
-    - rid: 7550196143538307163
+    - rid: 7550196143538307215
       type: {class: DirectCfg, ns: , asm: Assembly-CSharp}
       data:
         maxSpeed: 2
@@ -98,26 +121,3 @@ MonoBehaviour:
         respawnRange: 8
         divergeRange: 2
         divergeWeight: 1
-    - rid: 7550196143538307220
-      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
-      data:
-        enabled: 0
-        weight: 1
-        config:
-          rid: 7550196143538307221
-    - rid: 7550196143538307221
-      type: {class: RangeOrbitCfg, ns: , asm: Assembly-CSharp}
-      data:
-        maxSpeed: 2
-        speed: 1
-        attackRange: 1
-        attackRangeMax: 1
-        outOfRange: 10
-        respawnRange: 8
-        divergeRange: 2
-        divergeWeight: 1
-        OrbitDistance: 5
-        OrbitMax: 1
-        OrbitRange: 0.5
-        randDir: 0
-        direction: 1

@@ -6,7 +6,7 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
     private Transform target;
     private SpriteRenderer spriteRenderer;
 
-    public void Start()
+    public void Awake()
     {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         target = GameObject.FindGameObjectWithTag("Raft").transform;
@@ -16,6 +16,7 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
     {
         var behavior = logic.getBehavior().CreateRuntimeBehavior();
         manager.ChangeBehavior(behavior, transform, GetComponent<Animator>());
+        spriteRenderer.color = logic.color;
     }
     void Update()
     {
@@ -29,6 +30,7 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
             spriteRenderer.sortingOrder = target.GetComponentInChildren<SpriteRenderer>().sortingOrder + 1;
         }
     } 
+
     void LateUpdate() => manager.LateTick();
 
     void OnDestroy() => manager.Exit();
