@@ -14,10 +14,7 @@ public static class CircleMovement
     
     public static void Execute(BehaviorContext ctx, float minRadius, float maxRadius, float direction, bool setAnimation = true)
     {
-        if (setAnimation)
-        {
-            ActionNodes.SetMoving(ctx, true);
-        }
+        
         
         // Get or create circle data
         CircleData data = ctx.customData as CircleData;

@@ -8,9 +8,9 @@ using System.Reflection;
 public class BehaviorOptions
 {
     [SerializeReference] public BehaviorOption SharkDefault = new BehaviorOption { config = new SharkDefaultCfg() };
-    [SerializeReference] public BehaviorOption Pack = new BehaviorOption { config = new PackHunterBehaviorCfg() };
+    [SerializeReference] public BehaviorOption Orbit = new BehaviorOption { config = new RangeOrbitCfg() };
     [SerializeReference] public BehaviorOption HammerDefault = new BehaviorOption { config = new HammerDefaultCfg() };
-    [SerializeReference] public BehaviorOption ZigZag = new BehaviorOption { config = new ZigzagApproachBehaviorCfg() };
+    [SerializeReference] public BehaviorOption Direct = new BehaviorOption { config = new DirectCfg() };
 
 
     public IEnumerable<BehaviorOption> All()
@@ -22,7 +22,7 @@ public class BehaviorOptions
     }
 }
 
-[CreateAssetMenu(menuName = "Liam/Enemies")]
+[CreateAssetMenu(menuName = "Enemies")]
 public class EnemySO : ScriptableObject //TODO change name, add prefab, 
 {
     [SerializeField] public BehaviorOptions Behaviors = new BehaviorOptions();
