@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: TestWave
   m_EditorClassIdentifier: Assembly-CSharp::StandardWaveSO
   enemyPool:
-  - {fileID: 11400000, guid: faa4a951334fe4d2d9d27ed3b060ee9e, type: 2}
-  - {fileID: 11400000, guid: 64872f4d55ffe44a395827daa2e09dc3, type: 2}
+  - {fileID: 11400000, guid: b34da4e13a26aa34b874e0285a302621, type: 2}
+  - {fileID: 11400000, guid: f586909f9ebff504d9ab3ad84e5d0d5b, type: 2}
+  - {fileID: 11400000, guid: 6065b3c4425c19d479c99c59fed8a23e, type: 2}
   spawnRate: 1
   maxEnemies: 0
