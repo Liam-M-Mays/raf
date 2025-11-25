@@ -1,8 +1,5 @@
 using UnityEngine;
 
-/// <summary>
-/// Direct chase movement - moves straight toward target
-/// </summary>
 public static class DirectChaseMovement
 {
     public static void Execute(BehaviorContext ctx, bool setAnimation = true)

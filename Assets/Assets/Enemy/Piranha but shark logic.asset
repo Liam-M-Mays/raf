@@ -15,12 +15,12 @@ MonoBehaviour:
   Behaviors:
     SharkDefault:
       rid: 7550196008830369929
-    Pack:
-      rid: 7550196008830369930
+    Orbit:
+      rid: 7550196143538307283
     HammerDefault:
       rid: 7550196008830369931
-    ZigZag:
-      rid: 7550196008830369932
+    Direct:
+      rid: 7550196143538307284
   cost: 1
   prefab: {fileID: 2177139864062627669, guid: f0a8fcad786becb4d934d4c52360194d, type: 3}
   spawnRadius: 20
@@ -31,17 +31,10 @@ MonoBehaviour:
     - rid: 7550196008830369929
       type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
       data:
-        enabled: 1
-        weight: 1
-        config:
-          rid: 7550196008830369933
-    - rid: 7550196008830369930
-      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
-      data:
         enabled: 0
         weight: 1
         config:
-          rid: 7550196008830369934
+          rid: 7550196008830369933
     - rid: 7550196008830369931
       type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
       data:
@@ -49,13 +42,6 @@ MonoBehaviour:
         weight: 1
         config:
           rid: 7550196008830369935
-    - rid: 7550196008830369932
-      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
-      data:
-        enabled: 0
-        weight: 1
-        config:
-          rid: 7550196008830369936
     - rid: 7550196008830369933
       type: {class: SharkDefaultCfg, ns: , asm: Assembly-CSharp}
       data:
@@ -75,18 +61,6 @@ MonoBehaviour:
         direction: 1
         zigzagAmplitude: 5
         zigzagFrequency: 2
-    - rid: 7550196008830369934
-      type: {class: PackHunterBehaviorCfg, ns: , asm: Assembly-CSharp}
-      data:
-        maxSpeed: 2
-        speed: 1
-        attackRange: 1
-        outOfRange: 10
-        respawnRange: 8
-        divergeRange: 2
-        divergeWeight: 1
-        packDistance: 8
-        formationSpacing: 3
     - rid: 7550196008830369935
       type: {class: HammerDefaultCfg, ns: , asm: Assembly-CSharp}
       data:
@@ -106,15 +80,44 @@ MonoBehaviour:
         attackTimer: 3
         randDir: 0
         direction: 1
-    - rid: 7550196008830369936
-      type: {class: ZigzagApproachBehaviorCfg, ns: , asm: Assembly-CSharp}
+    - rid: 7550196143538307283
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196143538307285
+    - rid: 7550196143538307284
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+        weight: 1
+        config:
+          rid: 7550196143538307286
+    - rid: 7550196143538307285
+      type: {class: RangeOrbitCfg, ns: , asm: Assembly-CSharp}
       data:
         maxSpeed: 2
         speed: 1
         attackRange: 1
+        attackRangeMax: 1
         outOfRange: 10
         respawnRange: 8
         divergeRange: 2
         divergeWeight: 1
-        zigzagAmplitude: 5
-        zigzagFrequency: 2
+        OrbitDistance: 5
+        OrbitMax: 1
+        OrbitRange: 0.5
+        randDir: 0
+        direction: 1
+    - rid: 7550196143538307286
+      type: {class: DirectCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        attackRangeMax: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1

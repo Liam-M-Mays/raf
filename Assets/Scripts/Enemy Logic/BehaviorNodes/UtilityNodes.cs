@@ -8,33 +8,34 @@ public static class UtilityNodes
 {
     
     public static Vector2 ApplyDivergence(BehaviorContext ctx, Vector2 targetPosition)
-{
-    Vector2 selfPos = ctx.self.position;
-    Vector2 totalPush = Vector2.zero;
-    
-    Collider2D[] sharks = Physics2D.OverlapCircleAll(selfPos, ctx.divergeRange, ctx.sharkLayer);
-
-    foreach (Collider2D shark in sharks)
     {
-        if (shark.transform == ctx.self) continue;
-
-        Vector2 offset = selfPos - (Vector2)shark.transform.position;
-        float distSquared = offset.sqrMagnitude;
-
-        if (distSquared <= 0.01f || distSquared >= ctx.divergeRange * ctx.divergeRange) continue;
-
-        float dist = Mathf.Sqrt(distSquared);
+        Vector2 selfPos = ctx.self.position;
+        Vector2 totalPush = Vector2.zero;
         
-        // Inverse distance weighting - closer sharks push MUCH harder
-        float fallOff = 1f - (dist / ctx.divergeRange);
-        fallOff = fallOff * fallOff * fallOff; // Cubic for aggressive close-range push
-        
-        // Normalize direction and apply weighted push
-        totalPush += (offset / dist) * fallOff;
+        Collider2D[] sharks = Physics2D.OverlapCircleAll(selfPos, ctx.divergeRange, ctx.sharkLayer);
+
+        foreach (Collider2D shark in sharks)
+        {
+            if (shark.transform == ctx.self) continue;
+
+            Vector2 offset = selfPos - (Vector2)shark.transform.position;
+            float distSquared = offset.sqrMagnitude;
+
+            float dist = Mathf.Sqrt(distSquared);
+            
+            // Inverse distance weighting - closer sharks push MUCH harder
+            float fallOff = 1f - (dist / ctx.divergeRange);
+            fallOff = fallOff * fallOff * fallOff; // Cubic for aggressive close-range push
+            
+            // Normalize direction and apply weighted push
+            totalPush += (offset / dist) * fallOff;
+        }
+        Debug.DrawLine(selfPos, targetPosition, Color.red);
+        Debug.DrawLine(selfPos, targetPosition + (totalPush * ctx.divergeWeight), Color.green);
+        Debug.Log($"TotalPush magnitude: {totalPush.magnitude}, Weight: {ctx.divergeWeight}");
+        Debug.Log($"Found {sharks.Length} sharks within range");
+        return targetPosition + (totalPush * ctx.divergeWeight);
     }
-
-    return targetPosition + (totalPush * ctx.divergeWeight);
-}
     
     /// <summary>
     /// Flip sprite to face target
@@ -42,6 +43,17 @@ public static class UtilityNodes
     public static void UpdateFacing(BehaviorContext ctx, Vector2 target)
     {
         bool shouldFaceRight = ctx.self.position.x <= target.x;
+        bool isFacingRight = ctx.self.localScale.x > 0;
+        
+        if (shouldFaceRight != isFacingRight )//&& Vector2.Distance(target, (Vector2)ctx.self.position) > 0.75)
+        {
+            Flip(ctx);
+        }
+    }
+
+    public static void UpdateFacingReverse(BehaviorContext ctx, Vector2 target)
+    {
+        bool shouldFaceRight = ctx.self.position.x >= target.x;
         bool isFacingRight = ctx.self.localScale.x > 0;
         
         if (shouldFaceRight != isFacingRight )//&& Vector2.Distance(target, (Vector2)ctx.self.position) > 0.75)

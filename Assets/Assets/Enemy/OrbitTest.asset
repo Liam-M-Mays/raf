@@ -21,7 +21,7 @@ MonoBehaviour:
       rid: 7550196143538307210
     Direct:
       rid: 7550196143538307211
-  cost: 0
+  cost: 1
   prefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
   spawnRadius: 10
   color: {r: 0.8722427, g: 0.16140087, b: 0.8773585, a: 1}

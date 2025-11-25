@@ -11,6 +11,7 @@ public class HammerDefaultCfg : BehaviorCfg
 
     [Header("Ranges")]
     [Min(0f)] public float attackRange     = 1f;
+    [Min(0f)] public float attackRangeMax  = 1f;
     [Min(0f)] public float outOfRange      = 10f;
     [Min(0f)] public float respawnRange    = 8f;
 
@@ -73,6 +74,7 @@ public class HammerDefault : IBehavior
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
         ctx.attackRange = config.attackRange;
+        ctx.attackRangeMax = config.attackRangeMax;
         ctx.outOfRange = config.outOfRange;
         ctx.respawnRange = config.respawnRange;
         ctx.divergeRange = config.divergeRange;
@@ -149,7 +151,7 @@ public class HammerDefault : IBehavior
 
             case ChargeState.Cooldown:
                 cooldown -= ctx.deltaTime;
-                if (!UtilityNodes.IsInAttackRange(ctx)) RaftTracker.removeSelf(this);
+                if (!UtilityNodes.IsInAttackMax(ctx)) RaftTracker.removeSelf(this);
                 if (cooldown <= 0f)
                 {
                     cooldown = config.chargeCooldown;

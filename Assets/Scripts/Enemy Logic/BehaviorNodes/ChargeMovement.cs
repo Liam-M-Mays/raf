@@ -25,7 +25,7 @@ public static class ChargeMovement
         Vector2 positionTarget = (Vector2)ctx.target.position - dirToTarget * chargeDistance;
         
         Vector2 targetPos = UtilityNodes.ApplyDivergence(ctx, positionTarget);
-        UtilityNodes.UpdateFacing(ctx, targetPos);
+        UtilityNodes.UpdateFacingReverse(ctx, targetPos);
         UtilityNodes.MoveTowards(ctx, targetPos, 0.8f); // Slower positioning
     }
     

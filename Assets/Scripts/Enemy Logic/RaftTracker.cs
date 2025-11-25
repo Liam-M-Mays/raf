@@ -7,7 +7,7 @@ public static class RaftTracker
      public static bool addSelf(IBehavior B)
     {
         if (Braft.Contains(B)) return true;
-        else if (Braft.Count < 4)
+        else if (Braft.Count < 3)
         {
             Braft.Add(B);
             return true;
