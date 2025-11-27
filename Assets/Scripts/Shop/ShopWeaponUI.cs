@@ -6,11 +6,12 @@ public class ShopWeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 {
     private GameObject tooltip;
     private ShopTooltipUI tooltipScript;
-    //public Sprite soldOut;
+    public Sprite soldOut;
     private Image buttonImage;
 
     private WeaponSO weapon;
     private ShopManager shopManager;
+    private bool canPurchase = true;
 
     private void Awake() {
         buttonImage = GetComponent<Image>();
@@ -28,13 +29,14 @@ public class ShopWeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        if (!canPurchase) return;
         tooltip.SetActive(true);
 
         Debug.Log($"{weapon.weaponName} - Hover Enter");
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-
+        if (!canPurchase) return;
         tooltip.SetActive(false);
         
         Debug.Log($"{weapon.weaponName} - Hover Exit");
@@ -42,13 +44,14 @@ public class ShopWeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"{weapon.weaponName} - Clicked!");
         tooltip.SetActive(false);
+        if (!canPurchase) return;
 
         // Attempt to purchase the weapon through the shop manager
         if (shopManager != null && weapon != null) {
             shopManager.PurchaseWeapon(weapon, weapon.isMelee);
-            Destroy(gameObject);
+            buttonImage.sprite = soldOut;
+            buttonImage.SetNativeSize();
         }
     }
 }

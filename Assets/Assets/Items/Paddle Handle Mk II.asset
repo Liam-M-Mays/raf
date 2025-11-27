@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
-  m_Name: Bedframe Mk I
+  m_Name: Paddle Handle Mk II
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Bed Frame
-  cost: 10
-  itemSprite: {fileID: -8624123025954764935, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A standard wooden bedframe.\nIncreases your max health as well as
-    your weight.
-  maxHealthBonus: 10
+  itemName: Paddle Handle Mk II
+  cost: 20
+  itemSprite: {fileID: 567961344979646433, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: An improved lightweight handle.\nYou'll be weaving through waves like
+    you know what you're doing.
+  maxHealthBonus: 0
   healthOverTimeBonus: 0
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 10
-  speedEffect: 0
+  weightEffect: -10
+  speedEffect: 20
   hasUpgrade: 1
-  upgradedItem: {fileID: 11400000, guid: ed8491ee46451ff4c858fb9603fa81e8, type: 2}
+  upgradedItem: {fileID: 11400000, guid: d09ba0fa32631894591b21f6d041b74c, type: 2}
   permanentShopItem: 0

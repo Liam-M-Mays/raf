@@ -151,7 +151,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: -10}
+  m_AnchoredPosition: {x: 200, y: 0}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &125896306
@@ -185,11 +185,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 933045935}
+  - {fileID: 1474034396}
   - {fileID: 42719226}
   - {fileID: 750741491}
   - {fileID: 964001529}
-  - {fileID: 1474034396}
-  - {fileID: 933045935}
   m_Father: {fileID: 195476885}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -464,7 +464,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265976786}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be50cfe2de3ba514f961f4665e22e89b, type: 3}
   m_Name: 
@@ -479,14 +479,23 @@ MonoBehaviour:
   - {fileID: 11400000, guid: efd5fcb00d171684eb6401635702994e, type: 2}
   - {fileID: 11400000, guid: 1a3e613478a0e184ba65dc797da7f74f, type: 2}
   - {fileID: 11400000, guid: 2447c236945adc54e8c92cec607f05b5, type: 2}
-  itemPool: []
-  availableItemPool: []
+  itemPool:
+  - {fileID: 0}
+  availableItemPool:
+  - {fileID: 11400000, guid: 279f835bca7117d41a242a923e976143, type: 2}
+  - {fileID: 11400000, guid: 4d9dfe1a4b4ece349a5e1e6b8fc2a1ea, type: 2}
+  - {fileID: 11400000, guid: aa4eb277a40efb342893aa046edd8dbc, type: 2}
+  - {fileID: 11400000, guid: e73e6f32feb649f408bc319e6f966be8, type: 2}
+  - {fileID: 11400000, guid: bbf3027ee4824c64f84d20f61d91d66c, type: 2}
+  - {fileID: 11400000, guid: 13e7c697b2b4d1b47bddf528c1962951, type: 2}
+  - {fileID: 11400000, guid: a9c5bbf26de64e24aafb7ca8c2f74128, type: 2}
   gunSpot1: {fileID: 964001529}
   gunSpot2: {fileID: 750741491}
   gunSpot3: {fileID: 42719226}
   itemSpot1: {fileID: 1474034396}
   itemSpot2: {fileID: 933045935}
-  shopItemPrefab: {fileID: 6327673331779669998, guid: 9a4f2a90d48cd88468d32c20bbc2a9c8, type: 3}
+  shopWeaponPrefab: {fileID: 6327673331779669998, guid: 9a4f2a90d48cd88468d32c20bbc2a9c8, type: 3}
+  shopItemPrefab: {fileID: 3342972835341346573, guid: c6a22b5bdbdf1b44cb6f892cdb4ff659, type: 3}
 --- !u!1 &452935796
 GameObject:
   m_ObjectHideFlags: 0
@@ -868,7 +877,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 80}
+  m_AnchoredPosition: {x: 200, y: 90}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &847291636 stripped
@@ -963,7 +972,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 200, y: 170}
+  m_AnchoredPosition: {x: 200, y: 180}
   m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1011168094

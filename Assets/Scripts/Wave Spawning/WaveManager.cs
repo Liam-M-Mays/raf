@@ -92,4 +92,12 @@ public class WaveManager : MonoBehaviour
             StartWave();
         }
     }
+
+    public int GetWaveNumber() {
+        return waveNumber;
+    }
+
+    public bool IsWaveActive() {
+        return waveActive;
+    }
 }

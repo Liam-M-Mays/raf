@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
-  m_Name: Bedframe Mk I
+  m_Name: Bedding Mk II
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Bed Frame
-  cost: 10
-  itemSprite: {fileID: -8624123025954764935, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A standard wooden bedframe.\nIncreases your max health as well as
-    your weight.
-  maxHealthBonus: 10
-  healthOverTimeBonus: 0
+  itemName: Bedding Mk II
+  cost: 20
+  itemSprite: {fileID: -5061960570389789244, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: An extra comfy set of bedding.\nWake up shiny and fresh with even
+    more health.
+  maxHealthBonus: 0
+  healthOverTimeBonus: 10
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 10
+  weightEffect: 0
   speedEffect: 0
   hasUpgrade: 1
-  upgradedItem: {fileID: 11400000, guid: ed8491ee46451ff4c858fb9603fa81e8, type: 2}
+  upgradedItem: {fileID: 11400000, guid: b413d2fcb2ceca046a062cc012512c4c, type: 2}
   permanentShopItem: 0

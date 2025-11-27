@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
-  m_Name: Bedframe Mk I
+  m_Name: Barbed Wire Mk IV
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Bed Frame
-  cost: 10
-  itemSprite: {fileID: -8624123025954764935, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A standard wooden bedframe.\nIncreases your max health as well as
-    your weight.
-  maxHealthBonus: 10
+  itemName: Barbed Wire Mk IV
+  cost: 40
+  itemSprite: {fileID: -8841976588442503770, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: A fortress of overheated razor sharp coils.\nDeals massive damage
+    to any unfortunate fish that wanders too close.
+  maxHealthBonus: 0
   healthOverTimeBonus: 0
   damageBonus: 0
-  barbedDamageBonus: 0
+  barbedDamageBonus: 40
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 10
+  weightEffect: 0
   speedEffect: 0
-  hasUpgrade: 1
-  upgradedItem: {fileID: 11400000, guid: ed8491ee46451ff4c858fb9603fa81e8, type: 2}
+  hasUpgrade: 0
+  upgradedItem: {fileID: 0}
   permanentShopItem: 0

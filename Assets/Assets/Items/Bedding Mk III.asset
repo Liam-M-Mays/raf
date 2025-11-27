@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
-  m_Name: Bedframe Mk I
+  m_Name: Bedding Mk III
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Bed Frame
-  cost: 10
-  itemSprite: {fileID: -8624123025954764935, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A standard wooden bedframe.\nIncreases your max health as well as
-    your weight.
-  maxHealthBonus: 10
-  healthOverTimeBonus: 0
+  itemName: Bedding Mk III
+  cost: 30
+  itemSprite: {fileID: -8176082980275530410, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: Bed sheets pationately woven together.\nWaking up refreshed is an
+    understatement, you will wake up a new man.
+  maxHealthBonus: 0
+  healthOverTimeBonus: 10
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 10
+  weightEffect: 0
   speedEffect: 0
   hasUpgrade: 1
-  upgradedItem: {fileID: 11400000, guid: ed8491ee46451ff4c858fb9603fa81e8, type: 2}
+  upgradedItem: {fileID: 11400000, guid: 119fe1514f2539b41baaff933c979d6c, type: 2}
   permanentShopItem: 0

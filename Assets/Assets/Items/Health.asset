@@ -24,3 +24,6 @@ MonoBehaviour:
   plusHealth: 10
   weightEffect: 0
   speedEffect: 0
+  hasUpgrade: 0
+  upgradedItem: {fileID: 0}
+  permanentShopItem: 1
