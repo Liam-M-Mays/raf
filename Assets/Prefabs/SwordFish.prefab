@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9156007058027070800}
   - component: {fileID: 2534357816290332558}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - component: {fileID: 3023635997735175768}
   - component: {fileID: 1577551861200976054}
   - component: {fileID: 2606364471873936502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SwordFish
   m_TagString: Enemy
   m_Icon: {fileID: 0}

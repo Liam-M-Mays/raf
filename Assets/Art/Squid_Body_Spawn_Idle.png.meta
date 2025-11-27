@@ -1,0 +1,476 @@
+fileFormatVersion: 2
+guid: 67356f93e48f3c244aa22218a163dc46
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3066169644387547941
+    second: Squid_Body_Spawn_Idle_0
+  - first:
+      213: 4551827911452618794
+    second: Squid_Body_Spawn_Idle_1
+  - first:
+      213: -5381769611689808185
+    second: Squid_Body_Spawn_Idle_2
+  - first:
+      213: 6930449821619854288
+    second: Squid_Body_Spawn_Idle_3
+  - first:
+      213: 1692989099456104243
+    second: Squid_Body_Spawn_Idle_4
+  - first:
+      213: -5946843247725933655
+    second: Squid_Body_Spawn_Idle_5
+  - first:
+      213: 2179840649785116549
+    second: Squid_Body_Spawn_Idle_6
+  - first:
+      213: 5616451758633657607
+    second: Squid_Body_Spawn_Idle_7
+  - first:
+      213: 1812182110108955771
+    second: Squid_Body_Spawn_Idle_8
+  - first:
+      213: -6537871674245168814
+    second: Squid_Body_Spawn_Idle_9
+  - first:
+      213: 907487523135469263
+    second: Squid_Body_Spawn_Idle_10
+  - first:
+      213: -3727394266523244408
+    second: Squid_Body_Spawn_Idle_11
+  - first:
+      213: 218578454419964889
+    second: Squid_Body_Spawn_Idle_12
+  - first:
+      213: -5130666356679619262
+    second: Squid_Body_Spawn_Idle_13
+  - first:
+      213: 5152590709641947213
+    second: Squid_Body_Spawn_Idle_14
+  - first:
+      213: 2670820235465860661
+    second: Squid_Body_Spawn_Idle_15
+  - first:
+      213: -6526871434682998594
+    second: Squid_Body_Spawn_Idle_16
+  - first:
+      213: -9139649108248226043
+    second: Squid_Body_Spawn_Idle_17
+  - first:
+      213: 3259316814577529298
+    second: Squid_Body_Spawn_Idle_18
+  - first:
+      213: -8609538363134151808
+    second: Squid_Body_Spawn_Idle_19
+  - first:
+      213: -1689265959002762374
+    second: Squid_Body_Spawn_Idle_20
+  - first:
+      213: 35023730708017315
+    second: Squid_Body_Spawn_Idle_21
+  - first:
+      213: 7326403261282961501
+    second: Squid_Body_Spawn_Idle_22
+  - first:
+      213: 8306217129521413287
+    second: Squid_Body_Spawn_Idle_23
+  - first:
+      213: 6462021203486434835
+    second: Squid_Body_Spawn_Idle_24
+  - first:
+      213: 8103947622066300892
+    second: Squid_Body_Spawn_Idle_25
+  - first:
+      213: 4182201640958714140
+    second: Squid_Body_Spawn_Idle_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4c13524f6c275d0800000000000000
+      internalID: -3066169644387547941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2077dc6e575b2f30800000000000000
+      internalID: 4551827911452618794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ceac305d0d1055b0800000000000000
+      internalID: -5381769611689808185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db1257c467ed2060800000000000000
+      internalID: 6930449821619854288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 80
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33780b9bd94be7710800000000000000
+      internalID: 1692989099456104243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab8d5ce291987da0800000000000000
+      internalID: -5946843247725933655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 587066d8589504e10800000000000000
+      internalID: 2179840649785116549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7052a730e15a1fd40800000000000000
+      internalID: 5616451758633657607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b74bc5d170a262910800000000000000
+      internalID: 1812182110108955771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2514785f950d445a0800000000000000
+      internalID: -6537871674245168814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6b69e181b089c00800000000000000
+      internalID: 907487523135469263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Squid_Body_Spawn_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 888ed06c9a2a54cc0800000000000000
+      internalID: -3727394266523244408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 0dfe5ba30828c3449b91972115b13c83
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":80.0,"y":80.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Squid_Body_Spawn_Idle_0: -3066169644387547941
+      Squid_Body_Spawn_Idle_1: 4551827911452618794
+      Squid_Body_Spawn_Idle_10: 907487523135469263
+      Squid_Body_Spawn_Idle_11: -3727394266523244408
+      Squid_Body_Spawn_Idle_2: -5381769611689808185
+      Squid_Body_Spawn_Idle_3: 6930449821619854288
+      Squid_Body_Spawn_Idle_4: 1692989099456104243
+      Squid_Body_Spawn_Idle_5: -5946843247725933655
+      Squid_Body_Spawn_Idle_6: 2179840649785116549
+      Squid_Body_Spawn_Idle_7: 5616451758633657607
+      Squid_Body_Spawn_Idle_8: 1812182110108955771
+      Squid_Body_Spawn_Idle_9: -6537871674245168814
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

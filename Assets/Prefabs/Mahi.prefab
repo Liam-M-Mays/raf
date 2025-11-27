@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 885310809152204010}
   - component: {fileID: 3213949819982320159}
   - component: {fileID: 576163833260752413}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mahi
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -143,7 +143,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4143441452799867127}
   - component: {fileID: 7752016503635629580}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
