@@ -52,6 +52,7 @@ public class ShopWeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             shopManager.PurchaseWeapon(weapon, weapon.isMelee);
             buttonImage.sprite = soldOut;
             buttonImage.SetNativeSize();
+            canPurchase = false;
         }
     }
 }

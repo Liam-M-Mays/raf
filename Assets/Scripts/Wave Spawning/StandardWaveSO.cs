@@ -5,6 +5,7 @@ public class StandardWaveSO : ScriptableObject
 {
     public EnemySO[] enemyPool;
     public float spawnRate;
-    public float maxEnemies;
+    public int maxEnemies;
+    public int minEnemies;
 }
 

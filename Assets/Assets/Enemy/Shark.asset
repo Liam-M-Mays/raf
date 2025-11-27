@@ -21,7 +21,7 @@ MonoBehaviour:
       rid: 7550196008830369931
     Direct:
       rid: 7550196143538307162
-  cost: 1
+  cost: 2
   prefab: {fileID: 210006346862396152, guid: 70be149bc30a14741adb3fa0261694b7, type: 3}
   spawnRadius: 20
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -67,6 +67,7 @@ MonoBehaviour:
         maxSpeed: 2
         speed: 1
         attackRange: 1
+        attackRangeMax: 1
         outOfRange: 10
         respawnRange: 8
         divergeRange: 2

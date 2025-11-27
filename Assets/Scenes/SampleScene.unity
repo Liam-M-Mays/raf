@@ -275,7 +275,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &195476882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -423,8 +423,10 @@ MonoBehaviour:
   bossFrequency: 3
   standardWavePool:
   - {fileID: 11400000, guid: cfe6d9ba0267dd044a48d81b5e9f08fa, type: 2}
+  - {fileID: 11400000, guid: 15ebc161256b4834caa95c7b1c0c1c90, type: 2}
+  - {fileID: 11400000, guid: 5f4f5a7c19746e141a0855ea982f28f2, type: 2}
   waveActive: 0
-  waveNumber: 1
+  waveNumber: 0
   waveCurrency: 0
   waveType: 0
 --- !u!114 &265976790
@@ -434,7 +436,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265976786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 12beb88437925d24396135bfebd34442, type: 3}
   m_Name: 
@@ -472,6 +474,8 @@ MonoBehaviour:
   standardWaveActive: 0
   waveCurrency: 0
   spawnRate: 0
+  maxEnemies: 0
+  minEnemies: 0
 --- !u!114 &265976792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -479,7 +483,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265976786}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: be50cfe2de3ba514f961f4665e22e89b, type: 3}
   m_Name: 
@@ -930,7 +934,7 @@ GameObject:
   m_Layer: 5
   m_Name: ItemSpot2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -1412012063857583412, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1169,7 +1173,7 @@ GameObject:
   m_Layer: 5
   m_Name: ItemSpot1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

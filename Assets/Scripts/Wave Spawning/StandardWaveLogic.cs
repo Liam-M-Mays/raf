@@ -11,6 +11,8 @@ public class StandardWaveLogic : MonoBehaviour
     [SerializeField] private bool standardWaveActive;
     [SerializeField] private int waveCurrency;
     [SerializeField] private float spawnRate;
+    [SerializeField] private int maxEnemies;
+    [SerializeField] private int minEnemies;
 
     private SpawnManager spawnManager;
 
@@ -34,6 +36,9 @@ public class StandardWaveLogic : MonoBehaviour
         this.waveCurrency = waveCurrency;
         enemyPool = waveData.enemyPool;
         spawnRate = waveData.spawnRate;
+        maxEnemies = waveData.maxEnemies;
+        minEnemies = waveData.minEnemies;
+
         standardWaveActive = true;
         Debug.Log(
             $"------------ Wave Configuration ------------\n" +
@@ -48,6 +53,11 @@ public class StandardWaveLogic : MonoBehaviour
     IEnumerator SpawnEnemies() {
         Debug.Log("Start Spawning for Wave " + waveManager.waveNumber);
         while(waveCurrency > 0) {
+            if (alive.Length >= maxEnemies) {
+                while (alive.Length > minEnemies) {
+                    yield return null;
+                }
+            }
             EnemySO enemy = PickEnemyToSpawn();
             waveCurrency-=enemy.cost;
             Debug.Log(
@@ -79,7 +89,7 @@ public class StandardWaveLogic : MonoBehaviour
     {
         alive = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (standardWaveActive && alive.Length == 0 && waveCurrency == 0) {
+        if (standardWaveActive && alive.Length == 0 && waveCurrency < 0) {
             waveManager.EndWave();
             standardWaveActive = false;
         }

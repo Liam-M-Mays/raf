@@ -19,7 +19,7 @@ public class WaveManager : MonoBehaviour
 
     [Header("Wave Updates")]
     public bool waveActive = false;
-    public int waveNumber = 1;
+    public int waveNumber = 0;
     public int waveCurrency = 0;
     public Wave waveType;
 
@@ -39,7 +39,7 @@ public class WaveManager : MonoBehaviour
         }
         Debug.Log("Wave Manager -> Start Wave " + waveNumber);
         waveActive = true;
-        waveCurrency = waveNumber*currencyMultiplier;
+        waveCurrency = waveNumber*currencyMultiplier + currencyMultiplier;
 
         waveType = DetermineWave();
         switch(waveType) {
@@ -48,7 +48,11 @@ public class WaveManager : MonoBehaviour
                 // pick a wave from wavePool
                 // call the standard wave spawner
                 Debug.Log("Wave " + waveNumber + " is Standard");
-                standardWaveLogic.StartWave(standardWavePool[0], waveCurrency);
+                if (waveNumber < standardWavePool.Length) {
+                    standardWaveLogic.StartWave(standardWavePool[waveNumber], waveCurrency);
+                } else {
+                    standardWaveLogic.StartWave(standardWavePool[0], waveCurrency);
+                }
                 break;
 
             case Wave.boss:
@@ -69,7 +73,7 @@ public class WaveManager : MonoBehaviour
     }
 
     public Wave DetermineWave() {
-        if (waveNumber % bossFrequency == 0) {
+        if (waveNumber == 15) {
             return Wave.boss;
         } else {
             return Wave.standard;
