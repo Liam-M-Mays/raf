@@ -84,8 +84,8 @@ MonoBehaviour:
         attackRangeMax: 1
         outOfRange: 30
         respawnRange: 20
-        divergeRange: 2
-        divergeWeight: 1
+        divergeRange: 3
+        divergeWeight: 5
         OrbitDistance: 3
         OrbitMax: 5
         OrbitRange: 1
@@ -97,18 +97,19 @@ MonoBehaviour:
         maxSpeed: 2
         speed: 1
         attackRange: 1
+        attackRangeMax: 1
         outOfRange: 10
         respawnRange: 8
-        divergeRange: 2
-        divergeWeight: 1
+        divergeRange: 5
+        divergeWeight: 5
         chargeWindupTime: 1
         chargeCooldown: 3
         chargeSpeed: 2.5
         OrbitDistance: 5
         OrbitMax: 1
-        OrbitRange: 0.5
+        OrbitRange: 0
         attackTimer: 3
-        randDir: 0
+        randDir: 1
         direction: 1
     - rid: 7550196143538307215
       type: {class: DirectCfg, ns: , asm: Assembly-CSharp}
