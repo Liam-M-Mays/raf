@@ -423,7 +423,6 @@ MonoBehaviour:
   bossFrequency: 3
   standardWavePool:
   - {fileID: 11400000, guid: cfe6d9ba0267dd044a48d81b5e9f08fa, type: 2}
-  bossWavePool: []
   waveActive: 0
   waveNumber: 1
   waveCurrency: 0
@@ -440,6 +439,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12beb88437925d24396135bfebd34442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BossWaveLogic
+  Health: 100
+  orbitChance: 0.7
+  radius: 4
+  speedMax: 8
+  speedMin: 4
+  speedChangeIntervalMin: 2
+  speedChangeIntervalMax: 5
+  speedLerpSpeed: 2
+  orbitIntervalMin: 2
+  orbitIntervalMax: 5
+  tranSpeed: 2
+  biteSpeed: 3
+  chompMin: 1
+  chompMax: 5
+  chompSpeed: 7
+  currentState: 0
 --- !u!114 &265976791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,9 +485,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
   weaponPool:
-  - {fileID: 11400000, guid: 1a3e613478a0e184ba65dc797da7f74f, type: 2}
-  - {fileID: 11400000, guid: 2447c236945adc54e8c92cec607f05b5, type: 2}
-  - {fileID: 11400000, guid: efd5fcb00d171684eb6401635702994e, type: 2}
   - {fileID: 11400000, guid: beeeaabf0a0822a4aa58fbd833fa0c3e, type: 2}
   - {fileID: 11400000, guid: 56026a936d18f2f47a594bf8ee53cfd9, type: 2}
   availableWeaponPool:
@@ -496,6 +508,7 @@ MonoBehaviour:
   itemSpot2: {fileID: 933045935}
   shopWeaponPrefab: {fileID: 6327673331779669998, guid: 9a4f2a90d48cd88468d32c20bbc2a9c8, type: 3}
   shopItemPrefab: {fileID: 3342972835341346573, guid: c6a22b5bdbdf1b44cb6f892cdb4ff659, type: 3}
+  weaponIndex: 0
 --- !u!1 &452935796
 GameObject:
   m_ObjectHideFlags: 0
