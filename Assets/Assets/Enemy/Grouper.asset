@@ -119,5 +119,5 @@ MonoBehaviour:
         attackRangeMax: 1
         outOfRange: 10
         respawnRange: 8
-        divergeRange: 2
-        divergeWeight: 1
+        divergeRange: 3
+        divergeWeight: 5
