@@ -46,6 +46,8 @@ public class SharkBossLogic : MonoBehaviour
     private int chompCount = 0;
     private bool locked = false;
     private bool chomping = false;
+    private bool chomp = true;
+
     [SerializeField] private float chompSpeed = 7f;
 
 
@@ -171,13 +173,14 @@ public class SharkBossLogic : MonoBehaviour
                 }
                 else
                 {
-                    target = player.position + new Vector3(21*side, 0,0);
-                    rb.linearVelocity = (target - (Vector2)tf.position).normalized * tranSpeed;
-                    Debug.DrawLine((Vector2)tf.position, (Vector2)tf.position + rb.linearVelocity, Color.red);
+                    
+                    tf.position = player.position + new Vector3(21*side, 0,0);
+                    rb.linearVelocity = Vector2.zero;
+                    //Debug.DrawLine((Vector2)tf.position, (Vector2)tf.position + rb.linearVelocity, Color.red);
                     if(Mathf.Abs(tf.position.x - player.position.x) >= 20)
                     {
-                        anim.SetTrigger("Chomp");
                         anim.SetBool("Surface", false);
+                        anim.SetTrigger("Chomp");
                         chomps = Random.Range(chompMin, chompMax);
                         chompCount = 0;
                         currentState = State.Chomp;
@@ -228,22 +231,22 @@ public class SharkBossLogic : MonoBehaviour
                 {
                     if (!locked)
                     {
-                        float Xoffset = player.position.x - tf.position.x;
-                        target = player.position + new Vector3(Xoffset, 0, 0);
+                        target = player.position + new Vector3(20f * -side, 0.3f, 0f);
+                        side *= -1f;
                         locked = true;
                     }
-                    rb.linearVelocity = (target - (Vector2)tf.position).normalized * chompSpeed;
+                    rb.linearVelocity = (target-(Vector2)tf.position).normalized * chompSpeed;
                     Debug.DrawLine((Vector2)tf.position, (Vector2)tf.position + rb.linearVelocity, Color.red);
-                    if(Mathf.Abs(tf.position.x - player.position.x) >= 20 && chomping)
+                    if(Vector2.Distance((Vector2)tf.position, target) < 5 && chomp)
                     {
                         chompCount += 1;
                         Debug.Log("chomped " + chompCount);
                         locked = false;
-                        chomping = false;
+                        chomp = false;
                     }
-                    else if (Mathf.Abs(tf.position.x - player.position.x) < 20)
+                    else if (Vector2.Distance((Vector2)tf.position, target) >= 5 && !chomp)
                     {
-                        chomping = true;
+                        chomp = true;
                     }
                 }
                 else 
@@ -265,12 +268,17 @@ public class SharkBossLogic : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Mathf.Sign(rb.linearVelocity.x) == Mathf.Sign(transform.localScale.x))
-        {
-            Vector3 scaler = transform.localScale;
-            scaler.x *= -1;
-            transform.localScale = scaler;
-        }
+        // Only flip if there's significant horizontal movement
+        //if(Mathf.Abs(rb.linearVelocity.x) > 0.1f)
+        //{
+            // Check if velocity direction matches current facing direction
+            if(Mathf.Sign(rb.linearVelocity.x) == Mathf.Sign(transform.localScale.x))
+            {
+                Vector3 scaler = transform.localScale;
+                scaler.x *= -1;
+                transform.localScale = scaler;
+            }
+        //}
     }
 
     private void Decide()
@@ -289,7 +297,7 @@ public class SharkBossLogic : MonoBehaviour
         spriteRenderer.enabled = false;
         if (bite)
         {
-            tf.position = player.position;
+            tf.position = player.position + new Vector3(0f, 0.3f, 0f);
             spriteRenderer.enabled = true;
             currentState = State.Bite;
         }

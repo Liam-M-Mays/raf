@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SharkBossLogic
   Health: 100
-  orbitChance: 0.3
+  orbitChance: 0
   radius: 6
   speedMax: 5
   speedMin: 2
