@@ -656,11 +656,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2524310792147788646, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.36
+      value: 10.7
       objectReference: {fileID: 0}
     - target: {fileID: 2524310792147788646, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 17.35
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2524310792147788646, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -699,60 +699,12 @@ PrefabInstance:
       value: Boss Shark
       objectReference: {fileID: 0}
     - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: radius
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: chompMax
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: chompMin
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: speedMax
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: speedMin
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: tranSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: chompSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: orbitSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
       propertyPath: orbitChance
-      value: 0.3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: speedLerpSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: orbitIntervalMax
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: orbitIntervalMin
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: speedChangeIntervalMax
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6946586374364572095, guid: 66b54f39b6fd6e54ea7e3fe7723c04ba, type: 3}
-      propertyPath: speedChangeIntervalMin
-      value: 1
+      propertyPath: currentState
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -882,11 +834,15 @@ PrefabInstance:
       objectReference: {fileID: 674222582}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: zoomIn
-      value: 3
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: zoomOut
-      value: 5
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: maxSpeed
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: raftAnim
@@ -901,8 +857,20 @@ PrefabInstance:
       value: 0.003
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: zoomSpeed
+      propertyPath: walkSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: waterDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: zoomSpeed
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: paddleForce
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: raftDeAccel

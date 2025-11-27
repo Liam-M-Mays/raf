@@ -174,9 +174,10 @@ public class SharkBossLogic : MonoBehaviour
                     target = player.position + new Vector3(21*side, 0,0);
                     rb.linearVelocity = (target - (Vector2)tf.position).normalized * tranSpeed;
                     Debug.DrawLine((Vector2)tf.position, (Vector2)tf.position + rb.linearVelocity, Color.red);
-                    if(Mathf.Abs(tf.position.x - player.position.x) > 20)
+                    if(Mathf.Abs(tf.position.x - player.position.x) >= 20)
                     {
                         anim.SetTrigger("Chomp");
+                        anim.SetBool("Surface", false);
                         chomps = Random.Range(chompMin, chompMax);
                         chompCount = 0;
                         currentState = State.Chomp;
@@ -223,7 +224,6 @@ public class SharkBossLogic : MonoBehaviour
                 break;
 
             case State.Chomp: // side charges
-                //currentState = State.Under;
                 if(chompCount < chomps)
                 {
                     if (!locked)
@@ -232,9 +232,8 @@ public class SharkBossLogic : MonoBehaviour
                         target = player.position + new Vector3(Xoffset, 0, 0);
                         locked = true;
                     }
-                    rb.linearVelocity = target.normalized * chompSpeed;
+                    rb.linearVelocity = (target - (Vector2)tf.position).normalized * chompSpeed;
                     Debug.DrawLine((Vector2)tf.position, (Vector2)tf.position + rb.linearVelocity, Color.red);
-                    //Debug.Log("SharkX: " + tf.position.x + " PlayerX: " + player.position.x);
                     if(Mathf.Abs(tf.position.x - player.position.x) >= 20 && chomping)
                     {
                         chompCount += 1;
@@ -255,9 +254,7 @@ public class SharkBossLogic : MonoBehaviour
                     currentState = State.Under;
                 }
                 break;
-
         }
-
     }
 
     private Vector2 Noise()
