@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections.Generic;
 using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
@@ -10,8 +11,10 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Raft Rowing")]
     public float paddleForce = 100f;
+    public float extraForce = 0f;
     public float maxSpeed = 5f;
     public float waterDrag = 3f;
+    public float weight = 1f;
     public Rigidbody2D raftRB;
     public Animator raftAnim;
     
@@ -25,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public Collider2D walkable;
     public Transform feetAnchor;
     public float boundaryPadding = 0.02f;
+
+    [Header("Upgrades")]
+    public List<ItemSO> Upgrades = new List<ItemSO>();
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -45,6 +51,11 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        foreach (var upgrade in Upgrades)
+        {
+            extraForce = upgrade.speedEffect;
+            weight = Mathf.Clamp(1 + upgrade.weightEffect, 0, 1 + upgrade.weightEffect);
+        }
         Vector2 input = moveAction.ReadValue<Vector2>();
 
         // Toggle rowing mode
