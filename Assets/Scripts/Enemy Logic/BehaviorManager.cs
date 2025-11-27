@@ -41,7 +41,8 @@ public abstract class BehaviorCfg
 public class BehaviorOption
 {
     public bool enabled = false;
-    [Range(0f, 10f)] public float weight = 1f;
+    
+     public float weight = 1f;
 
     // Inline-polymorphic config
     [SerializeReference] public BehaviorCfg config;

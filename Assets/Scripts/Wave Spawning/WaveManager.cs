@@ -11,7 +11,7 @@ public class WaveManager : MonoBehaviour
     //public float timeBetweenSpawns = 1f;
     
     public StandardWaveSO[] standardWavePool;
-    public BossWaveSO[] bossWavePool;
+    //public BossWaveSO[] bossWavePool;
 
 
     //public EnemySO[] enemies;
@@ -25,12 +25,12 @@ public class WaveManager : MonoBehaviour
 
 
     private StandardWaveLogic standardWaveLogic;
-    private BossWaveLogic bossWaveLogic;
+    //private BossWaveLogic bossWaveLogic;
     
 
     void Start() {
         standardWaveLogic = GetComponent<StandardWaveLogic>();
-        bossWaveLogic = GetComponent<BossWaveLogic>();
+        //bossWaveLogic = GetComponent<BossWaveLogic>();
     }
 
     public void StartWave() {
