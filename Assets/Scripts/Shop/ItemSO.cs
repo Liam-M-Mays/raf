@@ -21,6 +21,12 @@ public class ItemSO : ScriptableObject
     public int weightEffect;
     public int speedEffect;
 
+    public bool hasUpgrade;
+    public ItemSO upgradedItem;
+
+    public bool permanentShopItem;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

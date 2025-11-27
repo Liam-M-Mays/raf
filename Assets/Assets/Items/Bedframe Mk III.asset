@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: Bedframe Mk III
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Bedframe Mk III
-  cost: 0
-  itemSprite: {fileID: 0}
-  description: A solid 10k gold plated frame. The sharks will be very jealous of
-    this one.
+  cost: 30
+  itemSprite: {fileID: 2144893120661026739, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: A bedframe plated with real 10 karrot gold.\nSignificantly heavier,
+    but will make the sharks very jealous.
   maxHealthBonus: 30
   healthOverTimeBonus: 0
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 0
+  weightEffect: 30
   speedEffect: 0
+  hasUpgrade: 1
+  upgradedItem: {fileID: 11400000, guid: e933418b4a36df2448b869d2d4e02eb6, type: 2}
+  permanentShopItem: 0

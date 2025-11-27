@@ -6,11 +6,13 @@ public class ShopItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 {
     private GameObject tooltip;
     private ShopTooltipUI tooltipScript;
-    //public Sprite soldOut;
+    public Sprite soldOut;
     private Image buttonImage;
 
     private ItemSO item;
     private ShopManager shopManager;
+
+    private bool canPurchase = true;
 
     private void Awake() {
         buttonImage = GetComponent<Image>();
@@ -28,13 +30,13 @@ public class ShopItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
     }
 
     public void OnPointerEnter(PointerEventData eventData) {
+        if (!canPurchase) return;
         tooltip.SetActive(true);
 
         Debug.Log($"{item.itemName} - Hover Enter");
     }
 
     public void OnPointerExit(PointerEventData eventData) {
-
         tooltip.SetActive(false);
         
         Debug.Log($"{item.itemName} - Hover Exit");
@@ -42,13 +44,14 @@ public class ShopItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"{item.itemName} - Clicked!");
         tooltip.SetActive(false);
-
+        if (!canPurchase) return;
         // Attempt to purchase the item through the shop manager
         if (shopManager != null && item != null) {
             shopManager.PurchaseItem(item);
-            Destroy(gameObject);
+            canPurchase = false;
+            buttonImage.sprite = soldOut;
+            buttonImage.SetNativeSize();
         }
     }
 }

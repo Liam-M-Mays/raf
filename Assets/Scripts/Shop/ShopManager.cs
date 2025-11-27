@@ -1,24 +1,30 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class ShopManager : MonoBehaviour
 {
     public WeaponSO[] weaponPool;
-    public WeaponSO[] availableWeaponPool; // Stater shop weapons
+    public List<WeaponSO> availableWeaponPool; // Starter weapon items
 
     public ItemSO[] itemPool;
-    public ItemSO[] availableItemPool; // Starter shop items
+    public List<ItemSO> availableItemPool; // Starter shop items
     
     public Transform gunSpot1, gunSpot2, gunSpot3;
     public Transform itemSpot1, itemSpot2;
+    public GameObject shopWeaponPrefab;
     public GameObject shopItemPrefab;
+
+    private WaveManager waveManager;
+
+    public int weaponIndex = 0;
 
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        PopulateShop();
+        waveManager = GetComponent<WaveManager>();
     }
 
 
@@ -26,46 +32,53 @@ public class ShopManager : MonoBehaviour
     void Update()
     {
         // add weapons to available wepons pool every few waves or if pool is less than 3
-        if (availableWeaponPool.Length < 3)
+        if (availableWeaponPool.Count < 3)
         {
             // Add more weapons to the available pool
+        }
+
+        if (InputSystem.actions.FindAction("Jump").triggered) {
+            PopulateShop();
+            Debug.Log("Populated Shop");
         }
     }
 
     public void PopulateShop() {
-        Debug.Log("Populate");
-        Shuffle(availableWeaponPool);
-        Debug.Log("Shuffled");
+        UpdateWeaponPool();
+        DestroyChildren(gunSpot1);
+        DestroyChildren(gunSpot2);
+        DestroyChildren(gunSpot3);
+        DestroyChildren(itemSpot1);
+        DestroyChildren(itemSpot2);
+        ShuffleWeapons(availableWeaponPool);
+        ShuffleItems(availableItemPool);
 
-        if (availableWeaponPool.Length < 1) {
+        if (availableWeaponPool.Count < 1) {
             Debug.LogWarning("Not enough weapons in the available pool to populate the shop.");
-            return;
-        } else if (availableWeaponPool.Length < 2) {
+        } else if (availableWeaponPool.Count < 2) {
             CreateShopWeapon(availableWeaponPool[0], gunSpot1);
-            return;
-        } else if (availableWeaponPool.Length < 3) {
+        } else if (availableWeaponPool.Count < 3) {
             CreateShopWeapon(availableWeaponPool[0], gunSpot1);
             CreateShopWeapon(availableWeaponPool[1], gunSpot2);
-            return;
+        } else {
+            CreateShopWeapon(availableWeaponPool[0], gunSpot1);
+            CreateShopWeapon(availableWeaponPool[1], gunSpot2);
+            CreateShopWeapon(availableWeaponPool[2], gunSpot3);
         }
-        CreateShopWeapon(availableWeaponPool[0], gunSpot1);
-        CreateShopWeapon(availableWeaponPool[1], gunSpot2);
-        CreateShopWeapon(availableWeaponPool[2], gunSpot3);
+        
 
-        if (availableItemPool.Length < 1) {
+        if (availableItemPool.Count < 1) {
             Debug.LogWarning("Not enough items in the available pool to populate the shop.");
-            return;
-        } else if (availableItemPool.Length < 2) {
+        } else if (availableItemPool.Count < 2) {
             CreateShopItem(availableItemPool[0], itemSpot1);
-            return;
+        } else {
+            CreateShopItem(availableItemPool[0], itemSpot1);
+            CreateShopItem(availableItemPool[1], itemSpot2);
         }
-
-        CreateShopItem(availableItemPool[0], itemSpot1);
-        CreateShopItem(availableItemPool[1], itemSpot2);
     }
 
     public void CreateShopWeapon(WeaponSO weapon, Transform spot) {
-        GameObject item = Instantiate(shopItemPrefab, spot);
+        GameObject item = Instantiate(shopWeaponPrefab, spot);
         ShopWeaponUI shopItemUI = item.GetComponent<ShopWeaponUI>();
         shopItemUI.Setup(weapon, this);
     }
@@ -88,10 +101,17 @@ public class ShopManager : MonoBehaviour
             // mark as purchased
             // remove from weaponPool
         //}
+        availableWeaponPool.Remove(weapon);
     }
 
     public void PurchaseItem(ItemSO item)
     {
+        if (item.hasUpgrade) {
+            availableItemPool.Add(item.upgradedItem);
+        }
+        if (!item.permanentShopItem) {
+            availableItemPool.Remove(item);
+        }
         //if (PlayerCurrency >= item.cost)
         //{
         //    PlayerCurrency -= item.cost;
@@ -101,14 +121,44 @@ public class ShopManager : MonoBehaviour
         //}
     }
 
-    void Shuffle(WeaponSO[] list)
+    void ShuffleWeapons(List<WeaponSO> list)
     {
-        for (int i = 0; i < list.Length; i++)
+        for (int i = 0; i < list.Count; i++)
         {
             WeaponSO temp = list[i];
-            int randomIndex = Random.Range(i, list.Length);
+            int randomIndex = Random.Range(i, list.Count);
             list[i] = list[randomIndex];
             list[randomIndex] = temp;
+        }
+    }
+
+    void ShuffleItems(List<ItemSO> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            ItemSO temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
+    }
+
+    void DestroyChildren(Transform parent) {
+        foreach (Transform child in parent) {
+            GameObject.Destroy(child.gameObject);
+        }
+    }
+
+    void UpdateWeaponPool() {
+        if (waveManager == null) return;
+        int currentWave = waveManager.GetWaveNumber();
+
+        // add a new weapon every 2 waves or if there is only 3 weapons
+        if (currentWave % 2 == 0 || availableWeaponPool.Count < 3) {
+            if (weaponIndex < weaponPool.Length) {
+                availableWeaponPool.Add(weaponPool[weaponIndex]);
+                weaponIndex++;
+            }
         }
     }
 }
