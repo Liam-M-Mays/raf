@@ -97,20 +97,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SharkBossLogic
   Health: 100
-  orbitChance: 0
-  radius: 6
+  orbitChance: 0.35
+  radius: 3
   speedMax: 5
   speedMin: 2
   speedChangeIntervalMin: 1
   speedChangeIntervalMax: 3
-  speedLerpSpeed: 3
+  speedLerpSpeed: 0.5
   orbitIntervalMin: 3
   orbitIntervalMax: 5
-  tranSpeed: 1
-  biteSpeed: 3
+  tranSpeed: 5
+  biteSpeed: 0.5
   chompMin: 2
-  chompMax: 5
-  chompSpeed: 5
+  chompMax: 6
+  chompSpeed: 7
   currentState: 0
 --- !u!1 &8530120673201418871
 GameObject:

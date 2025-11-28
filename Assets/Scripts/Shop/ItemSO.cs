@@ -20,6 +20,7 @@ public class ItemSO : ScriptableObject
     [Header("Effects")]
     public int weightEffect;
     public int speedEffect;
+    public Sprite upgradeSprite;
 
     public bool hasUpgrade;
     public ItemSO upgradedItem;

@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     
     [Header("Raft Rowing")]
     public float paddleForce = 100f;
-    public float extraForce = 0f;
+    private float extraForce = 0f;
     public float maxSpeed = 5f;
     public float waterDrag = 3f;
-    public float weight = 1f;
+    private float weight = 1f;
     public Rigidbody2D raftRB;
     public Animator raftAnim;
     
@@ -30,7 +30,13 @@ public class PlayerMovement : MonoBehaviour
     public float boundaryPadding = 0.02f;
 
     [Header("Upgrades")]
-    public List<ItemSO> Upgrades = new List<ItemSO>();
+    public GameObject parentGameObject;
+    public ItemSO Sheets = null;
+    public ItemSO Frame = null;
+    public ItemSO Barbed = null;
+    private SpriteRenderer Base = null;
+    private SpriteRenderer frame = null;
+    private SpriteRenderer barbed = null;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -47,15 +53,45 @@ public class PlayerMovement : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         interactAction = InputSystem.actions.FindAction("Interact");
         feetLocalOffset = transform.InverseTransformPoint(feetAnchor.position);
+        Base = parentGameObject.transform.Find("Base Sprite").gameObject.GetComponent<SpriteRenderer>();
+        frame = parentGameObject.transform.Find("Frame Sprite").gameObject.GetComponent<SpriteRenderer>();
+        barbed = parentGameObject.transform.Find("Barb Sprite").gameObject.GetComponent<SpriteRenderer>();
     }
 
     void Update()
     {
-        foreach (var upgrade in Upgrades)
+        if (Sheets != null)
         {
-            extraForce = upgrade.speedEffect;
-            weight = Mathf.Clamp(1 + upgrade.weightEffect, 0, 1 + upgrade.weightEffect);
+            Base.sprite = Sheets.upgradeSprite;
+            extraForce = Sheets.speedEffect;
+            Base.enabled = true;
         }
+        else
+        {
+            Base.enabled = false;
+            extraForce = 0f;
+        }
+        if (Frame != null)
+        {
+            frame.sprite = Frame.upgradeSprite;
+            raftRB.mass = Frame.weightEffect;
+            frame.enabled = true;
+        }
+        else
+        {
+            frame.enabled = false;
+            raftRB.mass = 1f;
+        }
+        if (Barbed != null)
+        {
+            barbed.sprite = Barbed.upgradeSprite;
+            barbed.enabled = true;
+        }
+        else
+        {
+            barbed.enabled = false;
+        }
+
         Vector2 input = moveAction.ReadValue<Vector2>();
 
         // Toggle rowing mode
@@ -106,11 +142,11 @@ public class PlayerMovement : MonoBehaviour
             // Apply paddle force
             if (input != Vector2.zero)
             {
-                raftRB.AddForce(input.normalized * paddleForce);
+                raftRB.AddForce(input.normalized * (paddleForce + extraForce));
             }
             
             // Water drag (smooth deceleration)
-            raftRB.AddForce(-raftRB.linearVelocity * waterDrag);
+            raftRB.AddForce(-raftRB.linearVelocity  * waterDrag);
             
             // Cap max speed
             if (raftRB.linearVelocity.magnitude > maxSpeed)
