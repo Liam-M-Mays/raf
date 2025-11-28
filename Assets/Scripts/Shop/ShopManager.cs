@@ -150,7 +150,7 @@ public class ShopManager : MonoBehaviour
         int currentWave = waveManager.GetWaveNumber();
 
         // add a new weapon every 2 waves or if there is only 3 weapons
-        if (currentWave % 2 == 0 || availableWeaponPool.Count < 3) {
+        if (currentWave % 3 == 0 || availableWeaponPool.Count < 3) {
             if (weaponIndex < weaponPool.Length) {
                 availableWeaponPool.Add(weaponPool[weaponIndex]);
                 weaponIndex++;

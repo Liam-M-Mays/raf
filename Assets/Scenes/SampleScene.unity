@@ -119,25 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &2597055 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8724443780134295448, guid: f68e78128e112b4438b072f298084206, type: 3}
-  m_PrefabInstance: {fileID: 2686357072635121854}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2597061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2597055}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802b4e84670ab284e983abfd841efbeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ShopIndicator
-  indicator: {fileID: 2006711192}
-  hideDistance: 5
 --- !u!1 &42719225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1424,11 +1405,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1 &2006711192 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6860260766098730637, guid: 4385b06984f014041a03116fd7552b74, type: 3}
-  m_PrefabInstance: {fileID: 5947438659056184301}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2686357072635121854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1524,10 +1500,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8724443780134295448, guid: f68e78128e112b4438b072f298084206, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2597061}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f68e78128e112b4438b072f298084206, type: 3}
 --- !u!1001 &5947438659056184301
 PrefabInstance:
