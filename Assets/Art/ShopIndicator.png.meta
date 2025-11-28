@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 626c023701dea5c4ba9c33e5280428e1
+guid: 7bf1eb3a2a2c4384e9d34c9678a6b856
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2765467171962141693
-    second: ShopBackground_0
+      213: -4317716266404856518
+    second: ShopIndicator_0
+  - first:
+      213: -8536923669625301350
+    second: ShopIndicator_1
+  - first:
+      213: -4691079979314134883
+    second: ShopIndicator_2
+  - first:
+      213: -5342596509486948174
+    second: ShopIndicator_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ShopBackground_0
+      name: ShopIndicator_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 160
-        height: 90
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,20 +124,42 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 304413952461f99d0800000000000000
-      internalID: -2765467171962141693
+      spriteID: a3d33049ee36414c0800000000000000
+      internalID: -4317716266404856518
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShopBackground_1
+      name: ShopIndicator_1
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 0
-        width: 160
-        height: 90
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a961c5d2721c68980800000000000000
+      internalID: -8536923669625301350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ShopIndicator_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +168,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b24692db7fb09148848a367efedf940
-      internalID: 1045766753
+      spriteID: ccd3bf8145e3aff4c9f58dff26cba19d
+      internalID: -4691079979314134883
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ShopBackground_2
+      name: ShopIndicator_3
       rect:
         serializedVersion: 2
-        x: 320
+        x: 96
         y: 0
-        width: 160
-        height: 90
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,52 +190,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 239c1cff2a310bf4ba6fafba17f5a189
-      internalID: -801285450
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShopBackground_3
-      rect:
-        serializedVersion: 2
-        x: 480
-        y: 0
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 09fb8bd2a7abdc344addb54b74448ec3
-      internalID: -1258907767
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ShopBackground_4
-      rect:
-        serializedVersion: 2
-        x: 640
-        y: 0
-        width: 160
-        height: 90
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 20fa6b61260fa3140a137a407420db47
-      internalID: -328732641
+      spriteID: 9dda6a0608e9479469afffa23d6b3682
+      internalID: -5342596509486948174
       vertices: []
       indices: 
       edges: []
@@ -213,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3895189f07df5c24e8672d48820cbd2e
+    spriteID: ff7454d7d2c61084891153ce57d6d935
     internalID: 0
     vertices: []
     indices: 
@@ -223,13 +210,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":160.0,"y":90.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      ShopBackground_0: -2765467171962141693
-      ShopBackground_1: 1045766753
-      ShopBackground_2: -801285450
-      ShopBackground_3: -1258907767
-      ShopBackground_4: -328732641
+      ShopIndicator_0: -4317716266404856518
+      ShopIndicator_1: -8536923669625301350
+      ShopIndicator_2: -4691079979314134883
+      ShopIndicator_3: -5342596509486948174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

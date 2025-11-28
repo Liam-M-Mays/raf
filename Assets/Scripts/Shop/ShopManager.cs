@@ -20,7 +20,6 @@ public class ShopManager : MonoBehaviour
     public int weaponIndex = 0;
 
 
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -88,9 +87,6 @@ public class ShopManager : MonoBehaviour
         ShopItemUI shopItemUI = itemObj.GetComponent<ShopItemUI>();
         shopItemUI.Setup(item, this);
     }
-
-
-
 
     public void PurchaseWeapon(WeaponSO weapon, bool isMelee)
     {
