@@ -55,11 +55,7 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
-<<<<<<< HEAD
                     "expectedControlType": "Button",
-=======
-                    "expectedControlType": "",
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -90,63 +86,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-<<<<<<< HEAD
-=======
-                },
-                {
-                    "name": "one",
-                    "type": "Button",
-                    "id": "33219653-04e7-47bc-935d-403f4862dc14",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "two",
-                    "type": "Button",
-                    "id": "968b21f1-19a9-4b61-b454-e89d9c325c2e",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "three",
-                    "type": "Button",
-                    "id": "19a5c47a-65dc-4641-8755-86dc75d835d1",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "four",
-                    "type": "Button",
-                    "id": "148002ee-56ec-480d-ad70-ee33b0625d11",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "five",
-                    "type": "Button",
-                    "id": "a91835a6-ac26-4d22-af1a-3b5bc245082f",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Cik",
-                    "type": "Button",
-                    "id": "89db477c-f6ce-4120-bf15-eae463f7b0fe",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                 }
             ],
             "bindings": [
@@ -534,75 +473,6 @@
                     "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
-<<<<<<< HEAD
-=======
-                },
-                {
-                    "name": "",
-                    "id": "4900bc4a-fb8c-4778-ada9-0f8c136721de",
-                    "path": "<Keyboard>/1",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "one",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "20e6e566-aa3c-450b-8d77-5603b0087cbe",
-                    "path": "<Keyboard>/2",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "two",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "e15711aa-0721-4bf6-ada2-a27138040a6d",
-                    "path": "<Keyboard>/3",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "three",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "dad5aab0-0ab8-4615-971c-5658eee01b78",
-                    "path": "<Keyboard>/4",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "four",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "79576f0e-30fb-4f8d-a510-4da102761df1",
-                    "path": "<Keyboard>/5",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "five",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "bd5a54e2-1c65-426d-8349-0623fadc8d0d",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Cik",
-                    "isComposite": false,
-                    "isPartOfComposite": false
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                 }
             ]
         },

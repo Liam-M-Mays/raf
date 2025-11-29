@@ -3,17 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-<<<<<<< HEAD
-  - RAFT EDGE
-  - Raft
-  - Enemy
-=======
-  - Raft
-  - Enemy
-  - Tooltip
-  - Shop
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,22 +11,13 @@ TagManager:
   - 
   - Water
   - UI
-  - Shark
-<<<<<<< HEAD
-  - Enemy
-  - Raft
-  - Player
-  - PlayerProjectile
-  - Enemy
-  - Enemy Projectile
-=======
-  - Raft
   - 
   - 
   - 
   - 
   - 
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
+  - 
+  - 
   - 
   - 
   - 
@@ -57,20 +38,8 @@ TagManager:
   - 
   - 
   m_SortingLayers:
-<<<<<<< HEAD
   - name: Default
     uniqueID: 0
     locked: 0
-=======
-  - name: Background
-    uniqueID: 1989396331
-    locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
-  - name: ShopUI
-    uniqueID: 2545779417
-    locked: 0
->>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_RenderingLayers:
   - Default
