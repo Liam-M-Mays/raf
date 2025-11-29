@@ -143,10 +143,14 @@ public class PlayerMovement : MonoBehaviour
             if (input != Vector2.zero)
             {
                 raftRB.AddForce(input.normalized * (paddleForce + extraForce));
+                raftRB.AddForce(-raftRB.linearVelocity);
+            }
+            else
+            {
+                // Water drag (smooth deceleration)
+                raftRB.AddForce(-raftRB.linearVelocity  * waterDrag);
             }
             
-            // Water drag (smooth deceleration)
-            raftRB.AddForce(-raftRB.linearVelocity  * waterDrag);
             
             // Cap max speed
             if (raftRB.linearVelocity.magnitude > maxSpeed)

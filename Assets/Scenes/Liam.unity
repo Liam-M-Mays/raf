@@ -929,6 +929,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 848312173340697469, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 848312173340697469, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 848312173340697469, guid: 4385b06984f014041a03116fd7552b74, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 2361191466597270422, guid: 4385b06984f014041a03116fd7552b74, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -1063,6 +1075,10 @@ PrefabInstance:
       propertyPath: m_Constraints
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6633955577952894718, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: vcam
       value: 
@@ -1101,7 +1117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: waterDrag
-      value: 7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: zoomSpeed
@@ -1113,7 +1129,7 @@ PrefabInstance:
       objectReference: {fileID: 4258086525560425693, guid: d158b66116ab7ec44a532699e4db4235, type: 3}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: paddleForce
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: raftDeAccel
