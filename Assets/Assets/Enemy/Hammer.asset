@@ -1,0 +1,124 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b52617c20a9e4d78a85165c230a59b5, type: 3}
+  m_Name: Hammer
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySO
+  Behaviors:
+    SharkDefault:
+      rid: 7550196008830369886
+    Orbit:
+      rid: 7550196298018455552
+    HammerDefault:
+      rid: 7550196008830369895
+    Direct:
+      rid: 7550196298018455553
+  cost: 1
+  prefab: {fileID: 1764306394173875516, guid: 3593d794fd740474f87f49cb8b1568b6, type: 3}
+  spawnRadius: 20
+  color: {r: 1, g: 1, b: 1, a: 1}
+  references:
+    version: 2
+    RefIds:
+    - rid: 7550196008830369886
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196008830369890
+    - rid: 7550196008830369890
+      type: {class: SharkDefaultCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 0.3
+        attackRangeMax: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        OrbitDistance: 5
+        OrbitMax: 1
+        OrbitRange: 0.5
+        attackTimer: 3
+        randDir: 0
+        direction: 1
+        zigzagAmplitude: 5
+        zigzagFrequency: 2
+    - rid: 7550196008830369895
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+        weight: 1
+        config:
+          rid: 7550196008830369896
+    - rid: 7550196008830369896
+      type: {class: HammerDefaultCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 0.3
+        attackRangeMax: 1
+        outOfRange: 30
+        respawnRange: 20
+        divergeRange: 1
+        divergeWeight: 5
+        chargeWindupTime: 3
+        chargeCooldown: 5
+        chargeSpeed: 3.5
+        OrbitDistance: 3
+        OrbitMax: 5
+        OrbitRange: 0.5
+        attackTimer: 5
+        randDir: 1
+        direction: 1
+    - rid: 7550196298018455552
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196298018455554
+    - rid: 7550196298018455553
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 7550196298018455555
+    - rid: 7550196298018455554
+      type: {class: RangeOrbitCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        attackRangeMax: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1
+        OrbitDistance: 5
+        OrbitMax: 1
+        OrbitRange: 0.5
+        randDir: 0
+        direction: 1
+    - rid: 7550196298018455555
+      type: {class: DirectCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 2
+        speed: 1
+        attackRange: 1
+        attackRangeMax: 1
+        outOfRange: 10
+        respawnRange: 8
+        divergeRange: 2
+        divergeWeight: 1

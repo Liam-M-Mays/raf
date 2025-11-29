@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
+  m_Name: Paddle Handle Mk IV
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: Paddle Handle Mk IV
+  cost: 40
+  itemSprite: {fileID: -1253338170, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: A high-performance diamond handle.\nA handle so precise it practically
+    paddles itself.\nIt doesnt actually though, you still need to switch between
+    moving and shooting.
+  maxHealthBonus: 0
+  healthOverTimeBonus: 0
+  damageBonus: 0
+  barbedDamageBonus: 0
+  plusAmmo: 0
+  plusHealth: 0
+  weightEffect: -30
+  speedEffect: 50
+  hasUpgrade: 0
+  upgradedItem: {fileID: 0}
+  permanentShopItem: 0

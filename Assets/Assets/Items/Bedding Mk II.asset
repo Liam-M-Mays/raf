@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39bae8306baa13a469ded7354afdd999, type: 3}
+  m_Name: Bedding Mk II
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSO
+  itemName: Bedding Mk II
+  cost: 20
+  itemSprite: {fileID: -5061960570389789244, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
+  description: An extra comfy set of bedding.\nWake up shiny and fresh with even
+    more health.
+  maxHealthBonus: 0
+  healthOverTimeBonus: 10
+  damageBonus: 0
+  barbedDamageBonus: 0
+  plusAmmo: 0
+  plusHealth: 0
+  weightEffect: 0
+  speedEffect: 0
+  upgradeSprite: {fileID: 932737734218856507, guid: 6f8d2709bce821745a73095b62f898c6, type: 3}
+  hasUpgrade: 1
+  upgradedItem: {fileID: 11400000, guid: b413d2fcb2ceca046a062cc012512c4c, type: 2}
+  permanentShopItem: 0

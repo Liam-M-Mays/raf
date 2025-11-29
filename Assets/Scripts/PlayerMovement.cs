@@ -1,9 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+<<<<<<< HEAD
+=======
+using System.Collections.Generic;
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 using Unity.Cinemachine;
 
 public class PlayerMovement : MonoBehaviour
 {
+<<<<<<< HEAD
     #region Serialized Fields
 
     [Header("Debug - Runtime Info")]
@@ -15,11 +20,27 @@ public class PlayerMovement : MonoBehaviour
     public float moveSpeed = 5f;
     public GameObject playerSprite;
 
+=======
+    [Header("Player Walking")]
+    public float walkSpeed = 5f;
+    public GameObject playerSprite;
+    
+    [Header("Raft Rowing")]
+    public float paddleForce = 100f;
+    private float extraForce = 0f;
+    public float maxSpeed = 5f;
+    public float waterDrag = 3f;
+    private float weight = 1f;
+    public Rigidbody2D raftRB;
+    public Animator raftAnim;
+    
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
     [Header("Camera")]
     public CinemachineCamera vcam;
     public float zoomOut = 6f;
     public float zoomIn = 3f;
     public float zoomSpeed = 0.5f;
+<<<<<<< HEAD
 
     [Header("Raft")]
     public Rigidbody2D raftRB;
@@ -47,10 +68,32 @@ public class PlayerMovement : MonoBehaviour
     private InputAction moveAction;
     private InputAction interactAction;
 
+=======
+    
+    [Header("Raft Boundary")]
+    public Collider2D walkable;
+    public Transform feetAnchor;
+    public float boundaryPadding = 0.02f;
+
+    [Header("Upgrades")]
+    public GameObject parentGameObject;
+    public ItemSO Sheets = null;
+    public ItemSO Frame = null;
+    public ItemSO Barbed = null;
+    private SpriteRenderer Base = null;
+    private SpriteRenderer frame = null;
+    private SpriteRenderer barbed = null;
+
+    private Rigidbody2D rb;
+    private Animator anim;
+    private InputAction moveAction;
+    private InputAction interactAction;
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
     private bool rowing = false;
     private bool isFacingRight = true;
     private Vector3 feetLocalOffset;
 
+<<<<<<< HEAD
     #endregion
 
     #region Stats Classes
@@ -126,19 +169,70 @@ public class PlayerMovement : MonoBehaviour
 
         // Cache feet offset for boundary clamping
         feetLocalOffset = transform.InverseTransformPoint(feetAnchor.position);
+=======
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        moveAction = InputSystem.actions.FindAction("Move");
+        interactAction = InputSystem.actions.FindAction("Interact");
+        feetLocalOffset = transform.InverseTransformPoint(feetAnchor.position);
+        Base = parentGameObject.transform.Find("Base Sprite").gameObject.GetComponent<SpriteRenderer>();
+        frame = parentGameObject.transform.Find("Frame Sprite").gameObject.GetComponent<SpriteRenderer>();
+        barbed = parentGameObject.transform.Find("Barb Sprite").gameObject.GetComponent<SpriteRenderer>();
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
     }
 
     void Update()
     {
+<<<<<<< HEAD
         // Read input
         moveValue = moveAction.ReadValue<Vector2>();
 
         // Toggle between player and raft control
+=======
+        if (Sheets != null)
+        {
+            Base.sprite = Sheets.upgradeSprite;
+            extraForce = Sheets.speedEffect;
+            Base.enabled = true;
+        }
+        else
+        {
+            Base.enabled = false;
+            extraForce = 0f;
+        }
+        if (Frame != null)
+        {
+            frame.sprite = Frame.upgradeSprite;
+            raftRB.mass = Frame.weightEffect;
+            frame.enabled = true;
+        }
+        else
+        {
+            frame.enabled = false;
+            raftRB.mass = 1f;
+        }
+        if (Barbed != null)
+        {
+            barbed.sprite = Barbed.upgradeSprite;
+            barbed.enabled = true;
+        }
+        else
+        {
+            barbed.enabled = false;
+        }
+
+        Vector2 input = moveAction.ReadValue<Vector2>();
+
+        // Toggle rowing mode
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
         if (interactAction.triggered)
         {
             rowing = !rowing;
         }
 
+<<<<<<< HEAD
         // Handle rowing vs walking mode
         if (rowing)
         {
@@ -161,11 +255,44 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             HandleWalkingMode();
+=======
+        if (rowing)
+        {
+            // Rowing mode - control raft
+            playerSprite.SetActive(false);
+            raftAnim.SetBool("Paddle", true);
+            vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
+            
+            // Sync player to raft
+            rb.linearVelocity = raftRB.linearVelocity;
+            anim.SetBool("Moving", false);
+            
+            // Paddle animations
+            if (input.x > 0) raftAnim.SetTrigger("PaddleRight");
+            else if (input.x < 0) raftAnim.SetTrigger("PaddleLeft");
+            else if (input.y != 0) raftAnim.SetTrigger("PaddleRight");
+        }
+        else
+        {
+            // Walking mode - move on raft
+            playerSprite.SetActive(true);
+            raftAnim.SetBool("Paddle", false);
+            vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
+            
+            // Walk relative to raft
+            rb.linearVelocity = (input * walkSpeed) + raftRB.linearVelocity;
+            
+            // Animation & flip
+            anim.SetBool("Moving", input != Vector2.zero);
+            if (input.x > 0 && !isFacingRight) Flip();
+            else if (input.x < 0 && isFacingRight) Flip();
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
         }
     }
 
     void FixedUpdate()
     {
+<<<<<<< HEAD
         // Calculate all forces acting on the raft
         Vector2 playerForce;
         if (!rowing) playerForce = Vector2.zero;
@@ -185,10 +312,32 @@ public class PlayerMovement : MonoBehaviour
         currentVelocity = raftRB.linearVelocity;
         currentSpeed = raftRB.linearVelocity.magnitude;
         currentDragForce = dragForce.magnitude;
+=======
+        if (rowing)
+        {
+            Vector2 input = moveAction.ReadValue<Vector2>();
+            
+            // Apply paddle force
+            if (input != Vector2.zero)
+            {
+                raftRB.AddForce(input.normalized * (paddleForce + extraForce));
+            }
+            
+            // Water drag (smooth deceleration)
+            raftRB.AddForce(-raftRB.linearVelocity  * waterDrag);
+            
+            // Cap max speed
+            if (raftRB.linearVelocity.magnitude > maxSpeed)
+            {
+                raftRB.linearVelocity = raftRB.linearVelocity.normalized * maxSpeed;
+            }
+        }
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
     }
 
     void LateUpdate()
     {
+<<<<<<< HEAD
         // Keep player within raft boundaries when walking
         if (!rowing)
         {
@@ -461,3 +610,32 @@ EnvironmentStats
 
 
 */
+=======
+        if (!rowing)
+        {
+            ClampPlayerToRaft();
+        }
+    }
+
+    void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+
+    void ClampPlayerToRaft()
+    {
+        Vector3 feetWorld = transform.position + transform.TransformVector(feetLocalOffset);
+        
+        if (walkable.OverlapPoint(feetWorld)) return;
+        
+        Vector2 nearest = walkable.ClosestPoint(feetWorld);
+        Vector2 toCenter = ((Vector2)walkable.bounds.center - nearest).normalized;
+        Vector2 clamped = nearest + toCenter * boundaryPadding;
+        
+        transform.position = (Vector3)clamped - transform.TransformVector(feetLocalOffset);
+    }
+}
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
