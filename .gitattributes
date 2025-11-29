@@ -1,0 +1,13 @@
+# Let UnityYAMLMerge auto-merge Unity text assets
+*.unity      merge=unityyamlmerge
+*.prefab     merge=unityyamlmerge
+*.asset      merge=unityyamlmerge
+*.anim       merge=unityyamlmerge
+*.controller merge=unityyamlmerge
+*.overrideController merge=unityyamlmerge
+*.mat        merge=unityyamlmerge
+*.physicMaterial2D merge=unityyamlmerge
+*.physicMaterial  merge=unityyamlmerge
+*.terrainlayer merge=unityyamlmerge
+*.vfx merge=unityyamlmerge
+*.meta merge=unityyamlmerge
