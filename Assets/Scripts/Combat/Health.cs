@@ -1,0 +1,110 @@
+using UnityEngine;
+using UnityEngine.Events;
+
+/// Universal health component for raft, enemies, and any damageable object
+public class Health : MonoBehaviour
+{
+    [Header("Health Settings")]
+    [SerializeField] private float maxHealth = 100f;
+    [SerializeField] private float currentHealth;
+    
+    [Header("Damage Numbers")]
+    [SerializeField] private bool showDamageNumbers = true;
+    [SerializeField] private GameObject damageNumberPrefab;
+    
+    [Header("Death Settings")]
+    [SerializeField] private bool destroyOnDeath = true;
+    [SerializeField] private float destroyDelay = 0.5f;
+    [SerializeField] private GameObject deathEffectPrefab;
+    
+    [Header("Events")]
+    public UnityEvent<float> OnDamaged;
+    public UnityEvent<float> OnHealed;
+    public UnityEvent OnDeath;
+    
+    private bool isDead = false;
+
+    void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
+    /// Deal damage to this entity
+    public void TakeDamage(float damage, Vector3 hitPosition)
+    {
+        if (isDead) return;
+
+        currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth, 0);
+
+        // Show damage number
+        if (showDamageNumbers && damageNumberPrefab != null)
+        {
+            GameObject dmgNum = Instantiate(damageNumberPrefab, hitPosition, Quaternion.identity);
+            DamageNumber dmgScript = dmgNum.GetComponent<DamageNumber>();
+            if (dmgScript != null)
+            {
+                dmgScript.SetDamage(damage);
+            }
+        }
+
+        // Trigger damage event
+        OnDamaged?.Invoke(damage);
+
+        // Check for death
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    /// Heal this entity
+    public void Heal(float amount)
+    {
+        if (isDead) return;
+
+        currentHealth += amount;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        
+        OnHealed?.Invoke(amount);
+    }
+
+    /// Handle death
+    private void Die()
+    {
+        if (isDead) return;
+        
+        isDead = true;
+        OnDeath?.Invoke();
+
+        // Spawn death effect
+        if (deathEffectPrefab != null)
+        {
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
+        }
+
+        // Check if this is the raft
+        if (gameObject.CompareTag("Raft"))
+        {
+            GameManager.Instance?.TriggerGameOver();
+        }
+
+        // Destroy object after delay
+        if (destroyOnDeath)
+        {
+            Destroy(gameObject, destroyDelay);
+        }
+    }
+
+    // Getters
+    public float GetCurrentHealth() => currentHealth;
+    public float GetMaxHealth() => maxHealth;
+    public float GetHealthPercentage() => currentHealth / maxHealth;
+    public bool IsDead() => isDead;
+
+    // Optional: Take damage without position (uses object's position)
+    public void TakeDamage(float damage)
+    {
+        TakeDamage(damage, transform.position);
+    }
+}

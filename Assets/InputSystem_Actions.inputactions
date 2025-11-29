@@ -55,7 +55,11 @@
                     "name": "Jump",
                     "type": "Button",
                     "id": "f1ba0d36-48eb-4cd5-b651-1c94a6531f70",
+<<<<<<< HEAD
+                    "expectedControlType": "Button",
+=======
                     "expectedControlType": "",
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -86,6 +90,8 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+<<<<<<< HEAD
+=======
                 },
                 {
                     "name": "one",
@@ -140,6 +146,7 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                 }
             ],
             "bindings": [
@@ -527,6 +534,8 @@
                     "action": "Crouch",
                     "isComposite": false,
                     "isPartOfComposite": false
+<<<<<<< HEAD
+=======
                 },
                 {
                     "name": "",
@@ -593,6 +602,7 @@
                     "action": "Cik",
                     "isComposite": false,
                     "isPartOfComposite": false
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
                 }
             ]
         },

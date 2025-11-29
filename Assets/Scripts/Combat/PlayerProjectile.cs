@@ -1,0 +1,96 @@
+using UnityEngine;
+
+public class PlayerProjectile : MonoBehaviour
+{
+    [Header("Projectile Settings")]
+    [SerializeField] private float damage = 10f;
+    [SerializeField] private float speed = 12f;
+    [SerializeField] private float lifetime = 5f;
+    [SerializeField] private float maxRange = 15f;
+    
+    [Header("Visual")]
+    [SerializeField] private GameObject hitEffectPrefab;
+    
+    private Vector2 direction;
+    private Vector3 startPosition;
+    private float timer = 0f;
+    private bool initialized = false;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    void Update()
+    {
+        if (!initialized)
+        {
+            Debug.LogWarning("Bullet not initialized yet!");
+            return;
+        }
+        
+        // Move projectile
+        Vector3 movement = (Vector3)direction * speed * Time.deltaTime;
+        transform.position += movement;
+        
+        // Check if exceeded max range
+        if (Vector3.Distance(startPosition, transform.position) >= maxRange)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        
+        // Destroy after lifetime
+        timer += Time.deltaTime;
+        if (timer > lifetime)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    public void Initialize(Vector2 dir, float projSpeed, float projDamage, float projRange)
+    {
+        direction = dir.normalized;
+        speed = projSpeed;
+        damage = projDamage;
+        maxRange = projRange;
+        initialized = true;
+        
+        // Rotate to face direction
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0, 0, angle);
+        
+        Debug.Log($"Bullet INITIALIZED! Direction: {direction}, Speed: {speed}");
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Ignore raft and player collisions
+        if (collision.CompareTag("Raft") || collision.CompareTag("Player"))
+        {
+            return;
+        }
+        
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("Bullet hit enemy!");
+            
+            Health enemyHealth = collision.GetComponent<Health>();
+            if (enemyHealth != null && !enemyHealth.IsDead())
+            {
+                enemyHealth.TakeDamage(damage, transform.position);
+            }
+            
+            SpawnHitEffect();
+            Destroy(gameObject);
+        }
+    }
+
+    void SpawnHitEffect()
+    {
+        if (hitEffectPrefab != null)
+        {
+            Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+        }
+    }
+}

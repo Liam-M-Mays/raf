@@ -11,7 +11,11 @@ GameObject:
   - component: {fileID: 852801498796551837}
   - component: {fileID: 323562840636461336}
   - component: {fileID: 6324341918383524756}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 7
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Name: Particle System (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4803,7 +4807,11 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+  m_SortingOrder: -1
+=======
   m_SortingOrder: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4848,10 +4856,16 @@ GameObject:
   - component: {fileID: 848312173340697469}
   - component: {fileID: 6000157192109261984}
   - component: {fileID: 3870456231118394863}
+<<<<<<< HEAD
+  m_Layer: 0
+  m_Name: Matress
+  m_TagString: Untagged
+=======
   - component: {fileID: 4894415280777263888}
   m_Layer: 7
   m_Name: Matress
   m_TagString: Raft
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4874,7 +4888,10 @@ Transform:
   - {fileID: 852801498796551837}
   - {fileID: 6500127547497932585}
   - {fileID: 4716653926227919052}
+<<<<<<< HEAD
+=======
   - {fileID: 7905833464005488507}
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &848312173340697469
@@ -4889,7 +4906,11 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
+<<<<<<< HEAD
+  m_Mass: 0.0001
+=======
   m_Mass: 1
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_LinearDamping: 0
   m_AngularDamping: 0
   m_GravityScale: 0
@@ -4903,7 +4924,11 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
+<<<<<<< HEAD
+  m_Constraints: 0
+=======
   m_Constraints: 4
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 --- !u!61 &6000157192109261984
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4934,7 +4959,11 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
+<<<<<<< HEAD
+  m_IsTrigger: 1
+=======
   m_IsTrigger: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -4972,6 +5001,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+<<<<<<< HEAD
+=======
 --- !u!114 &4894415280777263888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4986,6 +5017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopIndicator
   indicator: {fileID: 6860260766098730637}
   hideDistance: 5
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 --- !u!1 &6675878564845436282
 GameObject:
   m_ObjectHideFlags: 0
@@ -4997,7 +5029,11 @@ GameObject:
   - component: {fileID: 1111154271883907949}
   - component: {fileID: 2737934653320972967}
   - component: {fileID: 5634752015056063626}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 7
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9789,7 +9825,11 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+  m_SortingOrder: -1
+=======
   m_SortingOrder: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -9822,6 +9862,8 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+<<<<<<< HEAD
+=======
 --- !u!1 &6860260766098730637
 GameObject:
   m_ObjectHideFlags: 0
@@ -9854,6 +9896,7 @@ Transform:
   - {fileID: 21117372807101414}
   m_Father: {fileID: 2361191466597270422}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 --- !u!1 &7204796545837393663
 GameObject:
   m_ObjectHideFlags: 0
@@ -9865,7 +9908,11 @@ GameObject:
   - component: {fileID: 6500127547497932585}
   - component: {fileID: 3495342344340620582}
   - component: {fileID: 2321255382655409016}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 7
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Name: Particle System (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14657,7 +14704,11 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+  m_SortingOrder: -1
+=======
   m_SortingOrder: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -14700,7 +14751,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4716653926227919052}
   - component: {fileID: 6636345240939000640}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 7
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Name: Matress Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14768,7 +14823,11 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+  m_SortingOrder: 0
+=======
   m_SortingOrder: 1
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Sprite: {fileID: -8702565085090424028, guid: d158b66116ab7ec44a532699e4db4235, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -14780,6 +14839,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+<<<<<<< HEAD
+=======
 --- !u!1 &8099740174816505600
 GameObject:
   m_ObjectHideFlags: 0
@@ -14870,6 +14931,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 --- !u!1 &8289446506146993640
 GameObject:
   m_ObjectHideFlags: 0
@@ -14881,7 +14943,11 @@ GameObject:
   - component: {fileID: 1058960056685113243}
   - component: {fileID: 4152147436811675414}
   - component: {fileID: 6732036507405149256}
+<<<<<<< HEAD
+  m_Layer: 0
+=======
   m_Layer: 7
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19673,7 +19739,11 @@ ParticleSystemRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
+<<<<<<< HEAD
+  m_SortingOrder: -1
+=======
   m_SortingOrder: 0
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0

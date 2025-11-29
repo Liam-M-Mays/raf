@@ -60,12 +60,20 @@
         "*.asset": "yaml",
         "*.meta": "yaml",
         "*.prefab": "yaml",
+<<<<<<< HEAD
+        "*.unity": "yaml"
+=======
         "*.unity": "yaml",
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
     },
     "explorer.fileNesting.enabled": true,
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
+<<<<<<< HEAD
+    "dotnet.defaultSolution": "raf-main.slnx"
+=======
     "dotnet.defaultSolution": "raf.slnx"
+>>>>>>> fdf3668fa4387896625b63e1da8b72f57f5347f7
 }
