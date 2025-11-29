@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5069270579517011681}
   - component: {fileID: 8199420264357795522}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,9 +100,13 @@ GameObject:
   m_Component:
   - component: {fileID: 227663114981929201}
   - component: {fileID: 1773943525459513883}
-  m_Layer: 0
+  - component: {fileID: -1339143393729235059}
+  - component: {fileID: 8451839859133829708}
+  - component: {fileID: 5137722664895747220}
+  - component: {fileID: 2479719928414607682}
+  m_Layer: 6
   m_Name: Squid
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +151,118 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-1339143393729235059
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505499849446463483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 50
+  currentHealth: 50
+  showDamageNumbers: 1
+  damageNumberPrefab: {fileID: 5260959021986548919, guid: f1bb98679991acb43ba63d992c682ff4, type: 3}
+  destroyOnDeath: 1
+  destroyDelay: 0.5
+  deathEffectPrefab: {fileID: 0}
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8451839859133829708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505499849446463483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbcc73d7a3c734f8fa7b38c8d5d18c49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LiamEnemyBrain
+--- !u!114 &5137722664895747220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505499849446463483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6743588fa22eb438d1d6b7849cc2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyRangedAttack
+  projectilePrefab: {fileID: 4317016593405667723, guid: 432906a4e1fd1ce448ce0eed903deebd, type: 3}
+  firePoint: {fileID: 0}
+  fireRate: 3
+  projectileDamage: 1
+  projectileSpeed: 8
+  attackRange: 7
+--- !u!60 &2479719928414607682
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3505499849446463483}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.23881137, y: 1.1364636}
+      - {x: -0.7463613, y: 0.5023403}
+      - {x: -0.31485802, y: 0.23720396}
+      - {x: -0.24396348, y: -0.901026}
+      - {x: 0.36034596, y: -0.8886206}
+      - {x: 0.1595738, y: 0.24074894}
+      - {x: 0.35971403, y: 0.5250845}
+  m_UseDelaunayMesh: 0
 --- !u!1 &3902650203355157428
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7887829582272733660}
   - component: {fileID: 6704573932624993502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: BottleTent
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3442043212420096794}
   - component: {fileID: 2935298954216236541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: WoodTent
   m_TagString: Untagged
   m_Icon: {fileID: 0}

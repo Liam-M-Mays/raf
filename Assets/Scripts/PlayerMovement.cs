@@ -186,10 +186,10 @@ public class PlayerMovement : MonoBehaviour
         
         // Animation & flip
         anim.SetBool("Moving", input != Vector2.zero);
-        if (input.x > 0 && !isFacingRight) 
+        /*if (input.x > 0 && !isFacingRight) 
             Flip();
         else if (input.x < 0 && isFacingRight) 
-            Flip();
+            Flip();*/
     }
 
     // === RAFT PHYSICS ===

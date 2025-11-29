@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1256077664102224927}
   - component: {fileID: 5051715365240410782}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Base Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8775341203138541748}
   - component: {fileID: 7676303061145656840}
   - component: {fileID: 2311914239238861614}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Particle System (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4939,7 +4939,8 @@ GameObject:
   - component: {fileID: 6933477064831522172}
   - component: {fileID: 4331019016217442645}
   - component: {fileID: 2072451057119512464}
-  m_Layer: 7
+  - component: {fileID: 7182382246192410247}
+  m_Layer: 3
   m_Name: Matress
   m_TagString: Raft
   m_Icon: {fileID: 0}
@@ -4993,7 +4994,7 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -5079,6 +5080,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopIndicator
   indicator: {fileID: 7318699527162448029}
   hideDistance: 5
+--- !u!114 &7182382246192410247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546178992715838942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  currentHealth: 100
+  showDamageNumbers: 1
+  damageNumberPrefab: {fileID: 5260959021986548919, guid: f1bb98679991acb43ba63d992c682ff4, type: 3}
+  destroyOnDeath: 1
+  destroyDelay: 0.5
+  deathEffectPrefab: {fileID: 0}
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3713458973787236324
 GameObject:
   m_ObjectHideFlags: 0
@@ -5090,7 +5119,7 @@ GameObject:
   - component: {fileID: 1174448539027850}
   - component: {fileID: 7988905756963896653}
   - component: {fileID: 6531207929486615621}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Particle System (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9925,7 +9954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3548617779626229277}
   - component: {fileID: 3158507926168246816}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10015,7 +10044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4327645867849451540}
   - component: {fileID: 2662352577360513228}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Frame Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10044,7 +10073,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5954771079231015432}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -10104,7 +10133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5890440359673847891}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Shop Indicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10138,7 +10167,7 @@ GameObject:
   - component: {fileID: 5687553456526474656}
   - component: {fileID: 7660974342068731298}
   - component: {fileID: 3156939010375694505}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14973,7 +15002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1904346300409181295}
   - component: {fileID: 6979877142204927894}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Matress Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15063,7 +15092,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9026229965440189976}
   - component: {fileID: 2750891688771826563}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Barb Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15154,7 +15183,7 @@ GameObject:
   - component: {fileID: 1842517854036911580}
   - component: {fileID: 4903670500079217205}
   - component: {fileID: 6543338477144114349}
-  m_Layer: 7
+  m_Layer: 3
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

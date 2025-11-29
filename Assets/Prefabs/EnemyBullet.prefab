@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20831a7bbfd668149813f7fc1d0a81ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProjectile
-  damage: 15
+  damage: 1
   speed: 8
   lifetime: 5
   hitEffectPrefab: {fileID: 0}
