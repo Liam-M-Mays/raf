@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de4eafa5e75712f4c8bb76cc3b7a112b, type: 3}
-  m_Name: Shotgun
+  m_Name: Stick
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  weaponName: Shotgun
-  cost: 20
-  weaponSprite: {fileID: -5390920950601771917, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  description: Medium spread with a short range.
+  weaponName: 
+  cost: 0
+  weaponSprite: {fileID: -7907951331658488048, guid: 65f94b7c4a0164b4d890a1af7f9cfc0a, type: 3}
+  description: 
   isMelee: 0
   autoFire: 0
-  attackingSpeed: 0
+  attackingSpeed: 1
   damage: 5
-  fireRate: 1
-  spreadAngle: 5
-  bulletsPerShot: 5
-  range: 0.5
-  weaponPrefab: {fileID: 799608554444309723, guid: af3c097620d97974fa2408c9712a3a5b, type: 3}
+  fireRate: 0
+  spreadAngle: 0
+  bulletsPerShot: 0
+  range: 2
+  weaponPrefab: {fileID: 1118395390521120250, guid: 414000356c567fd49826cc976e7d31b1, type: 3}
   projectilePrefab: {fileID: 0}

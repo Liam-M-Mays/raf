@@ -15,6 +15,14 @@ MonoBehaviour:
   weaponName: Axe
   cost: 10
   weaponSprite: {fileID: 5798914750623806655, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  damage: 0
   description: Close range weapon
   isMelee: 1
+  autoFire: 0
+  attackingSpeed: 1
+  damage: 10
+  fireRate: 0
+  spreadAngle: 0
+  bulletsPerShot: 0
+  range: 5
+  weaponPrefab: {fileID: 4998939648527584661, guid: 64887592bffff164ca95c172f1a1022b, type: 3}
+  projectilePrefab: {fileID: 0}

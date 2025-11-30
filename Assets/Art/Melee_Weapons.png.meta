@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: d98714adac723c0408368e8b4f299f69
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8989702732111222938
+    second: Melee_Weapons_0
+  - first:
+      213: -5425531114385918237
+    second: Melee_Weapons_1
+  - first:
+      213: 7972041006085864163
+    second: Melee_Weapons_2
+  - first:
+      213: 3395308355041312837
+    second: Melee_Weapons_3
+  - first:
+      213: 1619409568007143030
+    second: Melee_Weapons_4
+  - first:
+      213: -3863926716559740032
+    second: Melee_Weapons_5
+  - first:
+      213: -7566478626380713079
+    second: Melee_Weapons_6
+  - first:
+      213: 5759352548021028043
+    second: Melee_Weapons_7
+  - first:
+      213: 633506115490419542
+    second: Melee_Weapons_8
+  - first:
+      213: -1786729350265943715
+    second: Melee_Weapons_9
+  - first:
+      213: 6718451783140764785
+    second: Melee_Weapons_10
+  - first:
+      213: -2340410966192561314
+    second: Melee_Weapons_11
+  - first:
+      213: 3181161474078143168
+    second: Melee_Weapons_12
+  - first:
+      213: 6421373556023481995
+    second: Melee_Weapons_13
+  - first:
+      213: 1227839383588599384
+    second: Melee_Weapons_14
+  - first:
+      213: -3982339575933860344
+    second: Melee_Weapons_15
+  - first:
+      213: -7824861532330676691
+    second: Melee_Weapons_16
+  - first:
+      213: 2884711233743997381
+    second: Melee_Weapons_17
+  - first:
+      213: 8582029225384058889
+    second: Melee_Weapons_18
+  - first:
+      213: -5371619324062595942
+    second: Melee_Weapons_19
+  - first:
+      213: -4201031662013333032
+    second: Melee_Weapons_20
+  - first:
+      213: 1764710940396166241
+    second: Melee_Weapons_21
+  - first:
+      213: -178681039283775059
+    second: Melee_Weapons_22
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Melee_Weapons_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 667e620aef82e3380800000000000000
+      internalID: -8989702732111222938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 132
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e6b2397234a4b4b0800000000000000
+      internalID: -5425531114385918237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_2
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 132
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea789eae0162ae60800000000000000
+      internalID: 7972041006085864163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_3
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 132
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5404725b5fe8e1f20800000000000000
+      internalID: 3395308355041312837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_4
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 132
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67e3fee0c6c497610800000000000000
+      internalID: 1619409568007143030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 66
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 083b05d8f13906ac0800000000000000
+      internalID: -3863926716559740032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_6
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 66
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 983fdf937c77ef690800000000000000
+      internalID: -7566478626380713079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_7
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 66
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc4c809c0a45def40800000000000000
+      internalID: 5759352548021028043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_8
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 66
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65318d0a47aaac800800000000000000
+      internalID: 633506115490419542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_9
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 66
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5942a75f134437e0800000000000000
+      internalID: -1786729350265943715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ce1b60d4cbc3d50800000000000000
+      internalID: 6718451783140764785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_11
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e53e9a350a0358fd0800000000000000
+      internalID: -2340410966192561314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_12
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 0
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c2f5939181c52c20800000000000000
+      internalID: 3181161474078143168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_13
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 0
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b86ddd03a3d4d1950800000000000000
+      internalID: 6421373556023481995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Melee_Weapons_14
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 83
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 856780cf9692a0110800000000000000
+      internalID: 1227839383588599384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: e8402cf13cbf02c4d9af9965d0807af2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":83.0,"y":66.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      Melee_Weapons_0: -8989702732111222938
+      Melee_Weapons_1: -5425531114385918237
+      Melee_Weapons_10: 6718451783140764785
+      Melee_Weapons_11: -2340410966192561314
+      Melee_Weapons_12: 3181161474078143168
+      Melee_Weapons_13: 6421373556023481995
+      Melee_Weapons_14: 1227839383588599384
+      Melee_Weapons_2: 7972041006085864163
+      Melee_Weapons_3: 3395308355041312837
+      Melee_Weapons_4: 1619409568007143030
+      Melee_Weapons_5: -3863926716559740032
+      Melee_Weapons_6: -7566478626380713079
+      Melee_Weapons_7: 5759352548021028043
+      Melee_Weapons_8: 633506115490419542
+      Melee_Weapons_9: -1786729350265943715
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -15,6 +15,14 @@ MonoBehaviour:
   weaponName: Ak-47
   cost: 30
   weaponSprite: {fileID: 7926173939745720873, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  damage: 0
   description: Fully automatic with a high fire rate. Great for mowing down piranhas.
   isMelee: 0
+  autoFire: 1
+  attackingSpeed: 0
+  damage: 10
+  fireRate: 0.2
+  spreadAngle: 0.5
+  bulletsPerShot: 1
+  range: 5
+  weaponPrefab: {fileID: 2622625491221938436, guid: 03a28a2375491b94eaf732d209886a2b, type: 3}
+  projectilePrefab: {fileID: 0}

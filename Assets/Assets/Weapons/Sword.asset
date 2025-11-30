@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de4eafa5e75712f4c8bb76cc3b7a112b, type: 3}
-  m_Name: Shotgun
+  m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  weaponName: Shotgun
-  cost: 20
-  weaponSprite: {fileID: -5390920950601771917, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  description: Medium spread with a short range.
-  isMelee: 0
+  weaponName: Sword
+  cost: 30
+  weaponSprite: {fileID: 506871059547062844, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
+  description: Big ol' Sword
+  isMelee: 1
   autoFire: 0
-  attackingSpeed: 0
-  damage: 5
-  fireRate: 1
-  spreadAngle: 5
-  bulletsPerShot: 5
-  range: 0.5
-  weaponPrefab: {fileID: 799608554444309723, guid: af3c097620d97974fa2408c9712a3a5b, type: 3}
+  attackingSpeed: 2
+  damage: 50
+  fireRate: 0
+  spreadAngle: 0
+  bulletsPerShot: 0
+  range: 10
+  weaponPrefab: {fileID: 8637403613009429825, guid: 42ef3a2c4d586254ca58ff19f7e785cb, type: 3}
   projectilePrefab: {fileID: 0}

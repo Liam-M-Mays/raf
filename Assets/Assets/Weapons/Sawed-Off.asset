@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de4eafa5e75712f4c8bb76cc3b7a112b, type: 3}
-  m_Name: Shotgun
+  m_Name: Sawed-Off
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  weaponName: Shotgun
-  cost: 20
-  weaponSprite: {fileID: -5390920950601771917, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  description: Medium spread with a short range.
+  weaponName: Sawed-Off
+  cost: 40
+  weaponSprite: {fileID: -8080008174734147543, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
+  description: Small gun, big boom
   isMelee: 0
   autoFire: 0
   attackingSpeed: 0
-  damage: 5
-  fireRate: 1
-  spreadAngle: 5
-  bulletsPerShot: 5
-  range: 0.5
-  weaponPrefab: {fileID: 799608554444309723, guid: af3c097620d97974fa2408c9712a3a5b, type: 3}
+  damage: 0
+  fireRate: 2
+  spreadAngle: 15
+  bulletsPerShot: 10
+  range: 0.2
+  weaponPrefab: {fileID: 6997160528831347135, guid: a22d47a719cd9b74d873a970024e93f2, type: 3}
   projectilePrefab: {fileID: 0}

@@ -15,6 +15,14 @@ MonoBehaviour:
   weaponName: Harpoon Gun
   cost: 10
   weaponSprite: {fileID: 5266689570324221324, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  damage: 0
   description: Common weapon for fisherman. \nModerate damage with a low fire rate.
   isMelee: 0
+  autoFire: 0
+  attackingSpeed: 0
+  damage: 7
+  fireRate: 2
+  spreadAngle: 0.2
+  bulletsPerShot: 1
+  range: 3
+  weaponPrefab: {fileID: 195590483905385013, guid: f80d32b213a8272429445fd7ea398a43, type: 3}
+  projectilePrefab: {fileID: 0}
