@@ -233,6 +233,7 @@ public class SharkBossLogic : MonoBehaviour
                     {
                         target = player.position + new Vector3(20f * -side, 0.3f, 0f);
                         side *= -1f;
+                        transform.position = player.position + new Vector3(21f * side, 0.3f, 0f);
                         locked = true;
                     }
                     rb.linearVelocity = (target-(Vector2)tf.position).normalized * chompSpeed;
