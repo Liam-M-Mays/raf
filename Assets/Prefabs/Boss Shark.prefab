@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4522815240533001253}
   - component: {fileID: 7226529408693871229}
   - component: {fileID: 6946586374364572095}
+  - component: {fileID: -6056747659313045304}
   m_Layer: 0
   m_Name: Boss Shark
   m_TagString: Untagged
@@ -112,6 +113,34 @@ MonoBehaviour:
   chompMax: 6
   chompSpeed: 7
   currentState: 0
+--- !u!114 &-6056747659313045304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327326130357213386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  currentHealth: 0
+  showDamageNumbers: 1
+  damageNumberPrefab: {fileID: 0}
+  destroyOnDeath: 1
+  destroyDelay: 0.5
+  deathEffectPrefab: {fileID: 0}
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &8530120673201418871
 GameObject:
   m_ObjectHideFlags: 0
