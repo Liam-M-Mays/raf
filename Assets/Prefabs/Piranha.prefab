@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 6046348995148153406}
   - component: {fileID: 5087171872104124234}
   - component: {fileID: 5210538723506732825}
+  - component: {fileID: 8615793190925239398}
+  - component: {fileID: 2437739916061505311}
   m_Layer: 6
   m_Name: Piranha
   m_TagString: Enemy
@@ -133,6 +135,53 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &8615793190925239398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177139864062627669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maxHealth: 100
+  currentHealth: 0
+  showDamageNumbers: 1
+  damageNumberPrefab: {fileID: 0}
+  destroyOnDeath: 1
+  destroyDelay: 0.5
+  deathEffectPrefab: {fileID: 0}
+  OnDamaged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHealed:
+    m_PersistentCalls:
+      m_Calls: []
+  OnDeath:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2437739916061505311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2177139864062627669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33c956b7c9b93fd49a2408057f92e729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeAttack
+  damage: 10
+  attackCooldown: 1
+  raftLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  attackPoint: {fileID: 0}
+  attackRadius: 1
 --- !u!1 &5404895207697418235
 GameObject:
   m_ObjectHideFlags: 0
