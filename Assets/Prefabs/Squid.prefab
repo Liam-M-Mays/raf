@@ -203,6 +203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6743588fa22eb438d1d6b7849cc2fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyRangedAttack
+  leftArmAnimator: {fileID: 5822324861073765697}
+  rightArmAnimator: {fileID: 8782965697409073829}
   projectilePrefab: {fileID: 4317016593405667723, guid: 432906a4e1fd1ce448ce0eed903deebd, type: 3}
   firePoint: {fileID: 0}
   fireRate: 3
@@ -273,6 +275,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7887829582272733660}
   - component: {fileID: 6704573932624993502}
+  - component: {fileID: 5822324861073765697}
+  - component: {fileID: 9120569035434915528}
   m_Layer: 6
   m_Name: BottleTent
   m_TagString: Untagged
@@ -353,6 +357,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5822324861073765697
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902650203355157428}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 079d6de606cd24009869e24d145b652a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9120569035434915528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3902650203355157428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09db3fc98cd4c46489f718e74bb433e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &8957295055471266801
 GameObject:
   m_ObjectHideFlags: 0
@@ -363,6 +401,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3442043212420096794}
   - component: {fileID: 2935298954216236541}
+  - component: {fileID: 8782965697409073829}
+  - component: {fileID: 6515451142449272139}
   m_Layer: 6
   m_Name: WoodTent
   m_TagString: Untagged
@@ -443,3 +483,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8782965697409073829
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957295055471266801}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f8481c63d60c74a169a78a5332870c1e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6515451142449272139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8957295055471266801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09db3fc98cd4c46489f718e74bb433e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SquidArm

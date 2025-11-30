@@ -5,6 +5,9 @@ using UnityEngine;
 /// </summary>
 public class EnemyRangedAttack : MonoBehaviour
 {
+    [SerializeField] private Animator leftArmAnimator;
+    [SerializeField] private Animator rightArmAnimator;
+
     [Header("Projectile Settings")]
     [SerializeField] private GameObject projectilePrefab;
     [SerializeField] private Transform firePoint;
@@ -43,11 +46,44 @@ public class EnemyRangedAttack : MonoBehaviour
         
         if (distanceToRaft <= attackRange && Time.time >= lastFireTime + fireRate)
         {
-            FireProjectile();
+            if(leftArmAnimator != null && Vector2.Distance(leftArmAnimator.transform.position, raftTransform.position) < Vector2.Distance(rightArmAnimator.transform.position, raftTransform.position))
+            {
+                leftArmAnimator.SetTrigger("Shoot");
+                firePoint = leftArmAnimator.transform;
+            }
+            else if(rightArmAnimator != null)
+            {
+                rightArmAnimator.SetTrigger("Shoot");
+                firePoint = rightArmAnimator.transform;
+            }
         }
     }
 
-    void FireProjectile()
+    void LateUpdate()
+    {
+        if (raftTransform != null && raftTransform.position.x < transform.position.x)
+        {
+            // Face left
+            if (transform.localScale.x > 0)
+            {
+                Vector3 scaler = transform.localScale;
+                scaler.x *= -1f;
+                transform.localScale = scaler;
+            }
+        }
+        else if (raftTransform != null && raftTransform.position.x > transform.position.x)
+        {
+            // Face right
+            if (transform.localScale.x < 0)
+            {
+                Vector3 scaler = transform.localScale;
+                scaler.x *= -1f;
+                transform.localScale = scaler;
+            }
+        }
+    }
+
+    public void FireProjectile()
     {
         if (projectilePrefab == null) return;
         
