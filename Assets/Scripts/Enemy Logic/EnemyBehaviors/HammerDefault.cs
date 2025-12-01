@@ -107,9 +107,9 @@ public class HammerDefault : IBehavior
         {
             case ChargeState.Positioning:
                 // Move to charging position
-                RaftTracker.removeSelf(this);
+                //RaftTracker.removeSelf(this);
                 CircleMovement.Execute(ctx, orbit, config.OrbitMax, circleDirection);
-                if(ctx.distanceToTarget >= orbit && ctx.distanceToTarget < config.OrbitMax && !UtilityNodes.Obstructed(ctx)) attackTimer -= ctx.deltaTime;
+                if(ctx.distanceToTarget < config.OrbitMax && !UtilityNodes.Obstructed(ctx, 2)) attackTimer -= ctx.deltaTime;
                 if (attackTimer <= 0f && RaftTracker.addSelf(this))
                 {
                     attackTimer = config.attackTimer;
@@ -145,6 +145,7 @@ public class HammerDefault : IBehavior
                 }
                 else if (chargeComplete)
                 {
+                    RaftTracker.removeSelf(this);
                     currentState = ChargeState.Positioning;
                 }
                 break;
@@ -157,6 +158,7 @@ public class HammerDefault : IBehavior
                     cooldown = config.chargeCooldown;
                     ctx.anim.SetBool("Moving", true);
                     ctx.anim.SetBool("Dazed", false);
+                    RaftTracker.removeSelf(this);
                     currentState = ChargeState.Positioning;
                     ctx.customData = null;
                 }

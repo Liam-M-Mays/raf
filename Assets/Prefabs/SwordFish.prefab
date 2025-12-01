@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   maxHealth: 100
-  currentHealth: 0
+  currentHealth: 100
   showDamageNumbers: 1
   damageNumberPrefab: {fileID: 0}
   destroyOnDeath: 1
@@ -269,6 +269,6 @@ MonoBehaviour:
   attackCooldown: 1
   raftLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   attackPoint: {fileID: 0}
   attackRadius: 1
