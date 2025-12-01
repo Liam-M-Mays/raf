@@ -13,6 +13,7 @@ public class DirectCfg : BehaviorCfg
     public float respawnRange = 8f;
     public float divergeRange = 2f;
     public float divergeWeight = 1f;
+    public bool AlwaysHittable = true;
 
     public override IBehavior CreateRuntimeBehavior() => new Direct(this);
 }
@@ -34,7 +35,7 @@ public class Direct : IBehavior
     {
         // Initialize context with all the shared data
         ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
-        
+        ctx.hittable = true;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
@@ -73,7 +74,7 @@ public class Direct : IBehavior
         {
             // Not in attack range
             ActionNodes.StopAttack(ctx);
-            ctx.hittable = false;
+            if (!config.AlwaysHittable) ctx.hittable = false;
         }
         // Execute chase movement
         if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.Execute(ctx);

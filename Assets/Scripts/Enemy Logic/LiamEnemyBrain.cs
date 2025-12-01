@@ -51,7 +51,7 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
 
     void OnDestroy() 
     {
-        manager.Exit();
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().PlayerCurrency += cost;
+        manager.Exit();
     }
 }
