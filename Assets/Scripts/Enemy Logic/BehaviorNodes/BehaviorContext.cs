@@ -34,6 +34,7 @@ public class BehaviorContext
 
     // Additional data for specific behaviors
     public object customData; // Can store behavior-specific data
+    public bool hittable = true;
     
     
     

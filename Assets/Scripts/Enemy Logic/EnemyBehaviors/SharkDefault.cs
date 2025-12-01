@@ -31,7 +31,8 @@ public class SharkDefaultCfg : BehaviorCfg
 
 public class SharkDefault : IBehavior
 {
-    private BehaviorContext ctx;
+    public BehaviorContext ctx;
+    public BehaviorContext CTX() => ctx;
     private SharkDefaultCfg config;
 
     // State tracking
@@ -50,7 +51,7 @@ public class SharkDefault : IBehavior
     {
         // Initialize context
         ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
-        
+        ctx.hittable = false;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
@@ -94,9 +95,11 @@ public class SharkDefault : IBehavior
         if (isAttacking && Vector2.Distance(attackStart, (Vector2)ctx.target.position) <= ctx.attackRangeMax)
         {
             if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.SlowExecute(ctx);
+            ctx.hittable = true;
         }
         else
         {
+            ctx.hittable = false;
             // Not in attack range // -----> maybe move this function into attack node itself. 
             if (isAttacking)
             {

@@ -25,7 +25,8 @@ public class RangeOrbitCfg : BehaviorCfg
 
 public class RangeOrbit : IBehavior
 {
-    private BehaviorContext ctx;
+    public BehaviorContext ctx;
+    public BehaviorContext CTX() => ctx;
     private RangeOrbitCfg config;
     private float circleDirection;
     private float orbit;
@@ -40,7 +41,7 @@ public class RangeOrbit : IBehavior
     {
         // Initialize context with all the shared data
         ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
-        
+        ctx.hittable = true;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;

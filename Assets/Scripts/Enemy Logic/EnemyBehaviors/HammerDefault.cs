@@ -40,7 +40,8 @@ public class HammerDefaultCfg : BehaviorCfg
 
 public class HammerDefault : IBehavior
 {
-    private BehaviorContext ctx;
+    public BehaviorContext ctx;
+    public BehaviorContext CTX() => ctx;
     private HammerDefaultCfg config;
     
     // State tracking for charge sequence
@@ -67,9 +68,10 @@ public class HammerDefault : IBehavior
     
     public void OnEnter(Transform _self, Animator _anim)
     {
+
         // Initialize context
         ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
-        
+        ctx.hittable = false;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
@@ -127,6 +129,7 @@ public class HammerDefault : IBehavior
                     ctx.anim.SetBool("Lurk", false);
                     ctx.anim.SetBool("Moving", true);
                     chargeDistance = ctx.distanceToTarget;
+                    ctx.hittable = true;
                     currentState = ChargeState.Charging;
                 }
                 break;
@@ -138,6 +141,7 @@ public class HammerDefault : IBehavior
                 // Check if hit player
                 if (UtilityNodes.IsInAttackRange(ctx))
                 {
+                    ctx.hittable = false;
                     ctx.anim.SetBool("Moving", false);
                     ctx.anim.SetBool("Dazed", true);
                     ctx.anim.SetTrigger("Hit");
@@ -155,6 +159,7 @@ public class HammerDefault : IBehavior
                 if (!UtilityNodes.IsInAttackMax(ctx)) RaftTracker.removeSelf(this);
                 if (cooldown <= 0f)
                 {
+                    ctx.hittable = true;
                     cooldown = config.chargeCooldown;
                     ctx.anim.SetBool("Moving", true);
                     ctx.anim.SetBool("Dazed", false);

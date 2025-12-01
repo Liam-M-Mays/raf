@@ -19,7 +19,7 @@ public class DirectCfg : BehaviorCfg
 
 public class Direct : IBehavior
 {
-    private BehaviorContext ctx;
+    public BehaviorContext ctx;
     private DirectCfg config;
     
     
@@ -27,6 +27,8 @@ public class Direct : IBehavior
     {
         config = cfg;
     }
+
+    public BehaviorContext CTX() => ctx;
     
     public void OnEnter(Transform _self, Animator _anim)
     {
@@ -65,11 +67,13 @@ public class Direct : IBehavior
         if (UtilityNodes.IsInAttackMax(ctx))
         {
             ActionNodes.Attack(ctx);
+            ctx.hittable = true;
         }
         else
         {
             // Not in attack range
             ActionNodes.StopAttack(ctx);
+            ctx.hittable = false;
         }
         // Execute chase movement
         if (!UtilityNodes.IsInAttackRange(ctx)) DirectChaseMovement.Execute(ctx);

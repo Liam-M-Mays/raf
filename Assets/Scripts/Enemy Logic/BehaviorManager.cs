@@ -23,6 +23,8 @@ public class BehaviorManager
 
 public interface IBehavior
 {
+    //BehaviorContext ctx;
+    BehaviorContext CTX();
     void OnEnter(Transform self, Animator anim);
     void OnUpdate();
     void OnLateUpdate();

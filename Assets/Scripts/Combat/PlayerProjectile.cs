@@ -73,15 +73,19 @@ public class PlayerProjectile : MonoBehaviour
         
         if (collision.CompareTag("Enemy"))
         {
-            Debug.Log("Bullet hit enemy!");
-            
-            Health enemyHealth = collision.GetComponent<Health>();
-            if (enemyHealth != null && !enemyHealth.IsDead())
+            if (collision.GetComponent<LiamEnemyBrain>().manager.Current.CTX().hittable)
             {
-                enemyHealth.TakeDamage(damage, transform.position);
+                Debug.Log("Bullet hit enemy!");
+            
+                Health enemyHealth = collision.GetComponent<Health>();
+                if (enemyHealth != null && !enemyHealth.IsDead())
+                {
+                    enemyHealth.TakeDamage(damage, transform.position);
+                }
+                
+                SpawnHitEffect();
             }
             
-            SpawnHitEffect();
             Destroy(gameObject);
         }
     }
