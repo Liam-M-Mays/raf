@@ -154,13 +154,10 @@ public class ShopManager : MonoBehaviour
     void UpdateWeaponPool() {
         if (waveManager == null) return;
         int currentWave = waveManager.GetWaveNumber();
-
-        if (currentWave % 2 == 0) {
             if (weaponIndex < weaponPool.Length) {
                 availableWeaponPool.Add(weaponPool[weaponIndex]);
                 weaponIndex++;
             }
-        }
     }
 
     public void ClosShop() {

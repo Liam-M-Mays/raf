@@ -237,8 +237,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
-  currentHealth: 100
+  maxHealth: 30
+  currentHealth: 30
   showDamageNumbers: 1
   damageNumberPrefab: {fileID: 0}
   destroyOnDeath: 1

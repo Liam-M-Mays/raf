@@ -1,9 +1,12 @@
 using UnityEngine;
 using UnityEngine.Events;
+using TMPro;
 
 /// Universal health component for raft, enemies, and any damageable object
 public class Health : MonoBehaviour
 {
+    public TextMeshProUGUI healthText; // Optional UI element to display health
+
     [Header("Health Settings")]
     [SerializeField] private float maxHealth = 100f;
     [SerializeField] private float currentHealth;
@@ -106,5 +109,11 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         TakeDamage(damage, transform.position);
+    }
+
+    void Update() {
+        if (healthText != null) {
+            healthText.text = $"{Mathf.CeilToInt(currentHealth)} / {Mathf.CeilToInt(maxHealth)}";
+        }
     }
 }

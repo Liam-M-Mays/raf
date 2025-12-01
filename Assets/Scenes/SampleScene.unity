@@ -392,8 +392,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopManager
   weaponPool:
-  - {fileID: 11400000, guid: 2447c236945adc54e8c92cec607f05b5, type: 2}
-  - {fileID: 11400000, guid: beeeaabf0a0822a4aa58fbd833fa0c3e, type: 2}
   - {fileID: 11400000, guid: 56026a936d18f2f47a594bf8ee53cfd9, type: 2}
   - {fileID: 11400000, guid: a24fe7f4d74627544aee1d344847f787, type: 2}
   - {fileID: 11400000, guid: 21306d85586f3ad4a8c9577a90a8837c, type: 2}
@@ -1073,6 +1071,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7182382246192410247, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 34472289}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
