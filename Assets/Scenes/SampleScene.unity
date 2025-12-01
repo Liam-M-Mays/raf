@@ -330,7 +330,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9420c76402a524bfb8a4358c682dfead, type: 2}
   waveActive: 0
   waveNumber: 0
-  waveCurrency: 0
+  waveCurrency: 5
   waveType: 0
 --- !u!114 &265976790
 MonoBehaviour:
@@ -397,6 +397,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 56026a936d18f2f47a594bf8ee53cfd9, type: 2}
   - {fileID: 11400000, guid: a24fe7f4d74627544aee1d344847f787, type: 2}
   - {fileID: 11400000, guid: 21306d85586f3ad4a8c9577a90a8837c, type: 2}
+  - {fileID: 11400000, guid: 362525cd91f720244a004add5b322822, type: 2}
+  - {fileID: 11400000, guid: 55179b6cdc7759a48ad32a6e4bf5b0d6, type: 2}
+  - {fileID: 11400000, guid: e55c7407af1843744afc482ca2f0ac8b, type: 2}
   availableWeaponPool:
   - {fileID: 11400000, guid: 2447c236945adc54e8c92cec607f05b5, type: 2}
   - {fileID: 11400000, guid: beeeaabf0a0822a4aa58fbd833fa0c3e, type: 2}
@@ -2039,6 +2042,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: maxAmmo
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: currentAmmo
+      value: 10000
+      objectReference: {fileID: 0}
     - target: {fileID: 3570774241278023666, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: damageText
       value: 

@@ -75,12 +75,7 @@ public class WaveManager : MonoBehaviour
     }
 
     public Wave DetermineWave() {
-        if (waveNumber == 15) {
-            return Wave.boss;
-        } else {
             return Wave.standard;
-        }
-        // else special, maybe random?
     }
 
     public void EndWave() {
