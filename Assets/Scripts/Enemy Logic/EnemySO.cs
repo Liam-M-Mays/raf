@@ -11,6 +11,7 @@ public class BehaviorOptions
     [SerializeReference] public BehaviorOption Orbit = new BehaviorOption { config = new RangeOrbitCfg() };
     [SerializeReference] public BehaviorOption HammerDefault = new BehaviorOption { config = new HammerDefaultCfg() };
     [SerializeReference] public BehaviorOption Direct = new BehaviorOption { config = new DirectCfg() };
+    //[SerializeReference] public  BehaviorOption PiranaDefault = new BehaviorOption { config = new PiranhaPackCfg() };
 
 
     public IEnumerable<BehaviorOption> All()

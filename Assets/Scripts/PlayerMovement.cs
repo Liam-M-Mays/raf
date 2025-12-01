@@ -230,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
             anim.speed = Mathf.Max(0.5f, currentSpeed);
         }
         transform.position = raftRB.transform.position + new Vector3(0f, 0.005f, 0f);
-        vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
+        //vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
         
         // Sync player to raft
         rb.linearVelocity = raftRB.linearVelocity;
@@ -254,7 +254,7 @@ public class PlayerMovement : MonoBehaviour
         playerSprite.SetActive(true);
         raftAnim.SetBool("Paddle", false);
         anim.SetTrigger("StopROW");
-        vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
+        //vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
         
         // Walk relative to raft
         rb.linearVelocity = (input * walkSpeed) + raftRB.linearVelocity;

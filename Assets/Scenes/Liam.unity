@@ -570,6 +570,7 @@ GameObject:
   - component: {fileID: 819523780}
   - component: {fileID: 819523782}
   - component: {fileID: 819523783}
+  - component: {fileID: 819523785}
   m_Layer: 0
   m_Name: WaveManager
   m_TagString: Untagged
@@ -589,7 +590,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b241d3c96bd63444daaf3d8321f1512e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  currencyMultiplier: 5
+  currencyMultiplier: 10
   bossFrequency: 10
   standardWavePool:
   - {fileID: 11400000, guid: 9420c76402a524bfb8a4358c682dfead, type: 2}
@@ -643,6 +644,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ce6834032745141abd8d1f27a5f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
+--- !u!114 &819523785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819523779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fb692dc4cd54ec4a9bbe9ffe7b7265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollZoomController
+  vcam: {fileID: 295292812}
+  minZoom: 2
+  maxZoom: 10
+  zoomSpeed: 1
+  smoothSpeed: 5
 --- !u!1 &905704649 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2546178992715838942, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
