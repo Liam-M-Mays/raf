@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 30
   itemSprite: {fileID: 8754237332892035133, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: A finely carved paddle handle.\nIts elgance practically guides your
-    hand into better paddling.
+    \nhand into better paddling.
   maxHealthBonus: 0
   healthOverTimeBonus: 0
   damageBonus: 0
@@ -25,6 +25,11 @@ MonoBehaviour:
   plusHealth: 0
   weightEffect: -20
   speedEffect: 30
+  upgradeSprite: {fileID: 0}
+  Sheets: 0
+  Frame: 0
+  Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: eec4067e03f46f748a6999058956ecce, type: 2}
   permanentShopItem: 0

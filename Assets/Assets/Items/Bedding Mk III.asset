@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 30
   itemSprite: {fileID: -8176082980275530410, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: Bed sheets pationately woven together.\nWaking up refreshed is an
-    understatement, you will wake up a new man.
+    \nunderstatement, you will wake up a \nnew man.
   maxHealthBonus: 0
   healthOverTimeBonus: 10
   damageBonus: 0
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 1
   Frame: 0
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: 119fe1514f2539b41baaff933c979d6c, type: 2}
   permanentShopItem: 0

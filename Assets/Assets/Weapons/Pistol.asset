@@ -15,14 +15,14 @@ MonoBehaviour:
   weaponName: Pistol
   cost: 10
   weaponSprite: {fileID: 3096996549263505085, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  description: Semi auto with a high firerate but \nlow damage.
+  description: Ol' reliable.
   isMelee: 0
   weaponPrefab: {fileID: 496856416842775121, guid: 951620d1422ff3d4c89169981fae9413, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
   weaponType: 0
   primarySound: {fileID: 0}
   secondarySound: {fileID: 0}
-  fireRate: 0
+  fireRate: 0.1
   autoFire: 0
   projectileDamage: 5
   projectileSpeed: 12

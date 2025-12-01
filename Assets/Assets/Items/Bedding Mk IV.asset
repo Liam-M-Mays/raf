@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 0
   itemSprite: {fileID: 2002992905757787949, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: Luxuriously enchanted bedding.\nPillows so comfy you may not need
-    to live to see land again.
+    to live\n to see land again.
   maxHealthBonus: 0
   healthOverTimeBonus: 30
   damageBonus: 0
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 1
   Frame: 0
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 0
   upgradedItem: {fileID: 0}
   permanentShopItem: 0

@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Bedding Mk II
   cost: 20
   itemSprite: {fileID: -5061960570389789244, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: An extra comfy set of bedding.\nWake up shiny and fresh with even
+  description: An extra comfy set of bedding.\nWake up shiny and fresh with \neven
     more health.
   maxHealthBonus: 0
   healthOverTimeBonus: 10
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 1
   Frame: 0
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: b413d2fcb2ceca046a062cc012512c4c, type: 2}
   permanentShopItem: 0

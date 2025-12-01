@@ -1,9 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Unity.Cinemachine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Health matressHealth;
+    public TextMeshProUGUI currencyText;
+    public TextMeshProUGUI shopCurrencyText;
     [Header("Debug - Runtime Info")]
     [SerializeField] private float currentSpeed;
     [SerializeField] private Vector2 currentVelocity;
@@ -58,6 +62,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
     private Vector3 feetLocalOffset;
     private float paddleExtraForce = 0f;
+    private int sheetsHealthEffect = 0;
     private float sheetsSpeedEffect = 0f;
     private float paddleWeightEffect = 0f;
     private float frameHealthEffect = 0f;
@@ -69,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         // Get components
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+
         moveAction = InputSystem.actions.FindAction("Move");
         interactAction = InputSystem.actions.FindAction("Interact");
         feetLocalOffset = transform.InverseTransformPoint(feetAnchor.position);
@@ -81,6 +87,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        shopCurrencyText.text = $"${PlayerCurrency}";
+        currencyText.text = $"${PlayerCurrency}";
         UpdateUpgrades();
         HandleInput();
         UpdateDebugInfo();
@@ -109,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
         if (Sheets != null)
         {
             baseSprite.sprite = Sheets.upgradeSprite;
-            sheetsSpeedEffect = Sheets.speedEffect;
+            sheetsHealthEffect = Sheets.maxHealthBonus;
             baseSprite.enabled = true;
         }
         else
@@ -158,6 +166,10 @@ public class PlayerMovement : MonoBehaviour
         raftRB.mass = 1f + frameWeightEffect + paddleWeightEffect;
         extraForce = sheetsSpeedEffect + paddleExtraForce;
         raftRB.GetComponent<Health>().SetMaxHealth(frameHealthEffect);
+    }
+
+    public void Heal() {
+        matressHealth.Heal(sheetsHealthEffect);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

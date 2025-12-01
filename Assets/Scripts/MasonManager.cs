@@ -5,6 +5,8 @@ public class MasonManager : MonoBehaviour
 {
     [SerializeField] private GameObject dayPanel;
     [SerializeField] private TextMeshProUGUI dayText;
+    [SerializeField] private TextMeshProUGUI shopCurrencyText;
+    
 
     private WaveManager waveManager;
     private ShopSpawner shopSpawner;
@@ -40,6 +42,8 @@ public class MasonManager : MonoBehaviour
         StartCoroutine(DisplayDay(waveManager.GetWaveNumber() + 1));
         shopSpawner.DespawnShopBoat();
         ResetPlayerPosition();
+
+        player.GetComponent<PlayerMovement>().Heal();
 
         yield return new WaitForSeconds(3.5f); // Wait for the day display to finish
 

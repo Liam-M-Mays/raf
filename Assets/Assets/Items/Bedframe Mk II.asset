@@ -15,20 +15,21 @@ MonoBehaviour:
   itemName: Bedframe Mk II
   cost: 20
   itemSprite: {fileID: -6941287660301588496, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A sturdy metal bedframe.\nFurther increases your weght, but boy can
-    you take a punch/.
-  maxHealthBonus: 20
+  description: A sturdy metal bedframe.\nFurther increases your weght, \nbut boy
+    can you take a punch.
+  maxHealthBonus: 40
   healthOverTimeBonus: 0
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 20
+  weightEffect: 10
   speedEffect: 0
   upgradeSprite: {fileID: -2824233237403436511, guid: 6f8d2709bce821745a73095b62f898c6, type: 3}
   Sheets: 0
   Frame: 1
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: 82fcb8621dae42e46bdac5003d9ab426, type: 2}
   permanentShopItem: 0
