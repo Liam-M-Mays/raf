@@ -7,7 +7,7 @@ public class SceneManager : MonoBehaviour
     public GameObject menu;
 
     public void PlayGame() {
-        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleSceneWorking");
     }
 
     public void openMenu() {
