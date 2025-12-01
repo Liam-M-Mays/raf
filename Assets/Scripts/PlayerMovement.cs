@@ -158,8 +158,18 @@ public class PlayerMovement : MonoBehaviour
 
     void HandleRowingMode(Vector2 input)
     {
-        playerSprite.SetActive(false);
-        raftAnim.SetBool("Paddle", true);
+        //playerSprite.SetActive(false);
+        //raftAnim.SetBool("Paddle", true);
+        anim.SetTrigger("Row");
+        if (input == Vector2.zero)
+        {
+            anim.speed = 0f;
+        }
+        else
+        {
+            anim.speed = currentSpeed;
+        }
+        transform.position = raftRB.transform.position + new Vector3(0f, 0.005f, 0f);
         vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
         
         // Sync player to raft
@@ -168,17 +178,22 @@ public class PlayerMovement : MonoBehaviour
         
         // Paddle animations
         if (input.x > 0) 
-            raftAnim.SetTrigger("PaddleRight");
+            //raftAnim.SetTrigger("PaddleRight");
+            anim.SetBool("Rowing", true);
         else if (input.x < 0) 
-            raftAnim.SetTrigger("PaddleLeft");
+            //raftAnim.SetTrigger("PaddleLeft");
+            anim.SetBool("Rowing", true);
         else if (input.y != 0) 
-            raftAnim.SetTrigger("PaddleRight");
+            //raftAnim.SetTrigger("PaddleRight");
+            anim.SetBool("Rowing", true);
     }
 
     void HandleWalkingMode(Vector2 input)
     {
+        anim.speed = 1f;
         playerSprite.SetActive(true);
         raftAnim.SetBool("Paddle", false);
+        anim.SetTrigger("StopRow");
         vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
         
         // Walk relative to raft
