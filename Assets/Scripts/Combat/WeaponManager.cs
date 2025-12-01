@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class WeaponManager : MonoBehaviour
 {
@@ -76,7 +77,7 @@ public class WeaponManager : MonoBehaviour
                 }
             }
         }
-        
+        //if (InputSystem.actions.FindAction("Next").triggered) SwitchToNextWeapon();
         // Key switching
         if (Input.GetKeyDown(nextWeaponKey))
         {

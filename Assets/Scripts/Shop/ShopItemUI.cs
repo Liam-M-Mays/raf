@@ -48,7 +48,7 @@ public class ShopItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         if (!canPurchase) return;
         // Attempt to purchase the item through the shop manager
         if (shopManager != null && item != null) {
-            shopManager.PurchaseItem(item);
+            if(!shopManager.PurchaseItem(item)) return;
             canPurchase = false;
             buttonImage.sprite = soldOut;
             buttonImage.SetNativeSize();

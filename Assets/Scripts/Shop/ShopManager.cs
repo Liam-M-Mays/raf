@@ -86,24 +86,25 @@ public class ShopManager : MonoBehaviour
         shopItemUI.Setup(item, this);
     }
 
-    public void PurchaseWeapon(WeaponSO weapon, bool isMelee)
+    public bool PurchaseWeapon(WeaponSO weapon, bool isMelee)
     {
         //weaponManager.availableWeapons.Add(weapon);
-        if (playerMovement.PlayerCurrency >= weapon.cost)
-        {
-            playerMovement.PlayerCurrency -= weapon.cost;
+        if (playerMovement.PlayerCurrency < weapon.cost) return false;
+        
+        playerMovement.PlayerCurrency -= weapon.cost;
              //playerInventory.Add(weapon);
-             weaponManager.availableWeapons.Add(weapon);
-             availableWeaponPool.Remove(weapon);
+        weaponManager.availableWeapons.Add(weapon);
+        availableWeaponPool.Remove(weapon);
             // mark as purchased
             // remove from weaponPool
-        }
+        
         //availableWeaponPool.Remove(weapon);
+        return true;
     }
 
-    public void PurchaseItem(ItemSO item)
+    public bool PurchaseItem(ItemSO item)
     {
-        if (playerMovement.PlayerCurrency < item.cost) return;
+        if (playerMovement.PlayerCurrency < item.cost) return false;
         playerMovement.PlayerCurrency -= item.cost;
         if (item.hasUpgrade) {
             availableItemPool.Add(item.upgradedItem);
@@ -134,6 +135,7 @@ public class ShopManager : MonoBehaviour
             // mark as purchased
             // remove from itemPool
         //}
+        return true;
     }
 
     void ShuffleWeapons(List<WeaponSO> list)

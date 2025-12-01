@@ -49,7 +49,7 @@ public class ShopWeaponUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         // Attempt to purchase the weapon through the shop manager
         if (shopManager != null && weapon != null) {
-            shopManager.PurchaseWeapon(weapon, weapon.isMelee);
+            if(!shopManager.PurchaseWeapon(weapon, weapon.isMelee)) return;
             buttonImage.sprite = soldOut;
             buttonImage.SetNativeSize();
             canPurchase = false;

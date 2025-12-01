@@ -445,7 +445,7 @@ MonoBehaviour:
   weaponHoldPoint: {fileID: 8748322269525496408}
   firePoint: {fileID: 7060470167626382400}
   animator: {fileID: 0}
-  useScrollWheel: 1
+  useScrollWheel: 0
   nextWeaponKey: 101
   previousWeaponKey: 113
 --- !u!114 &3570774241278023666
