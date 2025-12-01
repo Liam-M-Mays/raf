@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bedframe Mk I
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Bed Frame
-  cost: 10
+  cost: 5
   itemSprite: {fileID: -8624123025954764935, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: A standard wooden bedframe.\nIncreases your max health \nas well as
     your weight.

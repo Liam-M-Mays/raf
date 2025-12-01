@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bedding Mk I
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Bedding
-  cost: 10
+  cost: 5
   itemSprite: {fileID: -8173917835959820685, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: A comfy set of sheets and a blanket.\nWake up each morning \nfeeling
     fresh with some extra health..
