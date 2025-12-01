@@ -19,6 +19,7 @@ public class OpenShop : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision) {
        
         if (collision.gameObject.CompareTag("ShopDetector")) {
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             Debug.Log("Player entered shop area");
             shopManager.PopulateShop();
         }
