@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public ItemSO Sheets = null;
     public ItemSO Frame = null;
     public ItemSO Barbed = null;
+    public ItemSO Paddle = null;
     private float barbDamage = 0f;
 
     // Components
@@ -55,6 +56,11 @@ public class PlayerMovement : MonoBehaviour
     private bool rowing = false;
     private bool isFacingRight = true;
     private Vector3 feetLocalOffset;
+    private float paddleExtraForce = 0f;
+    private float sheetsSpeedEffect = 0f;
+    private float paddleWeightEffect = 0f;
+    private float frameHealthEffect = 0f;
+    private float frameWeightEffect = 0f;
     private float extraForce = 0f;
 
     void Start()
@@ -102,7 +108,7 @@ public class PlayerMovement : MonoBehaviour
         if (Sheets != null)
         {
             baseSprite.sprite = Sheets.upgradeSprite;
-            extraForce = Sheets.speedEffect;
+            sheetsSpeedEffect = Sheets.speedEffect;
             baseSprite.enabled = true;
         }
         else
@@ -115,13 +121,16 @@ public class PlayerMovement : MonoBehaviour
         if (Frame != null)
         {
             frameSprite.sprite = Frame.upgradeSprite;
-            raftRB.mass = 1f+ Frame.weightEffect;
+            frameWeightEffect =  Frame.weightEffect;
+            frameHealthEffect = Frame.maxHealthBonus;
             frameSprite.enabled = true;
         }
         else
         {
             frameSprite.enabled = false;
-            raftRB.mass = 1f;
+            frameHealthEffect = 0f;
+            frameWeightEffect = 0f;
+            //raftRB.mass = 1f;
         }
 
         // Barbed upgrade
@@ -135,6 +144,19 @@ public class PlayerMovement : MonoBehaviour
         {
             barbedSprite.enabled = false;
         }
+        if (Paddle != null)
+        {
+            paddleExtraForce = Paddle.speedEffect;
+            paddleWeightEffect = Paddle.weightEffect;
+        }
+        else
+        {
+            paddleExtraForce = 0f;
+            paddleWeightEffect = 0f;
+        }
+        raftRB.mass = 1f; + frameWeightEffect + paddleWeightEffect;
+        extraForce = sheetsSpeedEffect + paddleExtraForce;
+        raftRB.GetComponent<Health>().SetMaxHealth(frameHealthEffect);
     }
 
     void OnTriggerEnter2D(Collider2D collision)

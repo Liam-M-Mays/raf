@@ -114,6 +114,9 @@ public class ShopManager : MonoBehaviour
         } else if(item.Barbed) {
             playerMovement.Barbed = item;
         }
+        else if(item.Paddle) {
+            playerMovement.Paddle = item;
+        }
         //if (PlayerCurrency >= item.cost)
         //{
         //    PlayerCurrency -= item.cost;

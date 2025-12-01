@@ -24,6 +24,7 @@ public class ItemSO : ScriptableObject
     public bool Sheets;
     public bool Frame;
     public bool Barbed;
+    public bool Paddle;
 
     public bool hasUpgrade;
     public ItemSO upgradedItem;
