@@ -6,6 +6,8 @@ public class ShopSpawner : MonoBehaviour
     public GameObject shopBoatPrefab;
 
     private GameObject shop;
+    private Animator shopAnimator;
+
     public float minDistance = 20f;
     public float maxDistance = 40f;
 
@@ -51,9 +53,15 @@ public class ShopSpawner : MonoBehaviour
         randomPosition.z = 0;
         
         shop = Instantiate(shopBoatPrefab, randomPosition, Quaternion.identity);
-        
+        shopAnimator = shop.GetComponent<Animator>();
+
         shopIndicator.ShowIndicator();
     }
+
+    public void CloseShop() {
+        shopAnimator.SetTrigger("Close");
+    }
+    
 
     public void DespawnShopBoat() {
         shopIndicator.HideIndicator();

@@ -17,6 +17,8 @@ public class ShopManager : MonoBehaviour
 
     private WaveManager waveManager;
 
+    public GameObject shopUI;
+
     public int weaponIndex = 0;
 
 
@@ -36,13 +38,10 @@ public class ShopManager : MonoBehaviour
             // Add more weapons to the available pool
         }
 
-        if (InputSystem.actions.FindAction("Jump").triggered) {
-            PopulateShop();
-            Debug.Log("Populated Shop");
-        }
     }
 
     public void PopulateShop() {
+        shopUI.SetActive(true);
         UpdateWeaponPool();
         DestroyChildren(gunSpot1);
         DestroyChildren(gunSpot2);
@@ -155,5 +154,9 @@ public class ShopManager : MonoBehaviour
                 weaponIndex++;
             }
         }
+    }
+
+    public void ClosShop() {
+        shopUI.SetActive(false);
     }
 }
