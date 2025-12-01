@@ -237,10 +237,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  maxHealth: 100
-  currentHealth: 0
+  maxHealth: 30
+  currentHealth: 30
   showDamageNumbers: 1
-  damageNumberPrefab: {fileID: 0}
+  damageNumberPrefab: {fileID: 5260959021986548919, guid: 12dc74bc664f24dfc8c3fbb9d6c72c1e, type: 3}
   destroyOnDeath: 1
   destroyDelay: 0.5
   deathEffectPrefab: {fileID: 0}
