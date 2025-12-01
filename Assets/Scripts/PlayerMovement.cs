@@ -38,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
     public ItemSO Sheets = null;
     public ItemSO Frame = null;
     public ItemSO Barbed = null;
+    private float barbDamage = 0f;
 
     // Components
     private Rigidbody2D rb;
@@ -128,10 +129,34 @@ public class PlayerMovement : MonoBehaviour
         {
             barbedSprite.sprite = Barbed.upgradeSprite;
             barbedSprite.enabled = true;
+            barbDamage = Barbed.barbedDamageBonus;
         }
         else
         {
             barbedSprite.enabled = false;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        // Ignore raft and player collisions
+        if (collision.CompareTag("Raft") || collision.CompareTag("Player"))
+        {
+            return;
+        }
+        
+        if (collision.CompareTag("Enemy"))
+        {
+            Debug.Log("raft hit enemy!");
+            
+            Health enemyHealth = collision.GetComponent<Health>();
+            if (enemyHealth != null && !enemyHealth.IsDead())
+            {
+                enemyHealth.TakeDamage(barbDamage, transform.position);
+            }
+            
+            //SpawnHitEffect();
+            //Destroy(gameObject);
         }
     }
 
