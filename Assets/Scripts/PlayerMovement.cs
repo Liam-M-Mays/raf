@@ -114,7 +114,7 @@ public class PlayerMovement : MonoBehaviour
         if (Frame != null)
         {
             frameSprite.sprite = Frame.upgradeSprite;
-            raftRB.mass = Frame.weightEffect;
+            raftRB.mass = 1f+ Frame.weightEffect;
             frameSprite.enabled = true;
         }
         else
