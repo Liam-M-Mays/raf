@@ -2055,14 +2055,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: maxAmmo
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: currentAmmo
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 3570774241278023666, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: damageText
       value: 

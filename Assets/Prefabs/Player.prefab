@@ -315,6 +315,7 @@ MonoBehaviour:
   currentSpeed: 0
   currentVelocity: {x: 0, y: 0}
   currentDragForce: 0
+  PlayerCurrency: 0
   walkSpeed: 1
   playerSprite: {fileID: 1919279162572115531}
   raftRB: {fileID: 0}
@@ -335,6 +336,7 @@ MonoBehaviour:
   Sheets: {fileID: 0}
   Frame: {fileID: 0}
   Barbed: {fileID: 0}
+  Paddle: {fileID: 0}
 --- !u!95 &6347936029896504379
 Animator:
   serializedVersion: 7
@@ -415,8 +417,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7d8858b95275564dbf12bf363fba0a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AmmoSystem
-  maxAmmo: 30
-  currentAmmo: 30
+  maxAmmo: 10000
+  currentAmmo: 10000
   infiniteAmmo: 0
   reloadTime: 2
   reloadKey: 114
