@@ -36,7 +36,7 @@ public class MasonManager : MonoBehaviour
     }
 
     public IEnumerator StartNewDay() {
-        yield return new WaitForSeconds(10f); // Wait for 2 seconds before starting new day
+        yield return new WaitForSeconds(5f); // Wait for 2 seconds before starting new day
         StartCoroutine(DisplayDay(waveManager.GetWaveNumber() + 1));
         shopSpawner.DespawnShopBoat();
         ResetPlayerPosition();

@@ -22,7 +22,7 @@ MonoBehaviour:
   weaponType: 0
   primarySound: {fileID: 0}
   secondarySound: {fileID: 0}
-  fireRate: 2
+  fireRate: 1.8
   autoFire: 0
   projectileDamage: 20
   projectileSpeed: 12

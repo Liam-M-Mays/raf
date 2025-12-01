@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    /*
 
     [Header("Game Over Settings")]
     [SerializeField] private GameObject gameOverUI;
@@ -37,13 +38,12 @@ public class GameManager : MonoBehaviour
     }
 
     /// Called when the raft dies
+    */
     public void TriggerGameOver()
     {
-        if (isGameOver) return;
-        
-        isGameOver = true;
-        Invoke(nameof(ShowGameOver), gameOverDelay);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
     }
+    /*
 
     void ShowGameOver()
     {
@@ -84,4 +84,5 @@ public class GameManager : MonoBehaviour
     }
 
     public bool IsGameOver() => isGameOver;
+    */
 }
