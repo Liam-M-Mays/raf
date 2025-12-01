@@ -21,6 +21,9 @@ public class ItemSO : ScriptableObject
     public int weightEffect;
     public int speedEffect;
     public Sprite upgradeSprite;
+    public bool Sheets;
+    public bool Frame;
+    public bool Barbed;
 
     public bool hasUpgrade;
     public ItemSO upgradedItem;

@@ -16,6 +16,7 @@ public class ShopManager : MonoBehaviour
     public GameObject shopItemPrefab;
 
     private WaveManager waveManager;
+    public PlayerMovement playerMovement;
     public WeaponManager weaponManager;
 
     public GameObject shopUI;
@@ -105,6 +106,13 @@ public class ShopManager : MonoBehaviour
         }
         if (!item.permanentShopItem) {
             availableItemPool.Remove(item);
+        }
+        if(item.Sheets) {
+            playerMovement.Sheets = item;
+        } else if(item.Frame) {
+            playerMovement.Frame = item;
+        } else if(item.Barbed) {
+            playerMovement.Barbed = item;
         }
         //if (PlayerCurrency >= item.cost)
         //{
