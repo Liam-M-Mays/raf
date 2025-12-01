@@ -42,7 +42,7 @@ public class BehaviorContext
         self = _self;
         target = _target;
         anim = _anim;
-        sharkLayer = LayerMask.GetMask("Shark");
+        sharkLayer = LayerMask.GetMask("Enemy");
         deltaTime = Time.deltaTime;
     }
     

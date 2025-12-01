@@ -19,5 +19,6 @@ public static class RaftTracker
     public static void removeSelf(IBehavior B)
     {
         Braft.Remove(B);
+        Debug.Log("Removed from Raft Tracker");
     }
 }

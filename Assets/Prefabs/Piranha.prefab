@@ -179,7 +179,7 @@ MonoBehaviour:
   attackCooldown: 1
   raftLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   attackPoint: {fileID: 0}
   attackRadius: 1
 --- !u!1 &5404895207697418235

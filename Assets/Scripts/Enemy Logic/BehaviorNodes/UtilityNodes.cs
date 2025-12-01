@@ -30,10 +30,10 @@ public static class UtilityNodes
             // Normalize direction and apply weighted push
             totalPush += (offset / dist) * fallOff;
         }
-        Debug.DrawLine(selfPos, targetPosition, Color.red);
-        Debug.DrawLine(selfPos, targetPosition + (totalPush * ctx.divergeWeight), Color.green);
-        Debug.Log($"TotalPush magnitude: {totalPush.magnitude}, Weight: {ctx.divergeWeight}");
-        Debug.Log($"Found {sharks.Length} sharks within range");
+        //Debug.DrawLine(selfPos, targetPosition, Color.red);
+        //Debug.DrawLine(selfPos, targetPosition + (totalPush * ctx.divergeWeight), Color.green);
+        //Debug.Log($"TotalPush magnitude: {totalPush.magnitude}, Weight: {ctx.divergeWeight}");
+        //Debug.Log($"Found {sharks.Length} sharks within range");
         return targetPosition + (totalPush * ctx.divergeWeight);
     }
     
@@ -113,11 +113,11 @@ public static class UtilityNodes
     }
 
     
-    public static bool Obstructed(BehaviorContext ctx)
+    public static bool Obstructed(BehaviorContext ctx, int count = 1)
     {
         RaycastHit2D[] hit = Physics2D.LinecastAll(ctx.self.position, ctx.target.position, ctx.sharkLayer);
 
-        if (hit.Length > 1)
+        if (hit.Length > count)
         {
             return true;
         }
