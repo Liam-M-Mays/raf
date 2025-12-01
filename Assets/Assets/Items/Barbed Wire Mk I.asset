@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Barbed Wire Mk I
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
   itemName: Barbed Wire
-  cost: 10
+  cost: 5
   itemSprite: {fileID: 5600644262935176866, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: Surrounds your matress with a \nlayer of barbed wire.\nDeals damage
     to any fish chewing on your raft.
