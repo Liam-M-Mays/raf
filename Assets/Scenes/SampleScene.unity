@@ -278,6 +278,7 @@ GameObject:
   - component: {fileID: 265976792}
   - component: {fileID: 265976793}
   - component: {fileID: 265976794}
+  - component: {fileID: 265976795}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -451,6 +452,23 @@ MonoBehaviour:
   dayText: {fileID: 1355228133}
   matress: {fileID: 981534622}
   player: {fileID: 1013756039}
+--- !u!114 &265976795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265976786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02fb692dc4cd54ec4a9bbe9ffe7b7265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScrollZoomController
+  vcam: {fileID: 452935798}
+  minZoom: 2
+  maxZoom: 7
+  zoomSpeed: 6
+  smoothSpeed: 6
 --- !u!1 &367423462
 GameObject:
   m_ObjectHideFlags: 0

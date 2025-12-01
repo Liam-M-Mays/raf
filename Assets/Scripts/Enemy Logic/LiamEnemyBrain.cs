@@ -44,6 +44,11 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
 
     void LateUpdate() => manager.LateTick();
 
+    public IBehavior currentBehavior()
+    {
+        return manager.Current;
+    }
+
     void OnDestroy() 
     {
         manager.Exit();
