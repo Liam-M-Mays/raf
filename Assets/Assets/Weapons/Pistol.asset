@@ -24,7 +24,7 @@ MonoBehaviour:
   secondarySound: {fileID: 0}
   fireRate: 0
   autoFire: 0
-  projectileDamage: 10
+  projectileDamage: 5
   projectileSpeed: 12
   projectileRange: 15
   bulletsPerShot: 1

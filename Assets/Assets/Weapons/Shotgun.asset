@@ -18,17 +18,17 @@ MonoBehaviour:
   description: Medium spread with a short range.
   isMelee: 0
   weaponPrefab: {fileID: 799608554444309723, guid: af3c097620d97974fa2408c9712a3a5b, type: 3}
-  projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
+  projectilePrefab: {fileID: 380249057907756681, guid: e95be360a8bd3914d82eb70d509cd14c, type: 3}
   weaponType: 0
   primarySound: {fileID: 0}
   secondarySound: {fileID: 0}
   fireRate: 1
   autoFire: 0
-  projectileDamage: 10
+  projectileDamage: 50
   projectileSpeed: 12
-  projectileRange: 15
+  projectileRange: 5
   bulletsPerShot: 5
-  spreadAngle: 5
+  spreadAngle: 10
   recoilDistance: 0.2
   recoilRecoverySpeed: 8
   usesAmmo: 0

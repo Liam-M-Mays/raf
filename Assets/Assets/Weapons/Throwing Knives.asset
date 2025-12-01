@@ -10,25 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: de4eafa5e75712f4c8bb76cc3b7a112b, type: 3}
-  m_Name: Sawed-Off
+  m_Name: Throwing Knives
   m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
-  weaponName: Sawed-Off
-  cost: 40
-  weaponSprite: {fileID: -8080008174734147543, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
-  description: Small gun, big boom
+  weaponName: Throwing Knives
+  cost: 100
+  weaponSprite: {fileID: 940222793582162861, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
+  description: Throwing Knives <3
   isMelee: 0
-  weaponPrefab: {fileID: 6997160528831347135, guid: a22d47a719cd9b74d873a970024e93f2, type: 3}
-  projectilePrefab: {fileID: 380249057907756681, guid: e95be360a8bd3914d82eb70d509cd14c, type: 3}
+  weaponPrefab: {fileID: 8958780488110649919, guid: 174505f6f37d60b4eb598c9b3da55094, type: 3}
+  projectilePrefab: {fileID: 380249057907756681, guid: c383f1f5ef3b653408cd05aa781a2e2a, type: 3}
   weaponType: 0
   primarySound: {fileID: 0}
   secondarySound: {fileID: 0}
-  fireRate: 2
+  fireRate: 0.2
   autoFire: 0
-  projectileDamage: 20
-  projectileSpeed: 12
-  projectileRange: 3
-  bulletsPerShot: 10
-  spreadAngle: 30
+  projectileDamage: 60
+  projectileSpeed: 15
+  projectileRange: 20
+  bulletsPerShot: 3
+  spreadAngle: 15
   recoilDistance: 0.2
   recoilRecoverySpeed: 8
   usesAmmo: 0

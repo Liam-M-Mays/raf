@@ -18,13 +18,13 @@ MonoBehaviour:
   description: Common weapon for fisherman. \nModerate damage with a low fire rate.
   isMelee: 0
   weaponPrefab: {fileID: 195590483905385013, guid: f80d32b213a8272429445fd7ea398a43, type: 3}
-  projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
+  projectilePrefab: {fileID: 380249057907756681, guid: 2a71699d3d886e6419e05afe31157131, type: 3}
   weaponType: 0
   primarySound: {fileID: 0}
   secondarySound: {fileID: 0}
   fireRate: 1
   autoFire: 0
-  projectileDamage: 100
+  projectileDamage: 20
   projectileSpeed: 12
   projectileRange: 15
   bulletsPerShot: 1
