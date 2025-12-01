@@ -111,4 +111,5 @@ public class EnemyRangedAttack : MonoBehaviour
     }
 
     public void SetCanShoot(bool value) => canShoot = value;
+    public void SetDamage(float newDamage) => projectileDamage = newDamage;
 }

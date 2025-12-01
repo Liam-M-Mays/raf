@@ -416,7 +416,7 @@ MonoBehaviour:
   itemSpot2: {fileID: 933045935}
   shopWeaponPrefab: {fileID: 6327673331779669998, guid: 9a4f2a90d48cd88468d32c20bbc2a9c8, type: 3}
   shopItemPrefab: {fileID: 3342972835341346573, guid: c6a22b5bdbdf1b44cb6f892cdb4ff659, type: 3}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 1013756056}
   weaponManager: {fileID: 1013756049}
   shopUI: {fileID: 667415738}
   weaponIndex: 0
@@ -1384,6 +1384,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 699653f8b05cedb46935d132790ba3ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
+--- !u!114 &1013756056 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8136738941739629976, guid: f68e78128e112b4438b072f298084206, type: 3}
+  m_PrefabInstance: {fileID: 2686357072635121854}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1013756039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f48a309c6b4074c9a8d387142db278c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1 &1047168196
 GameObject:
   m_ObjectHideFlags: 0
@@ -2044,14 +2055,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: maxAmmo
-      value: 10000
-      objectReference: {fileID: 0}
-    - target: {fileID: 1642435881404303507, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: currentAmmo
-      value: 10000
-      objectReference: {fileID: 0}
     - target: {fileID: 3570774241278023666, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: damageText
       value: 

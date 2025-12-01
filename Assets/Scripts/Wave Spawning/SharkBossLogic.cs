@@ -45,7 +45,7 @@ public class SharkBossLogic : MonoBehaviour
     private float chomps;
     private int chompCount = 0;
     private bool locked = false;
-    private bool chomping = false;
+    //private bool chomping = false;
     private bool chomp = true;
 
     [SerializeField] private float chompSpeed = 7f;

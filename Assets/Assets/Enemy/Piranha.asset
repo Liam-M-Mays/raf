@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4b52617c20a9e4d78a85165c230a59b5, type: 3}
-  m_Name: Piranha but shark logic
+  m_Name: Piranha
   m_EditorClassIdentifier: Assembly-CSharp::EnemySO
   Behaviors:
     SharkDefault:
@@ -22,6 +22,8 @@ MonoBehaviour:
     Direct:
       rid: 7550196143538307284
   cost: 1
+  health: 10
+  damage: 2
   prefab: {fileID: 2177139864062627669, guid: f0a8fcad786becb4d934d4c52360194d, type: 3}
   spawnRadius: 20
   color: {r: 1, g: 1, b: 1, a: 1}
@@ -67,6 +69,7 @@ MonoBehaviour:
         maxSpeed: 2
         speed: 1
         attackRange: 1
+        attackRangeMax: 1
         outOfRange: 10
         respawnRange: 8
         divergeRange: 2

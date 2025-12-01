@@ -26,10 +26,12 @@ public class Health : MonoBehaviour
     public UnityEvent OnDeath;
     
     private bool isDead = false;
+    private float realMaxHealth;
 
     void Start()
     {
         currentHealth = maxHealth;
+        realMaxHealth = maxHealth;
     }
 
     /// Deal damage to this entity
@@ -101,7 +103,17 @@ public class Health : MonoBehaviour
 
     // Getters
     public float GetCurrentHealth() => currentHealth;
+    public void SetHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+        maxHealth = newHealth;
+    }
     public float GetMaxHealth() => maxHealth;
+    public void SetMaxHealth(float newMaxHealth)
+    {
+        maxHealth = realMaxHealth + newMaxHealth;
+        currentHealth = Mathf.Min(currentHealth, maxHealth);
+    }
     public float GetHealthPercentage() => currentHealth / maxHealth;
     public bool IsDead() => isDead;
 

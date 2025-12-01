@@ -106,7 +106,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.03}
   m_Radius: 0.26890397
 --- !u!50 &576163833260752413
 Rigidbody2D:
@@ -147,12 +147,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthText: {fileID: 0}
   maxHealth: 100
   currentHealth: 100
   showDamageNumbers: 1
   damageNumberPrefab: {fileID: 5260959021986548919, guid: 12dc74bc664f24dfc8c3fbb9d6c72c1e, type: 3}
   destroyOnDeath: 1
-  destroyDelay: 0.5
+  destroyDelay: 0
   deathEffectPrefab: {fileID: 0}
   OnDamaged:
     m_PersistentCalls:
@@ -176,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeAttack
   damage: 10
-  attackCooldown: 1
+  attackCooldown: 0
   raftLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -88,19 +88,23 @@ public class ShopManager : MonoBehaviour
 
     public void PurchaseWeapon(WeaponSO weapon, bool isMelee)
     {
-        weaponManager.availableWeapons.Add(weapon);
-        //if (PlayerCurrency >= weapon.cost)
-        //{
-        //    PlayerCurrency -= weapon.cost;
-            // playerInventory.Add(weapon);
+        //weaponManager.availableWeapons.Add(weapon);
+        if (playerMovement.PlayerCurrency >= weapon.cost)
+        {
+            playerMovement.PlayerCurrency -= weapon.cost;
+             //playerInventory.Add(weapon);
+             weaponManager.availableWeapons.Add(weapon);
+             availableWeaponPool.Remove(weapon);
             // mark as purchased
             // remove from weaponPool
-        //}
-        availableWeaponPool.Remove(weapon);
+        }
+        //availableWeaponPool.Remove(weapon);
     }
 
     public void PurchaseItem(ItemSO item)
     {
+        if (playerMovement.PlayerCurrency < item.cost) return;
+        playerMovement.PlayerCurrency -= item.cost;
         if (item.hasUpgrade) {
             availableItemPool.Add(item.upgradedItem);
         }
@@ -114,6 +118,15 @@ public class ShopManager : MonoBehaviour
         } else if(item.Barbed) {
             playerMovement.Barbed = item;
         }
+        else if(item.Paddle) {
+            playerMovement.Paddle = item;
+        }
+        else if (item.plusHealth > 0) {
+            playerMovement.raftRB.GetComponent<Health>().Heal(item.plusHealth);
+        }
+        //else if (item.plusAmmo > 0) {
+        //    weaponManager.ReplenishAmmo(item.plusAmmo);
+        //}
         //if (PlayerCurrency >= item.cost)
         //{
         //    PlayerCurrency -= item.cost;
