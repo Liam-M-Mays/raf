@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b241d3c96bd63444daaf3d8321f1512e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
-  currencyMultiplier: 1
+  currencyMultiplier: 5
   bossFrequency: 3
   standardWavePool:
   - {fileID: 11400000, guid: 9420c76402a524bfb8a4358c682dfead, type: 2}
@@ -2124,6 +2124,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: availableWeapons.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 56026a936d18f2f47a594bf8ee53cfd9, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e55c7407af1843744afc482ca2f0ac8b, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 2447c236945adc54e8c92cec607f05b5, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 21306d85586f3ad4a8c9577a90a8837c, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: beeeaabf0a0822a4aa58fbd833fa0c3e, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: a24fe7f4d74627544aee1d344847f787, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 362525cd91f720244a004add5b322822, type: 2}
+    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
+      propertyPath: 'availableWeapons.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 55179b6cdc7759a48ad32a6e4bf5b0d6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
