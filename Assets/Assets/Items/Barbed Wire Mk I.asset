@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Barbed Wire
   cost: 10
   itemSprite: {fileID: 5600644262935176866, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: Surrounds your matress with a layer of barbed wire.\nDeals damage
+  description: Surrounds your matress with a \nlayer of barbed wire.\nDeals damage
     to any fish chewing on your raft.
   maxHealthBonus: 0
   healthOverTimeBonus: 0
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 0
   Frame: 0
   Barbed: 1
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: d6ddbe99ebabb74418a1cce94014cb72, type: 2}
   permanentShopItem: 0

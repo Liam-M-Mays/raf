@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Paddle Handle
   cost: 10
   itemSprite: {fileID: 359258935426025301, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A simple paddle grip.\nIncreases your speed and maneuverability.
+  description: A simple paddle grip.\nIncreases your speed and \nmaneuverability.
   maxHealthBonus: 0
   healthOverTimeBonus: 0
   damageBonus: 0
@@ -24,6 +24,11 @@ MonoBehaviour:
   plusHealth: 0
   weightEffect: -10
   speedEffect: 10
+  upgradeSprite: {fileID: 0}
+  Sheets: 0
+  Frame: 0
+  Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: 917c53597d77c97489cfef235bbe8116, type: 2}
   permanentShopItem: 0

@@ -6,6 +6,7 @@ using TMPro;
 public class Health : MonoBehaviour
 {
     public TextMeshProUGUI healthText; // Optional UI element to display health
+    public GameObject gameOver; // Reference to Game Over UI for raft death
 
     [Header("Health Settings")]
     [SerializeField] private float maxHealth = 100f;
@@ -91,7 +92,10 @@ public class Health : MonoBehaviour
         // Check if this is the raft
         if (gameObject.CompareTag("Raft"))
         {
-            GameManager.Instance?.TriggerGameOver();
+            if (gameOver != null)
+            {
+                gameOver.SetActive(true);
+            }
         }
 
         // Destroy object after delay

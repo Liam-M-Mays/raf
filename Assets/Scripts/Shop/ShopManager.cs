@@ -176,4 +176,8 @@ public class ShopManager : MonoBehaviour
     public void ClosShop() {
         shopUI.SetActive(false);
     }
+
+    public int GetPlayerCurrency() {
+        return playerMovement.PlayerCurrency;
+    }
 }

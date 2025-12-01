@@ -47,7 +47,7 @@ public class ShopItemUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandl
         tooltip.SetActive(false);
         if (!canPurchase) return;
         // Attempt to purchase the item through the shop manager
-        if (shopManager != null && item != null) {
+        if (shopManager != null && item != null && shopManager.GetPlayerCurrency() >= item.cost) {
             shopManager.PurchaseItem(item);
             canPurchase = false;
             buttonImage.sprite = soldOut;

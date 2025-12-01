@@ -16,19 +16,20 @@ MonoBehaviour:
   cost: 40
   itemSprite: {fileID: 8346038518957600330, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: A bedframe carved from pure diamond.\nAbsurdly heavy, wildly impractical,
-    but great for delaying the inevitable.
-  maxHealthBonus: 40
+    \nbut great for delaying the inevitable.
+  maxHealthBonus: 150
   healthOverTimeBonus: 0
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 40
+  weightEffect: 20
   speedEffect: 0
   upgradeSprite: {fileID: 5865270325041323255, guid: 6f8d2709bce821745a73095b62f898c6, type: 3}
   Sheets: 0
   Frame: 1
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 0
   upgradedItem: {fileID: 0}
   permanentShopItem: 0

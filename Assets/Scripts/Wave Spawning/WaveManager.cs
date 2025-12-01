@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class WaveManager : MonoBehaviour
 {
+    private bool winScreenActive = false;
+    public GameObject winScreen;
     [Header("Wave Settings")]
     public int currencyMultiplier = 5;
     public int bossFrequency = 10;
@@ -53,7 +55,7 @@ public class WaveManager : MonoBehaviour
                 if (waveNumber < standardWavePool.Length) {
                     standardWaveLogic.StartWave(standardWavePool[waveNumber], waveCurrency);
                 } else {
-                    standardWaveLogic.StartWave(standardWavePool[0], waveCurrency);
+                    standardWaveLogic.StartWave(standardWavePool[15], waveCurrency);
                 }
                 break;
 
@@ -94,6 +96,11 @@ public class WaveManager : MonoBehaviour
         if (InputSystem.actions.FindAction("Jump").triggered) {
             StartWave();
         }
+
+        if (waveNumber == 15 && !winScreenActive) {
+            winScreen.SetActive(true);
+            winScreenActive = true;
+        }
     }
 
     public int GetWaveNumber() {
@@ -102,5 +109,9 @@ public class WaveManager : MonoBehaviour
 
     public bool IsWaveActive() {
         return waveActive;
+    }
+
+    public void CloseWin() {
+        winScreen.SetActive(false);
     }
 }

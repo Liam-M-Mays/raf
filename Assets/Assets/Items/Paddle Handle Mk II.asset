@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Paddle Handle Mk II
   cost: 20
   itemSprite: {fileID: 567961344979646433, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: An improved lightweight handle.\nYou'll be weaving through waves like
+  description: An improved lightweight handle.\nYou'll be weaving through waves \nlike
     you know what you're doing.
   maxHealthBonus: 0
   healthOverTimeBonus: 0
@@ -25,6 +25,11 @@ MonoBehaviour:
   plusHealth: 0
   weightEffect: -10
   speedEffect: 20
+  upgradeSprite: {fileID: 0}
+  Sheets: 0
+  Frame: 0
+  Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: d09ba0fa32631894591b21f6d041b74c, type: 2}
   permanentShopItem: 0

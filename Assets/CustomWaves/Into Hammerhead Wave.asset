@@ -16,6 +16,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: faa4a951334fe4d2d9d27ed3b060ee9e, type: 2}
   - {fileID: 11400000, guid: 64872f4d55ffe44a395827daa2e09dc3, type: 2}
   - {fileID: 11400000, guid: 64872f4d55ffe44a395827daa2e09dc3, type: 2}
-  spawnRate: 0
-  maxEnemies: 0
-  minEnemies: 0
+  spawnRate: 1
+  maxEnemies: 5
+  minEnemies: 2

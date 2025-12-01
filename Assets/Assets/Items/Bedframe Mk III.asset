@@ -16,19 +16,20 @@ MonoBehaviour:
   cost: 30
   itemSprite: {fileID: 2144893120661026739, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
   description: A bedframe plated with real 10 karrot gold.\nSignificantly heavier,
-    but will make the sharks very jealous.
-  maxHealthBonus: 30
+    but will make \nthe sharks very jealous.
+  maxHealthBonus: 80
   healthOverTimeBonus: 0
   damageBonus: 0
   barbedDamageBonus: 0
   plusAmmo: 0
   plusHealth: 0
-  weightEffect: 30
+  weightEffect: 15
   speedEffect: 0
   upgradeSprite: {fileID: 5546770197808649531, guid: 6f8d2709bce821745a73095b62f898c6, type: 3}
   Sheets: 0
   Frame: 1
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: e933418b4a36df2448b869d2d4e02eb6, type: 2}
   permanentShopItem: 0

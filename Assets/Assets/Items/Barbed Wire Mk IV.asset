@@ -20,7 +20,7 @@ MonoBehaviour:
   maxHealthBonus: 0
   healthOverTimeBonus: 0
   damageBonus: 0
-  barbedDamageBonus: 40
+  barbedDamageBonus: 30
   plusAmmo: 0
   plusHealth: 0
   weightEffect: 0
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 0
   Frame: 0
   Barbed: 1
+  Paddle: 0
   hasUpgrade: 0
   upgradedItem: {fileID: 0}
   permanentShopItem: 0

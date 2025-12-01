@@ -15,7 +15,7 @@ MonoBehaviour:
   itemName: Bedding
   cost: 10
   itemSprite: {fileID: -8173917835959820685, guid: 460d9d84b5a14ce41bb6fce91497ed81, type: 3}
-  description: A comfy set of sheets and a blanket.\nWake up each morning feeling
+  description: A comfy set of sheets and a blanket.\nWake up each morning \nfeeling
     fresh with some extra health..
   maxHealthBonus: 0
   healthOverTimeBonus: 10
@@ -29,6 +29,7 @@ MonoBehaviour:
   Sheets: 1
   Frame: 0
   Barbed: 0
+  Paddle: 0
   hasUpgrade: 1
   upgradedItem: {fileID: 11400000, guid: 12e4ce88f069a0843baefec6db53f8d7, type: 2}
   permanentShopItem: 0
