@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float currentSpeed;
     [SerializeField] private Vector2 currentVelocity;
     [SerializeField] private float currentDragForce;
+    [SerializeField] public int PlayerCurrency = 0;
 
     [Header("Player Walking")]
     public float walkSpeed = 5f;
