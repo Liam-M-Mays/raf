@@ -121,6 +121,12 @@ public class ShopManager : MonoBehaviour
         else if(item.Paddle) {
             playerMovement.Paddle = item;
         }
+        else if (item.plusHealth > 0) {
+            playerMovement.raftRB.GetComponent<Health>().Heal(item.plusHealth);
+        }
+        //else if (item.plusAmmo > 0) {
+        //    weaponManager.ReplenishAmmo(item.plusAmmo);
+        //}
         //if (PlayerCurrency >= item.cost)
         //{
         //    PlayerCurrency -= item.cost;

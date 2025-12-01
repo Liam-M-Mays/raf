@@ -237,6 +237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthText: {fileID: 0}
   maxHealth: 30
   currentHealth: 30
   showDamageNumbers: 1
@@ -266,7 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMeleeAttack
   damage: 10
-  attackCooldown: 1
+  attackCooldown: 0
   raftLayer:
     serializedVersion: 2
     m_Bits: 8

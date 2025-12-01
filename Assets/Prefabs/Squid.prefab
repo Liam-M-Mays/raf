@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b75b27525a1bb4da9fae73dfba1c82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  healthText: {fileID: 0}
   maxHealth: 50
   currentHealth: 50
   showDamageNumbers: 1
@@ -207,7 +208,7 @@ MonoBehaviour:
   rightArmAnimator: {fileID: 8782965697409073829}
   projectilePrefab: {fileID: 4317016593405667723, guid: 432906a4e1fd1ce448ce0eed903deebd, type: 3}
   firePoint: {fileID: 0}
-  fireRate: 3
+  fireRate: 4
   projectileDamage: 1
   projectileSpeed: 8
   attackRange: 7
