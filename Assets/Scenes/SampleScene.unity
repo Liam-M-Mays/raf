@@ -415,6 +415,7 @@ MonoBehaviour:
   itemSpot2: {fileID: 933045935}
   shopWeaponPrefab: {fileID: 6327673331779669998, guid: 9a4f2a90d48cd88468d32c20bbc2a9c8, type: 3}
   shopItemPrefab: {fileID: 3342972835341346573, guid: c6a22b5bdbdf1b44cb6f892cdb4ff659, type: 3}
+  playerMovement: {fileID: 0}
   weaponManager: {fileID: 1013756049}
   shopUI: {fileID: 667415738}
   weaponIndex: 0
@@ -1021,26 +1022,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1430670491283315096, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2546178992715838942, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
       propertyPath: m_Name
       value: Matress
       objectReference: {fileID: 0}
-    - target: {fileID: 2662352577360513228, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5051715365240410782, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5954771079231015432, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
+    - target: {fileID: 6008881024885498816, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 265976792}
     - target: {fileID: 6334592003059157935, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1081,25 +1070,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6979877142204927894, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7591522747114085871, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8338788818054150260, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2546178992715838942, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
-      insertIndex: 4
-      addedObject: {fileID: 981534631}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
 --- !u!1 &667415738 stripped
 GameObject:
@@ -1282,19 +1256,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6334592003059157935, guid: 8a0f59e883259417a8828efb979598ae, type: 3}
   m_PrefabInstance: {fileID: 641983264}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &981534631
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 981534622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27085fdeb5415a4c9adbcf8e1b2825f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::OpenShop
-  shopManager: {fileID: 265976792}
 --- !u!1 &1011168094
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,10 +2110,6 @@ PrefabInstance:
     - target: {fileID: 8724443780134295448, guid: f68e78128e112b4438b072f298084206, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9022852911580656594, guid: f68e78128e112b4438b072f298084206, type: 3}
-      propertyPath: availableWeapons.Array.size
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

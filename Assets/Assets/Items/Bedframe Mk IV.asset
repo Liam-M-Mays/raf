@@ -26,6 +26,9 @@ MonoBehaviour:
   weightEffect: 40
   speedEffect: 0
   upgradeSprite: {fileID: 5865270325041323255, guid: 6f8d2709bce821745a73095b62f898c6, type: 3}
+  Sheets: 0
+  Frame: 1
+  Barbed: 0
   hasUpgrade: 0
   upgradedItem: {fileID: 0}
   permanentShopItem: 0

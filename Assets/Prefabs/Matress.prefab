@@ -4938,6 +4938,7 @@ GameObject:
   - component: {fileID: 6252446787478398330}
   - component: {fileID: 6933477064831522172}
   - component: {fileID: 4331019016217442645}
+  - component: {fileID: 6008881024885498816}
   - component: {fileID: 2072451057119512464}
   - component: {fileID: 7182382246192410247}
   m_Layer: 3
@@ -5066,6 +5067,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6008881024885498816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2546178992715838942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a27085fdeb5415a4c9adbcf8e1b2825f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OpenShop
+  shopManager: {fileID: 0}
 --- !u!114 &2072451057119512464
 MonoBehaviour:
   m_ObjectHideFlags: 0
