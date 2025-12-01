@@ -27,10 +27,11 @@ public class EnemySO : ScriptableObject //TODO change name, add prefab,
 {
     [SerializeField] public BehaviorOptions Behaviors = new BehaviorOptions();
     public int cost;
+    public int health;
+    public int damage;
     public GameObject prefab;
     public float spawnRadius;
     public Color color = Color.white;
-
 
 
     public BehaviorCfg getBehavior()

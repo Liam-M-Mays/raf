@@ -17,6 +17,15 @@ public class LiamEnemyBrain : MonoBehaviour //TODO change name, add decision mat
         var behavior = logic.getBehavior().CreateRuntimeBehavior();
         manager.ChangeBehavior(behavior, transform, GetComponent<Animator>());
         spriteRenderer.color = logic.color;
+        GetComponent<Health>().SetHealth(logic.health);
+        if(TryGetComponent<EnemyMeleeAttack>(out var attack))
+        {
+            attack.SetDamage(logic.damage);
+        }
+        else if (TryGetComponent<EnemyRangedAttack>(out var rangedAttack))
+        {
+            rangedAttack.SetDamage(logic.damage);
+        }
     }
     void Update()
     {

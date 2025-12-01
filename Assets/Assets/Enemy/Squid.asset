@@ -21,7 +21,9 @@ MonoBehaviour:
       rid: 7550196391377895522
     Direct:
       rid: 7550196391377895523
-  cost: 1
+  cost: 3
+  health: 50
+  damage: 5
   prefab: {fileID: 3505499849446463483, guid: b1a6e79b08c635c46b98d2fd06bc9219, type: 3}
   spawnRadius: 20
   color: {r: 1, g: 1, b: 1, a: 1}

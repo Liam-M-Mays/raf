@@ -154,7 +154,7 @@ public class PlayerMovement : MonoBehaviour
             paddleExtraForce = 0f;
             paddleWeightEffect = 0f;
         }
-        raftRB.mass = 1f; + frameWeightEffect + paddleWeightEffect;
+        raftRB.mass = 1f + frameWeightEffect + paddleWeightEffect;
         extraForce = sheetsSpeedEffect + paddleExtraForce;
         raftRB.GetComponent<Health>().SetMaxHealth(frameHealthEffect);
     }

@@ -103,6 +103,11 @@ public class Health : MonoBehaviour
 
     // Getters
     public float GetCurrentHealth() => currentHealth;
+    public void SetHealth(float newHealth)
+    {
+        currentHealth = newHealth;
+        maxHealth = newHealth;
+    }
     public float GetMaxHealth() => maxHealth;
     public void SetMaxHealth(float newMaxHealth)
     {
