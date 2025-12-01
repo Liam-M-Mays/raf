@@ -8,6 +8,7 @@ TagManager:
   - Raft
   - Tooltip
   - Shop
+  - ShopDetector
   layers:
   - Default
   - TransparentFX

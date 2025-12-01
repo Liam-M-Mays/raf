@@ -16,6 +16,7 @@ public class ShopManager : MonoBehaviour
     public GameObject shopItemPrefab;
 
     private WaveManager waveManager;
+    public WeaponManager weaponManager;
 
     public GameObject shopUI;
 
@@ -32,11 +33,8 @@ public class ShopManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // add weapons to available wepons pool every few waves or if pool is less than 3
-        if (availableWeaponPool.Count < 3)
-        {
-            // Add more weapons to the available pool
-        }
+
+
 
     }
 
@@ -89,6 +87,7 @@ public class ShopManager : MonoBehaviour
 
     public void PurchaseWeapon(WeaponSO weapon, bool isMelee)
     {
+        weaponManager.availableWeapons.Add(weapon);
         //if (PlayerCurrency >= weapon.cost)
         //{
         //    PlayerCurrency -= weapon.cost;

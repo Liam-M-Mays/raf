@@ -17,12 +17,18 @@ MonoBehaviour:
   weaponSprite: {fileID: 3096996549263505085, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Semi auto with a high firerate but \nlow damage.
   isMelee: 0
-  autoFire: 0
-  attackingSpeed: 0
-  damage: 5
+  weaponPrefab: {fileID: 496856416842775121, guid: 951620d1422ff3d4c89169981fae9413, type: 3}
+  projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
+  weaponType: 0
+  primarySound: {fileID: 0}
+  secondarySound: {fileID: 0}
   fireRate: 0
-  spreadAngle: 0.3
+  autoFire: 0
+  projectileDamage: 10
+  projectileSpeed: 12
+  projectileRange: 15
   bulletsPerShot: 1
-  range: 4
-  weaponPrefab: {fileID: 0}
-  projectilePrefab: {fileID: 0}
+  spreadAngle: 0.3
+  recoilDistance: 0.2
+  recoilRecoverySpeed: 8
+  usesAmmo: 0

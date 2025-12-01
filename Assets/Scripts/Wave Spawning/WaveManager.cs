@@ -25,11 +25,13 @@ public class WaveManager : MonoBehaviour
 
 
     private StandardWaveLogic standardWaveLogic;
+    private MasonManager masonManager;
     //private BossWaveLogic bossWaveLogic;
     
 
     void Start() {
         standardWaveLogic = GetComponent<StandardWaveLogic>();
+        masonManager = GetComponent<MasonManager>();
         //bossWaveLogic = GetComponent<BossWaveLogic>();
     }
 
@@ -88,6 +90,8 @@ public class WaveManager : MonoBehaviour
         waveActive = false;
         Debug.Log("Wave Manager -> End Wave " + waveNumber);
         waveNumber++;
+
+        masonManager.StartShop();
         
     }
 

@@ -1,4 +1,4 @@
- using UnityEngine;
+using UnityEngine;
 
 public class PlayerRangedWeapon : MonoBehaviour
 {
@@ -8,6 +8,7 @@ public class PlayerRangedWeapon : MonoBehaviour
     
     [Header("Fire Rate")]
     [SerializeField] private float fireRate = 0.5f;
+    [SerializeField] private bool autoFire = false;
     
     [Header("Projectile Properties")]
     [SerializeField] private float projectileDamage = 10f;
@@ -18,10 +19,6 @@ public class PlayerRangedWeapon : MonoBehaviour
     [SerializeField] private int bulletsPerShot = 1;
     [SerializeField] private float spreadAngle = 10f;
     
-    [Header("Input")]
-    [SerializeField] private KeyCode fireKey = KeyCode.Mouse0;
-    [SerializeField] private bool useOldInputSystem = true;
-    
     [Header("Audio")]
     [SerializeField] private AudioClip fireSound;
     
@@ -30,7 +27,27 @@ public class PlayerRangedWeapon : MonoBehaviour
     private AudioSource audioSource;
     private AmmoSystem ammoSystem;
     private WeaponAiming weaponAiming;
+    private WeaponManager weaponManager;
     private bool canFire = true;
+
+    void Update() {
+        // Auto-fire: hold button to fire repeatedly
+            if (autoFire)
+            {
+                if (Input.GetMouseButton(0) && CanFire())
+                {
+                    Fire();
+                }
+            }
+            // Semi-auto: single shot per button press
+            else
+            {
+                if (Input.GetMouseButtonDown(0) && CanFire())
+                {
+                    Fire();
+                }
+            }
+    }
 
     void Start()
     {
@@ -42,20 +59,14 @@ public class PlayerRangedWeapon : MonoBehaviour
         }
         
         audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+        
         ammoSystem = GetComponent<AmmoSystem>();
         weaponAiming = GetComponent<WeaponAiming>();
-    }
-
-    void Update()
-    {
-        // Only check input if this weapon script is enabled
-        if (useOldInputSystem && enabled)
-        {
-            if (Input.GetKeyDown(fireKey) && CanFire())
-            {
-                Fire();
-            }
-        }
+        weaponManager = GetComponent<WeaponManager>();
     }
 
     bool CanFire()
@@ -68,16 +79,29 @@ public class PlayerRangedWeapon : MonoBehaviour
     public void Fire()
     {
         if (!CanFire()) return;
-        if (projectilePrefab == null) return;
+        if (projectilePrefab == null)
+        {
+            Debug.LogError("PlayerRangedWeapon: No projectile prefab assigned!");
+            return;
+        }
+
+        // FIXED: Removed duplicate and added null check
+        if (weaponManager != null && weaponManager.animator != null)
+        {
+            weaponManager.animator.SetTrigger("Fire");
+        }
         
+        // Check ammo
         if (ammoSystem != null)
         {
             if (!ammoSystem.TryConsumeAmmo())
             {
+                Debug.Log("Out of ammo!");
                 return;
             }
         }
         
+        // Get aim direction from WeaponAiming
         Vector2 direction;
         if (weaponAiming != null)
         {
@@ -85,6 +109,7 @@ public class PlayerRangedWeapon : MonoBehaviour
         }
         else
         {
+            // Fallback to mouse position if no WeaponAiming
             Vector3 mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
             mousePos.z = 0;
             direction = (mousePos - firePoint.position).normalized;
@@ -92,9 +117,11 @@ public class PlayerRangedWeapon : MonoBehaviour
         
         Debug.Log($"PlayerRangedWeapon.Fire() called! Direction: {direction}");
         
+        // Calculate spread for multiple bullets
         float startAngle = -spreadAngle / 2f;
         float angleStep = bulletsPerShot > 1 ? spreadAngle / (bulletsPerShot - 1) : 0f;
         
+        // Spawn all bullets
         for (int i = 0; i < bulletsPerShot; i++)
         {
             float currentAngle = startAngle + (angleStep * i);
@@ -105,6 +132,7 @@ public class PlayerRangedWeapon : MonoBehaviour
         
         lastFireTime = Time.time;
         
+        // Play fire sound
         if (audioSource != null && fireSound != null)
         {
             audioSource.PlayOneShot(fireSound);
@@ -142,11 +170,16 @@ public class PlayerRangedWeapon : MonoBehaviour
         );
     }
 
+    // Setter methods for WeaponManager
+    public void SetProjectilePrefab(GameObject prefab) => projectilePrefab = prefab;
+    public void SetFirePoint(Transform point) => firePoint = point;
     public void SetFireRate(float rate) => fireRate = Mathf.Max(0.01f, rate);
+    public void SetAutoFire(bool auto) => autoFire = auto;
     public void SetDamage(float dmg) => projectileDamage = Mathf.Max(0f, dmg);
     public void SetSpeed(float spd) => projectileSpeed = Mathf.Max(0.1f, spd);
     public void SetRange(float range) => projectileRange = Mathf.Max(0.1f, range);
     public void SetBulletsPerShot(int bullets) => bulletsPerShot = Mathf.Max(1, bullets);
     public void SetSpreadAngle(float angle) => spreadAngle = Mathf.Clamp(angle, 0f, 180f);
+    public void SetFireSound(AudioClip clip) => fireSound = clip;
     public void SetCanFire(bool value) => canFire = value;
 }

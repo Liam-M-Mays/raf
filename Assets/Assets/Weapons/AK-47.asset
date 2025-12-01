@@ -17,12 +17,18 @@ MonoBehaviour:
   weaponSprite: {fileID: 7926173939745720873, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Fully automatic with a high fire rate. Great for mowing down piranhas.
   isMelee: 0
-  autoFire: 1
-  attackingSpeed: 0
-  damage: 10
-  fireRate: 0.2
-  spreadAngle: 0.5
-  bulletsPerShot: 1
-  range: 5
   weaponPrefab: {fileID: 2622625491221938436, guid: 03a28a2375491b94eaf732d209886a2b, type: 3}
-  projectilePrefab: {fileID: 0}
+  projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
+  weaponType: 0
+  primarySound: {fileID: 0}
+  secondarySound: {fileID: 0}
+  fireRate: 0.2
+  autoFire: 1
+  projectileDamage: 10
+  projectileSpeed: 12
+  projectileRange: 15
+  bulletsPerShot: 1
+  spreadAngle: 0.5
+  recoilDistance: 0.2
+  recoilRecoverySpeed: 8
+  usesAmmo: 0

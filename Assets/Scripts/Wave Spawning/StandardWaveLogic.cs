@@ -89,7 +89,7 @@ public class StandardWaveLogic : MonoBehaviour
     {
         alive = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if (standardWaveActive && alive.Length == 0 && waveCurrency < 0) {
+        if (standardWaveActive && alive.Length <= 0 && waveCurrency <= 0) {
             waveManager.EndWave();
             standardWaveActive = false;
         }

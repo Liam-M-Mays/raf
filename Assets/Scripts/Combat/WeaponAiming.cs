@@ -3,14 +3,6 @@ using UnityEngine.InputSystem;
 
 public class WeaponAiming : MonoBehaviour
 {
-    [Header("Weapon Type")]
-    [Tooltip("Select weapon type: Ranged for guns, Melee for swords/axes")]
-    public WeaponType weaponType = WeaponType.Ranged;
-    
-    [Header("Weapon Switching")]
-    [SerializeField] private KeyCode switchWeaponKey = KeyCode.Q;
-    [SerializeField] private bool allowWeaponSwitching = true;
-    
     [Header("References")]
     [Tooltip("The weapon sprite/object to rotate")]
     public Transform weaponTransform;
@@ -22,19 +14,9 @@ public class WeaponAiming : MonoBehaviour
     [Tooltip("Offset the weapon from the player center")]
     public Vector2 weaponOffset = new Vector2(0.5f, 0f);
     
-    [Tooltip("Distance from player (mainly for melee)")]
-    public float idleDistance = 0.5f;
-    
     [Header("Flip Settings")]
     [Tooltip("Flip the weapon sprite when aiming left")]
     public bool flipWeaponSprite = true;
-    
-    [Header("Melee Settings")]
-    [Tooltip("How far the weapon extends during a swing")]
-    public float swingDistance = 1.2f;
-    
-    [Tooltip("Speed of the swing animation")]
-    public float swingSpeed = 10f;
     
     [Header("Ranged Settings")]
     [Tooltip("Recoil distance when firing")]
@@ -48,14 +30,12 @@ public class WeaponAiming : MonoBehaviour
     public bool hideWhileRowing = true;
     
     private Camera mainCamera;
-    private SpriteRenderer weaponSpriteRenderer;
+    public SpriteRenderer weaponSpriteRenderer;
     private InputAction attackAction;
-    private bool isSwinging = false;
     private bool isRecoiling = false;
     private bool isFacingRight = true;
     
     private PlayerRangedWeapon rangedWeapon;
-    private PlayerMeleeWeapon meleeWeapon;
     
     [Header("Debug Info")]
     [SerializeField] private float debugAngle;
@@ -64,13 +44,11 @@ public class WeaponAiming : MonoBehaviour
     [SerializeField] private Vector2 debugDirection;
     
     private float currentDistance;
-    private float targetDistance;
 
     void Start()
     {
         mainCamera = Camera.main;
-        currentDistance = idleDistance;
-        targetDistance = idleDistance;
+        currentDistance = 0f;
         
         if (weaponTransform != null)
         {
@@ -86,21 +64,17 @@ public class WeaponAiming : MonoBehaviour
             playerMovement = GetComponent<PlayerMovement>();
         }
         
-        // Get weapon components
+        // Get ranged weapon component
         rangedWeapon = GetComponent<PlayerRangedWeapon>();
-        meleeWeapon = GetComponent<PlayerMeleeWeapon>();
-        
-        // Disable the weapon that's not being used
-        UpdateWeaponState();
+        if (rangedWeapon != null)
+        {
+            rangedWeapon.enabled = true;
+        }
     }
 
     void Update()
     {
-        // Handle weapon switching
-        if (allowWeaponSwitching && Input.GetKeyDown(switchWeaponKey))
-        {
-            SwitchWeapon();
-        }
+
         
         // Check if player is rowing - only show weapon when walking
         bool isRowing = IsPlayerRowing();
@@ -128,63 +102,12 @@ public class WeaponAiming : MonoBehaviour
         
         AimWeaponAtMouse();
         
-        // Handle attack input
-        if (attackAction != null && attackAction.triggered)
-        {
-            if (weaponType == WeaponType.Melee && !isSwinging)
-            {
-                StartSwing();
-            }
-            else if (weaponType == WeaponType.Ranged && !isRecoiling)
-            {
-                Fire();
-            }
-        }
         
-        // Update animations
-        if (weaponType == WeaponType.Melee && isSwinging)
-        {
-            UpdateSwing();
-        }
-        else if (weaponType == WeaponType.Ranged && isRecoiling)
+        
+        // Update recoil animation
+        if (isRecoiling)
         {
             UpdateRecoil();
-        }
-    }
-
-    void SwitchWeapon()
-    {
-        // Toggle between weapon types
-        if (weaponType == WeaponType.Ranged)
-        {
-            weaponType = WeaponType.Melee;
-            Debug.Log("Switched to MELEE weapon");
-        }
-        else
-        {
-            weaponType = WeaponType.Ranged;
-            Debug.Log("Switched to RANGED weapon");
-        }
-        
-        // Reset distances based on weapon type
-        currentDistance = (weaponType == WeaponType.Ranged) ? 0f : idleDistance;
-        targetDistance = currentDistance;
-        
-        // Update which weapon script can fire
-        UpdateWeaponState();
-    }
-
-    void UpdateWeaponState()
-    {
-        // Enable/disable weapon scripts based on current weapon type
-        if (rangedWeapon != null)
-        {
-            rangedWeapon.enabled = (weaponType == WeaponType.Ranged);
-        }
-        
-        if (meleeWeapon != null)
-        {
-            meleeWeapon.enabled = (weaponType == WeaponType.Melee);
         }
     }
 
@@ -226,49 +149,46 @@ public class WeaponAiming : MonoBehaviour
         Vector3 mousePos = mainCamera.ScreenToWorldPoint(new Vector3(mouseScreenPos.x, mouseScreenPos.y, 0));
         mousePos.z = 0f;
 
-        // Calculate direction from player to mouse
-        Vector2 baseDirection = (mousePos - transform.position).normalized;
-        Vector2 direction;
+        // Calculate direction from weapon position to mouse (not player position)
+        Vector2 direction = (mousePos - weaponTransform.position).normalized;
 
         // Debug values
         debugMouseWorld = mousePos;
         debugPlayerPos = transform.position;
-
-        // FIXED: Flip direction based on weapon type
-        if (weaponType == WeaponType.Ranged)
-        {
-            direction = baseDirection; // Ranged points AT mouse (toward cursor)
-        }
-        else // Melee
-        {
-            direction = -baseDirection; // Melee points AWAY from mouse (behind player)
-        }
-        
         debugDirection = direction;
 
         // Calculate angle in degrees
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         debugAngle = angle;
 
-        // Apply rotation to weapon
+        // Apply rotation to weapon - use world rotation to ignore parent scaling
         weaponTransform.rotation = Quaternion.Euler(0f, 0f, angle);
 
-        // Position weapon based on type
-        if (weaponType == WeaponType.Ranged)
+        // Calculate weapon offset accounting for player flip
+        Vector2 adjustedOffset = weaponOffset;
+        if (!isFacingRight)
         {
-            // Guns stay at fixed offset with recoil
-            Vector2 recoilOffset = direction * -currentDistance;
-            weaponTransform.position = (Vector2)transform.position + weaponOffset + recoilOffset;
+            adjustedOffset.x = -adjustedOffset.x;
         }
-        else // Melee
+
+        // Position weapon with recoil offset
+        Vector2 recoilOffset = direction * -currentDistance;
+        weaponTransform.position = (Vector2)transform.position + adjustedOffset + recoilOffset;
+
+        // Flip weapon transform scale so it points correctly
+        if (angle > 90f || angle < -90f)
         {
-            // Melee extends in the direction (away from mouse)
-            Vector2 offset = direction * currentDistance;
-            weaponTransform.position = (Vector2)transform.position + offset;
+            // Aiming left → weapon faces left
+            weaponTransform.localScale = new Vector3(1f, 1f, 1f);
+        }
+        else
+        {
+            // Aiming right → weapon faces right (-1,1,1)
+            weaponTransform.localScale = new Vector3(-1f, 1f, 1f);
         }
 
         // Flip weapon sprite when aiming left
-        if (flipWeaponSprite && weaponSpriteRenderer != null)
+        if (flipWeaponSprite)
         {
             if (angle > 90f || angle < -90f)
             {
@@ -281,54 +201,12 @@ public class WeaponAiming : MonoBehaviour
         }
     }
 
-    // === MELEE FUNCTIONS ===
-    
-    public void StartSwing()
-    {
-        isSwinging = true;
-        targetDistance = swingDistance;
-        
-        // Call PlayerMeleeWeapon to do damage
-        PlayerMeleeWeapon meleeWeapon = GetComponent<PlayerMeleeWeapon>();
-        if (meleeWeapon != null && meleeWeapon.enabled)
-        {
-            Debug.Log("WeaponAiming calling PlayerMeleeWeapon.Attack()");
-            meleeWeapon.Attack();
-        }
-        else
-        {
-            Debug.LogError("PlayerMeleeWeapon not found or disabled!");
-        }
-    }
-
-    void UpdateSwing()
-    {
-        // Extend weapon outward during swing
-        currentDistance = Mathf.Lerp(currentDistance, targetDistance, Time.deltaTime * swingSpeed);
-        
-        // When reached max distance, retract
-        if (currentDistance >= swingDistance - 0.1f)
-        {
-            targetDistance = idleDistance;
-            
-            // End swing when back to idle distance
-            if (currentDistance <= idleDistance + 0.1f)
-            {
-                currentDistance = idleDistance;
-                isSwinging = false;
-            }
-        }
-    }
-
-    // === RANGED FUNCTIONS ===
-    
     public void Fire()
     {
         isRecoiling = true;
         currentDistance = recoilDistance;
         
         // Call PlayerRangedWeapon to spawn bullet
-        PlayerRangedWeapon rangedWeapon = GetComponent<PlayerRangedWeapon>();
         if (rangedWeapon != null && rangedWeapon.enabled)
         {
             Debug.Log("WeaponAiming calling PlayerRangedWeapon.Fire()");
@@ -352,8 +230,6 @@ public class WeaponAiming : MonoBehaviour
         }
     }
 
-    // === UTILITY FUNCTIONS ===
-    
     bool IsPlayerRowing()
     {
         // Check if playerMovement exists and access its rowing state
@@ -383,25 +259,6 @@ public class WeaponAiming : MonoBehaviour
     
     public bool IsAttacking()
     {
-        return isSwinging || isRecoiling;
+        return isRecoiling;
     }
-    
-    // Change weapon type at runtime if needed
-    public void SetWeaponType(WeaponType type)
-    {
-        weaponType = type;
-        currentDistance = (type == WeaponType.Ranged) ? 0f : idleDistance;
-        UpdateWeaponState();
-    }
-    
-    public WeaponType GetCurrentWeaponType()
-    {
-        return weaponType;
-    }
-}
-
-public enum WeaponType
-{
-    Ranged,
-    Melee
 }
