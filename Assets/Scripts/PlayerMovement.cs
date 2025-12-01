@@ -160,14 +160,14 @@ public class PlayerMovement : MonoBehaviour
     {
         //playerSprite.SetActive(false);
         //raftAnim.SetBool("Paddle", true);
-        anim.SetTrigger("Row");
         if (input == Vector2.zero)
         {
-            anim.speed = 0f;
+            anim.SetTrigger("StopRow");
         }
         else
         {
-            anim.speed = currentSpeed;
+            anim.SetTrigger("Row");
+            anim.speed = Mathf.Max(0.5f, currentSpeed);
         }
         transform.position = raftRB.transform.position + new Vector3(0f, 0.005f, 0f);
         vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
@@ -193,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         anim.speed = 1f;
         playerSprite.SetActive(true);
         raftAnim.SetBool("Paddle", false);
-        anim.SetTrigger("StopRow");
+        anim.SetTrigger("StopROW");
         vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
         
         // Walk relative to raft
@@ -264,5 +264,10 @@ public class PlayerMovement : MonoBehaviour
         currentSpeed = raftRB.linearVelocity.magnitude;
         currentVelocity = raftRB.linearVelocity;
         currentDragForce = waterDrag * deceleration;
+    }
+
+    public bool IsPlayerRowing()
+    {
+        return rowing;
     }
 }

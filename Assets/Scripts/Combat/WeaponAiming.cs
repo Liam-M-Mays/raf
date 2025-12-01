@@ -77,7 +77,7 @@ public class WeaponAiming : MonoBehaviour
 
         
         // Check if player is rowing - only show weapon when walking
-        bool isRowing = IsPlayerRowing();
+        bool isRowing = playerMovement.IsPlayerRowing();
         
         if (hideWhileRowing && isRowing)
         {
@@ -85,6 +85,10 @@ public class WeaponAiming : MonoBehaviour
             if (weaponSpriteRenderer != null)
             {
                 weaponSpriteRenderer.enabled = false;
+                if (rangedWeapon != null)
+                {
+                    rangedWeapon.enabled = false;
+                }
             }
             return; // Don't process aiming while rowing
         }
@@ -94,6 +98,10 @@ public class WeaponAiming : MonoBehaviour
             if (weaponSpriteRenderer != null)
             {
                 weaponSpriteRenderer.enabled = true;
+                if (rangedWeapon != null)
+                {
+                    rangedWeapon.enabled = true;
+                }
             }
         }
         
@@ -230,7 +238,7 @@ public class WeaponAiming : MonoBehaviour
         }
     }
 
-    bool IsPlayerRowing()
+    /*bool IsPlayerRowing()
     {
         // Check if playerMovement exists and access its rowing state
         if (playerMovement != null && playerMovement.playerSprite != null)
@@ -238,7 +246,7 @@ public class WeaponAiming : MonoBehaviour
             return !playerMovement.playerSprite.activeSelf;
         }
         return false;
-    }
+    }*/
     
     public Vector2 GetAimDirection()
     {
