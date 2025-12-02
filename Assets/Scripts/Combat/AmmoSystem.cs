@@ -79,13 +79,14 @@ public class AmmoSystem : MonoBehaviour
             return false;
         }
         
+        // Check if we have ammo in magazine
         if (currentAmmo > 0)
         {
             currentAmmo--;
             UpdateAmmoUI();
             
             // Auto reload when empty
-            if (currentAmmo == 0 && autoReload)
+            if (currentAmmo == 0 && autoReload && (!useReserveAmmo || currentReserveAmmo > 0))
             {
                 StartReload();
             }
@@ -100,8 +101,8 @@ public class AmmoSystem : MonoBehaviour
                 audioSource.PlayOneShot(emptyClickSound);
             }
             
-            // Try to auto reload
-            if (autoReload && !isReloading)
+            // Try to auto reload if we have reserve ammo
+            if (autoReload && !isReloading && (!useReserveAmmo || currentReserveAmmo > 0))
             {
                 StartReload();
             }
@@ -187,12 +188,22 @@ public class AmmoSystem : MonoBehaviour
     {
         if (useReserveAmmo)
         {
+            // Add to reserve ammo pool
             currentReserveAmmo = Mathf.Min(currentReserveAmmo + amount, maxReserveAmmo);
         }
         else
         {
+            // Add directly to magazine (capped at max)
             currentAmmo = Mathf.Min(currentAmmo + amount, maxAmmo);
         }
+        UpdateAmmoUI();
+    }
+    
+    public void ReplenishAmmo()
+    {
+        // Fully replenish ammo (used in shops)
+        currentAmmo = maxAmmo;
+        currentReserveAmmo = maxReserveAmmo;
         UpdateAmmoUI();
     }
 
@@ -202,4 +213,29 @@ public class AmmoSystem : MonoBehaviour
     public int GetMaxAmmo() => maxAmmo;
     public int GetReserveAmmo() => currentReserveAmmo;
     public float GetReloadProgress() => isReloading ? (reloadTimer / reloadTime) : 0f;
+    // Setters for WeaponSO integration
+    public void ConfigureFromWeapon(WeaponSO weapon)
+    {
+        // Set reserve ammo system flag FIRST
+        useReserveAmmo = weapon.useReserveAmmo;
+        
+        // Configure magazine
+        maxAmmo = weapon.maxAmmo;
+        currentAmmo = weapon.maxAmmo;
+        
+        // Configure reserve ammo
+        maxReserveAmmo = weapon.maxReserveAmmo;
+        currentReserveAmmo = weapon.maxReserveAmmo;
+        
+        // Configure reload behavior
+        reloadTime = weapon.reloadTime;
+        autoReload = weapon.autoReload;
+        
+        // Configure audio
+        reloadSound = weapon.reloadSound;
+        emptyClickSound = weapon.emptyClickSound;
+        
+        UpdateAmmoUI();
+        Debug.Log($"Ammo configured: Magazine={currentAmmo}/{maxAmmo}, Reserve={currentReserveAmmo}/{maxReserveAmmo}, UseReserve={useReserveAmmo}");
+    }
 }

@@ -17,18 +17,41 @@ MonoBehaviour:
   weaponSprite: {fileID: 5266689570324221324, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Common weapon for fisherman. \nModerate damage with a low fire rate.
   isMelee: 0
-  weaponPrefab: {fileID: 195590483905385013, guid: f80d32b213a8272429445fd7ea398a43, type: 3}
+  weaponVisualPrefab: {fileID: 195590483905385013, guid: f80d32b213a8272429445fd7ea398a43, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: 2a71699d3d886e6419e05afe31157131, type: 3}
   weaponType: 0
-  primarySound: {fileID: 0}
-  secondarySound: {fileID: 0}
   fireRate: 2
   autoFire: 0
-  projectileDamage: 20
-  projectileSpeed: 12
-  projectileRange: 15
   bulletsPerShot: 1
   spreadAngle: 0.2
+  projectileType: 0
+  projectileSpeed: 15
+  projectileRange: 15
+  projectileDamage: 15
+  homingTurnSpeed: 5
+  homingRange: 10
+  maxBounces: 3
+  bounceDampenDamage: 0.1
+  explosionRadius: 3
+  explosionDamage: 15
+  explosionEffectPrefab: {fileID: 0}
+  slowDuration: 2
+  slowAmount: 0.5
+  splitCount: 2
+  splitProjectilePrefab: {fileID: 0}
+  splitSpeedReduction: 0.7
   recoilDistance: 0.2
   recoilRecoverySpeed: 8
   usesAmmo: 0
+  maxAmmo: 30
+  reloadTime: 2
+  autoReload: 1
+  useReserveAmmo: 0
+  maxReserveAmmo: 120
+  weaponKickbackForce: 0.2
+  enemyKnockbackForce: 0.2
+  primarySound: {fileID: 0}
+  fireSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  notes: Weapon notes and strategy

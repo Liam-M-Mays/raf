@@ -45,7 +45,8 @@ public static class UtilityNodes
         bool shouldFaceRight = ctx.self.position.x <= target.x;
         bool isFacingRight = ctx.self.localScale.x > 0;
         
-        if (shouldFaceRight != isFacingRight )//&& Vector2.Distance(target, (Vector2)ctx.self.position) > 0.75)
+        // Only flip if target is far enough away and facing is wrong (hysteresis to prevent jitter)
+        if (shouldFaceRight != isFacingRight && Vector2.Distance(target, (Vector2)ctx.self.position) > 0.5f)
         {
             Flip(ctx);
         }
@@ -56,7 +57,8 @@ public static class UtilityNodes
         bool shouldFaceRight = ctx.self.position.x >= target.x;
         bool isFacingRight = ctx.self.localScale.x > 0;
         
-        if (shouldFaceRight != isFacingRight )//&& Vector2.Distance(target, (Vector2)ctx.self.position) > 0.75)
+        // Only flip if target is far enough away and facing is wrong (hysteresis to prevent jitter)
+        if (shouldFaceRight != isFacingRight && Vector2.Distance(target, (Vector2)ctx.self.position) > 0.5f)
         {
             Flip(ctx);
         }

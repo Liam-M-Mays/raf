@@ -14,6 +14,7 @@ public class PlayerProjectile : MonoBehaviour
     private Vector2 direction;
     private Vector3 startPosition;
     private float timer = 0f;
+    private float knockbackForce = 0f; // Applied to enemies on hit
     private bool initialized = false;
 
     void Start()
@@ -48,12 +49,13 @@ public class PlayerProjectile : MonoBehaviour
         }
     }
 
-    public void Initialize(Vector2 dir, float projSpeed, float projDamage, float projRange)
+    public void Initialize(Vector2 dir, float projSpeed, float projDamage, float projRange, float projKnockback = 0f)
     {
         direction = dir.normalized;
         speed = projSpeed;
         damage = projDamage;
         maxRange = projRange;
+        knockbackForce = projKnockback;
         initialized = true;
         
         // Rotate to face direction
@@ -73,9 +75,17 @@ public class PlayerProjectile : MonoBehaviour
         
         if (collision.CompareTag("Enemy"))
         {
-            if (collision.GetComponent<LiamEnemyBrain>().manager.Current.CTX().hittable)
+            LiamEnemyBrain brain = collision.GetComponent<LiamEnemyBrain>();
+            bool hittable = false;
+            if (brain != null && brain.manager != null && brain.manager.Current != null)
             {
-                Debug.Log("Bullet hit enemy!");
+                var bctx = brain.manager.Current.CTX();
+                hittable = (bctx != null) ? bctx.hittable : false;
+            }
+            if (hittable)
+            {
+                // Enemy is HITTABLE - deal damage and destroy projectile
+                Debug.Log("Bullet hit HITTABLE enemy!");
             
                 Health enemyHealth = collision.GetComponent<Health>();
                 if (enemyHealth != null && !enemyHealth.IsDead())
@@ -83,10 +93,16 @@ public class PlayerProjectile : MonoBehaviour
                     enemyHealth.TakeDamage(damage, transform.position);
                 }
                 
+                // Apply knockback to enemy if force is set
+                if (knockbackForce > 0f)
+                {
+                    PlayerMovement.ApplyEnemyKnockback(collision.transform, direction, knockbackForce);
+                }
+                
                 SpawnHitEffect();
+                Destroy(gameObject);
             }
-            
-            Destroy(gameObject);
+            // If NOT hittable (underwater/non-hittable), projectile PASSES THROUGH (no destroy)
         }
     }
 
@@ -97,4 +113,9 @@ public class PlayerProjectile : MonoBehaviour
             Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
         }
     }
+
+    // Getters for ProjectileTypeConfig
+    public float GetDamage() => damage;
+    public float GetSpeed() => speed;
+    public float GetRange() => maxRange;
 }

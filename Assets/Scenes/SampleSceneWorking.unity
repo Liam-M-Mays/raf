@@ -262,6 +262,182 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3165852707008477012, guid: 8199f687dbe138b49a1763dc771fa31f, type: 3}
   m_PrefabInstance: {fileID: 5564749843653476422}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &244910456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 244910467}
+  - component: {fileID: 244910466}
+  - component: {fileID: 244910465}
+  - component: {fileID: 244910464}
+  - component: {fileID: 244910463}
+  - component: {fileID: 244910462}
+  - component: {fileID: 244910461}
+  - component: {fileID: 244910460}
+  - component: {fileID: 244910459}
+  - component: {fileID: 244910458}
+  - component: {fileID: 244910457}
+  m_Layer: 0
+  m_Name: DevMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &244910457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e74bd8adf2b2c74292c87c2f77f18c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevWaveSkipper
+  skipKey: 119
+--- !u!114 &244910458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aea83df9cf822eb48b2804e123a02ebd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevTimelineRecorder
+  recordKey: 114
+  replayKey: 304
+--- !u!114 &244910459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ce4060443ce2c146b28649a6a521938, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevSpawner
+  spawnKey: 277
+  enemyToSpawn: {fileID: 11400000, guid: faa4a951334fe4d2d9d27ed3b060ee9e, type: 2}
+  spawnCount: 4
+--- !u!114 &244910460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdebbcd228c19a54891317505b8afa5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevProjectileVisualizer
+  toggleKey: 112
+--- !u!114 &244910461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7522f95adc86dbc4299809ed7e010a52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevOverlay
+  godMode: {fileID: 244910463}
+  spawner: {fileID: 244910459}
+  toggleKey: 282
+--- !u!114 &244910462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d055e359e86cbee4d8dd1bebe4493655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevHealthBar
+--- !u!114 &244910463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69cc0e54149204441a281544ef5aab38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevGodMode
+  toggleKey: 103
+--- !u!114 &244910464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7643b9fd02c68fe43955eafbc82a42d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevGizmoToggle
+  toggleKey: 118
+--- !u!114 &244910465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b6e1b362ad4e1f4f9d4b14390880a1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevDifficultyScaler
+  increaseKey: 61
+  decreaseKey: 45
+--- !u!114 &244910466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13c066e788fdc3f4e82de360f291b3ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DevBehaviorInspector
+  toggleKey: 9
+--- !u!4 &244910467
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244910456}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.51339, y: 0.37824, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &265976786
 GameObject:
   m_ObjectHideFlags: 0
@@ -470,6 +646,7 @@ MonoBehaviour:
   shopCurrencyText: {fileID: 0}
   matress: {fileID: 981534622}
   player: {fileID: 1013756039}
+  DevMode: 0
 --- !u!114 &265976795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,9 +661,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScrollZoomController
   vcam: {fileID: 452935798}
   minZoom: 2
-  maxZoom: 7
-  zoomSpeed: 6
-  smoothSpeed: 6
+  maxZoom: 10
+  zoomSpeed: 15
+  smoothSpeed: 1
 --- !u!114 &265976796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,7 +2287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1423987420
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2969,3 +3146,4 @@ SceneRoots:
   - {fileID: 1085039945}
   - {fileID: 1011168097}
   - {fileID: 5564749843653476422}
+  - {fileID: 244910467}

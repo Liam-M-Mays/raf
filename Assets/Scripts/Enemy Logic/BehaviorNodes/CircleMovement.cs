@@ -30,12 +30,19 @@ public static class CircleMovement
         data.circleRadius = Mathf.Clamp(currentOffset.magnitude, minRadius, maxRadius);
         data.circleRadius = Mathf.Max(data.circleRadius - 0.1f, minRadius);
         
-        // Get current angle on circle
-        data.currentAngle = Mathf.Atan2(currentOffset.y, currentOffset.x);
+        // Get current angle on circle (smooth to avoid jitter)
+        float desiredAngle = Mathf.Atan2(currentOffset.y, currentOffset.x);
+        // Initialize currentAngle if unset
+        if (float.IsNaN(data.currentAngle) || data.currentAngle == 0f)
+        {
+            data.currentAngle = desiredAngle;
+        }
+        // Smoothly interpolate angle for stable orbiting
+        data.currentAngle = Mathf.LerpAngle(data.currentAngle, desiredAngle, Mathf.Clamp01(3f * Time.deltaTime));
         
         // Calculate rotation speed based on radius
-        float rotationSpeed = ctx.maxSpeed / data.circleRadius;
-        float targetAngle = data.currentAngle + (data.direction * rotationSpeed * 0.5f);
+        float rotationSpeed = ctx.maxSpeed / Mathf.Max(0.1f, data.circleRadius);
+        float targetAngle = data.currentAngle + (data.direction * rotationSpeed * 0.5f * Time.deltaTime * 60f);
         
         // Calculate target position on circle
         Vector2 circlePos = (Vector2)ctx.target.position + new Vector2(

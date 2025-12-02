@@ -87,6 +87,9 @@ public class WaveManager : MonoBehaviour
         waveActive = false;
         Debug.Log("Wave Manager -> End Wave " + waveNumber);
         waveNumber++;
+        // Heal the player between waves (25% of max health)
+        var player = GameServices.GetPlayerMovement();
+        if (player != null) player.HealBetweenWaves(0.25f);
 
         masonManager.StartShop();
         

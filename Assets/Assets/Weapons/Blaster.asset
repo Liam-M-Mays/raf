@@ -17,18 +17,41 @@ MonoBehaviour:
   weaponSprite: {fileID: 3802048888987309710, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Laser Gun
   isMelee: 0
-  weaponPrefab: {fileID: 8997268226254873336, guid: a5e560ba551ef1948bf4d4d80387b969, type: 3}
+  weaponVisualPrefab: {fileID: 8997268226254873336, guid: a5e560ba551ef1948bf4d4d80387b969, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: f797d4f143b65ec42aceb99af9529f66, type: 3}
   weaponType: 0
-  primarySound: {fileID: 0}
-  secondarySound: {fileID: 0}
   fireRate: 0.01
   autoFire: 1
-  projectileDamage: 20
-  projectileSpeed: 12
-  projectileRange: 15
   bulletsPerShot: 1
   spreadAngle: 0
+  projectileType: 3
+  projectileSpeed: 20
+  projectileRange: 15
+  projectileDamage: 10
+  homingTurnSpeed: 5
+  homingRange: 10
+  maxBounces: 3
+  bounceDampenDamage: 0.1
+  explosionRadius: 3
+  explosionDamage: 5
+  explosionEffectPrefab: {fileID: 0}
+  slowDuration: 2
+  slowAmount: 0.5
+  splitCount: 2
+  splitProjectilePrefab: {fileID: 0}
+  splitSpeedReduction: 0.7
   recoilDistance: 0.2
   recoilRecoverySpeed: 8
   usesAmmo: 1
+  maxAmmo: 30
+  reloadTime: 2
+  autoReload: 1
+  useReserveAmmo: 0
+  maxReserveAmmo: 120
+  weaponKickbackForce: 0
+  enemyKnockbackForce: 0.5
+  primarySound: {fileID: 0}
+  fireSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  notes: Weapon notes and strategy

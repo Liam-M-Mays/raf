@@ -17,18 +17,41 @@ MonoBehaviour:
   weaponSprite: {fileID: 7926173939745720873, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Fully automatic with a high fire rate.
   isMelee: 0
-  weaponPrefab: {fileID: 2622625491221938436, guid: 03a28a2375491b94eaf732d209886a2b, type: 3}
+  weaponVisualPrefab: {fileID: 2622625491221938436, guid: 03a28a2375491b94eaf732d209886a2b, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
   weaponType: 0
-  primarySound: {fileID: 0}
-  secondarySound: {fileID: 0}
   fireRate: 0.2
   autoFire: 1
-  projectileDamage: 5
+  bulletsPerShot: 1
+  spreadAngle: 0.8
+  projectileType: 5
   projectileSpeed: 12
   projectileRange: 15
-  bulletsPerShot: 1
-  spreadAngle: 0.5
-  recoilDistance: 0.2
+  projectileDamage: 5
+  homingTurnSpeed: 5
+  homingRange: 10
+  maxBounces: 3
+  bounceDampenDamage: 0.1
+  explosionRadius: 3
+  explosionDamage: 15
+  explosionEffectPrefab: {fileID: 0}
+  slowDuration: 2
+  slowAmount: 0.5
+  splitCount: 2
+  splitProjectilePrefab: {fileID: 0}
+  splitSpeedReduction: 0.7
+  recoilDistance: 1
   recoilRecoverySpeed: 8
-  usesAmmo: 0
+  usesAmmo: 1
+  maxAmmo: 30
+  reloadTime: 2
+  autoReload: 1
+  useReserveAmmo: 0
+  maxReserveAmmo: 120
+  weaponKickbackForce: 0.2
+  enemyKnockbackForce: 0
+  primarySound: {fileID: 0}
+  fireSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  notes: Weapon notes and strategy

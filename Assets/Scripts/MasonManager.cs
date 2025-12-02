@@ -13,13 +13,14 @@ public class MasonManager : MonoBehaviour
 
     public GameObject matress;
     public GameObject player;
+    public bool DevMode = false;
     
       // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         waveManager = GetComponent<WaveManager>();
         shopSpawner = GetComponent<ShopSpawner>();
-        StartCoroutine(StartNewDay());
+        if (!DevMode) StartCoroutine(StartNewDay());
     }
 
     // Update is called once per frame
@@ -43,7 +44,9 @@ public class MasonManager : MonoBehaviour
         shopSpawner.DespawnShopBoat();
         ResetPlayerPosition();
 
-        player.GetComponent<PlayerMovement>().Heal();
+        // Heal player between days/waves (use HealBetweenWaves)
+        var pm = player.GetComponent<PlayerMovement>();
+        if (pm != null) pm.HealBetweenWaves(0.25f);
 
         yield return new WaitForSeconds(3.5f); // Wait for the day display to finish
 

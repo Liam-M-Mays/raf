@@ -17,18 +17,41 @@ MonoBehaviour:
   weaponSprite: {fileID: 3096996549263505085, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Ol' reliable.
   isMelee: 0
-  weaponPrefab: {fileID: 496856416842775121, guid: 951620d1422ff3d4c89169981fae9413, type: 3}
+  weaponVisualPrefab: {fileID: 496856416842775121, guid: 951620d1422ff3d4c89169981fae9413, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: 49fbe1dafb4203a4e90bf88dfab303e4, type: 3}
   weaponType: 0
-  primarySound: {fileID: 0}
-  secondarySound: {fileID: 0}
   fireRate: 0.1
   autoFire: 0
-  projectileDamage: 5
-  projectileSpeed: 12
-  projectileRange: 15
   bulletsPerShot: 1
   spreadAngle: 0.3
+  projectileType: 0
+  projectileSpeed: 12
+  projectileRange: 15
+  projectileDamage: 5
+  homingTurnSpeed: 5
+  homingRange: 10
+  maxBounces: 3
+  bounceDampenDamage: 0.1
+  explosionRadius: 3
+  explosionDamage: 15
+  explosionEffectPrefab: {fileID: 0}
+  slowDuration: 2
+  slowAmount: 0.5
+  splitCount: 2
+  splitProjectilePrefab: {fileID: 0}
+  splitSpeedReduction: 0.7
   recoilDistance: 0.2
   recoilRecoverySpeed: 8
   usesAmmo: 0
+  maxAmmo: 30
+  reloadTime: 2
+  autoReload: 1
+  useReserveAmmo: 0
+  maxReserveAmmo: 120
+  weaponKickbackForce: 0
+  enemyKnockbackForce: 0
+  primarySound: {fileID: 0}
+  fireSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  notes: Weapon notes and strategy

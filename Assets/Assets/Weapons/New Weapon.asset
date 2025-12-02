@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de4eafa5e75712f4c8bb76cc3b7a112b, type: 3}
+  m_Name: New Weapon
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponSO
+  weaponName: 
+  cost: 0
+  weaponSprite: {fileID: 0}
+  description: 
+  isMelee: 0
+  weaponPrefab: {fileID: 0}
+  projectilePrefab: {fileID: 0}
+  weaponType: 0
+  primarySound: {fileID: 0}
+  secondarySound: {fileID: 0}
+  fireRate: 0
+  autoFire: 0
+  projectileDamage: 10
+  projectileSpeed: 12
+  projectileRange: 15
+  bulletsPerShot: 1
+  spreadAngle: 10
+  recoilDistance: 0.2
+  recoilRecoverySpeed: 8
+  usesAmmo: 0
+  weaponKickbackForce: 0
+  enemyKnockbackForce: 0

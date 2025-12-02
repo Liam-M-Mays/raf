@@ -312,6 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48a309c6b4074c9a8d387142db278c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  matressHealth: {fileID: 0}
+  currencyText: {fileID: 0}
+  shopCurrencyText: {fileID: 0}
   currentSpeed: 0
   currentVelocity: {x: 0, y: 0}
   currentDragForce: 0
@@ -320,11 +323,11 @@ MonoBehaviour:
   playerSprite: {fileID: 1919279162572115531}
   raftRB: {fileID: 0}
   raftAnim: {fileID: 0}
-  paddleForce: 5
+  paddleForce: 3
   maxSpeed: 3
-  acceleration: 30
-  deceleration: 8
-  waterDrag: 3
+  acceleration: 20
+  deceleration: 10
+  waterDrag: 4
   vcam: {fileID: 0}
   zoomOut: 6
   zoomIn: 3

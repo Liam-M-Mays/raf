@@ -17,18 +17,41 @@ MonoBehaviour:
   weaponSprite: {fileID: -8080008174734147543, guid: f348a4fa414ae8946b9989a6969d30d3, type: 3}
   description: Small gun, big boom
   isMelee: 0
-  weaponPrefab: {fileID: 6997160528831347135, guid: a22d47a719cd9b74d873a970024e93f2, type: 3}
+  weaponVisualPrefab: {fileID: 6997160528831347135, guid: a22d47a719cd9b74d873a970024e93f2, type: 3}
   projectilePrefab: {fileID: 380249057907756681, guid: e95be360a8bd3914d82eb70d509cd14c, type: 3}
   weaponType: 0
-  primarySound: {fileID: 0}
-  secondarySound: {fileID: 0}
   fireRate: 1.8
   autoFire: 0
-  projectileDamage: 20
-  projectileSpeed: 12
-  projectileRange: 3
   bulletsPerShot: 10
   spreadAngle: 30
-  recoilDistance: 0.2
+  projectileType: 0
+  projectileSpeed: 12
+  projectileRange: 5
+  projectileDamage: 20
+  homingTurnSpeed: 5
+  homingRange: 10
+  maxBounces: 3
+  bounceDampenDamage: 0.1
+  explosionRadius: 3
+  explosionDamage: 15
+  explosionEffectPrefab: {fileID: 0}
+  slowDuration: 2
+  slowAmount: 0.5
+  splitCount: 2
+  splitProjectilePrefab: {fileID: 0}
+  splitSpeedReduction: 0.7
+  recoilDistance: 1
   recoilRecoverySpeed: 8
   usesAmmo: 0
+  maxAmmo: 30
+  reloadTime: 2
+  autoReload: 1
+  useReserveAmmo: 0
+  maxReserveAmmo: 120
+  weaponKickbackForce: 1
+  enemyKnockbackForce: 1
+  primarySound: {fileID: 0}
+  fireSound: {fileID: 0}
+  reloadSound: {fileID: 0}
+  emptyClickSound: {fileID: 0}
+  notes: Weapon notes and strategy

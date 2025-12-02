@@ -21,6 +21,14 @@ MonoBehaviour:
       rid: 7550196008830369931
     Direct:
       rid: 7550196143538307284
+    Pufferfish:
+      rid: 8706629109097693300
+    Tank:
+      rid: 8706629109097693301
+    PackFormation:
+      rid: 8706629109097693302
+    Boss:
+      rid: 8706629109097693303
   cost: 1
   health: 10
   damage: 2
@@ -93,7 +101,7 @@ MonoBehaviour:
     - rid: 7550196143538307284
       type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
       data:
-        enabled: 1
+        enabled: 0
         weight: 1
         config:
           rid: 7550196143538307286
@@ -124,3 +132,87 @@ MonoBehaviour:
         respawnRange: 8
         divergeRange: 2
         divergeWeight: 1
+        AlwaysHittable: 1
+    - rid: 8706629109097693300
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 8706629109097693304
+    - rid: 8706629109097693301
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 8706629109097693305
+    - rid: 8706629109097693302
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 1
+        weight: 1
+        config:
+          rid: 8706629109097693306
+    - rid: 8706629109097693303
+      type: {class: BehaviorOption, ns: , asm: Assembly-CSharp}
+      data:
+        enabled: 0
+        weight: 1
+        config:
+          rid: 8706629109097693307
+    - rid: 8706629109097693304
+      type: {class: PufferfishCfg, ns: , asm: Assembly-CSharp}
+      data:
+        explosionRadius: 3
+        explosionDamage: 50
+        explodeOnDamage: 1
+        explodeOnDeath: 1
+    - rid: 8706629109097693305
+      type: {class: TankCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxSpeed: 1.5
+        speed: 1
+        attackRange: 1.2
+        attackDamage: 8
+        attackCooldown: 1.5
+        canCharge: 1
+        chargeSpeed: 3
+        chargeWindup: 0.8
+        chargeCooldown: 4
+        chargeImpactForce: 5
+    - rid: 8706629109097693306
+      type: {class: PackFormationCfg, ns: , asm: Assembly-CSharp}
+      data:
+        radius: 3
+        speed: 1.5
+        cohesion: 1
+        rotationSpeed: 0.2
+        neighborRadius: 2.5
+        separationDistance: 0.5
+        separationWeight: 1.2
+        alignmentWeight: 0.5
+        cohesionWeight: 0.6
+        orbitWeight: 1
+        useDeterministicSlots: 1
+        slotArrivalDistance: 0.3
+        attackRange: 0.5
+        attackCooldown: 2
+        attackDamage: 5
+    - rid: 8706629109097693307
+      type: {class: BossCfg, ns: , asm: Assembly-CSharp}
+      data:
+        maxHealth: 500
+        phase1Speed: 1.5
+        phase2Speed: 2
+        phase3Speed: 2.5
+        attackRange: 2
+        chompCooldown: 3
+        chompDamage: 30
+        chompWindup: 0.5
+        biteCooldown: 4
+        biteDamage: 50
+        biteWindup: 1
+        biteJumpHeight: 5
+        berserkAttackSpeedMultiplier: 2
+        berserkDamageMultiplier: 1.5

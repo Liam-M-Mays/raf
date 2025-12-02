@@ -11,7 +11,10 @@ public class BehaviorOptions
     [SerializeReference] public BehaviorOption Orbit = new BehaviorOption { config = new RangeOrbitCfg() };
     [SerializeReference] public BehaviorOption HammerDefault = new BehaviorOption { config = new HammerDefaultCfg() };
     [SerializeReference] public BehaviorOption Direct = new BehaviorOption { config = new DirectCfg() };
-    //[SerializeReference] public  BehaviorOption PiranaDefault = new BehaviorOption { config = new PiranhaPackCfg() };
+    [SerializeReference] public BehaviorOption Pufferfish = new BehaviorOption { config = new PufferfishCfg() };
+    [SerializeReference] public BehaviorOption Tank = new BehaviorOption { config = new TankCfg() };
+    [SerializeReference] public BehaviorOption PackFormation = new BehaviorOption { config = new PackFormationCfg() };
+    [SerializeReference] public BehaviorOption Boss = new BehaviorOption { config = new BossCfg() };
 
 
     public IEnumerable<BehaviorOption> All()

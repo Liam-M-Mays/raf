@@ -54,6 +54,23 @@ public class Health : MonoBehaviour
             }
         }
 
+        // Hit flash visual feedback
+        SpriteRenderer sprite = GetComponentInChildren<SpriteRenderer>();
+        if (sprite != null)
+        {
+            CombatEffects.HitFlash(sprite, 0.3f);
+        }
+
+        // Screen shake on significant damage (if this is the raft)
+        if (CompareTag("Raft") && damage > 5f)
+        {
+            Camera mainCam = Camera.main;
+            if (mainCam != null)
+            {
+                CombatEffects.ScreenShake(mainCam, 0.15f, 0.1f);
+            }
+        }
+
         // Trigger damage event
         OnDamaged?.Invoke(damage);
 

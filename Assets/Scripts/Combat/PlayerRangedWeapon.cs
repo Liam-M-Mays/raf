@@ -22,6 +22,10 @@ public class PlayerRangedWeapon : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip fireSound;
     
+    [Header("Physics Impact")]
+    [SerializeField] private float weaponKickbackForce = 0f; // Applied to raft when firing
+    [SerializeField] private float enemyKnockbackForce = 0f; // Applied to enemies when hit
+    
     private float lastFireTime = -999f;
     private Camera mainCam;
     private AudioSource audioSource;
@@ -132,6 +136,17 @@ public class PlayerRangedWeapon : MonoBehaviour
         
         lastFireTime = Time.time;
         
+        // Apply weapon kickback to raft (recoil)
+        if (weaponKickbackForce > 0f)
+        {
+            PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+            {
+                // Apply force opposite to fire direction
+                playerMovement.ApplyRaftImpact(-direction, weaponKickbackForce);
+            }
+        }
+        
         // Play fire sound
         if (audioSource != null && fireSound != null)
         {
@@ -151,7 +166,7 @@ public class PlayerRangedWeapon : MonoBehaviour
         if (projScript != null)
         {
             Debug.Log("PlayerProjectile script FOUND on bullet");
-            projScript.Initialize(direction, projectileSpeed, projectileDamage, projectileRange);
+            projScript.Initialize(direction, projectileSpeed, projectileDamage, projectileRange, enemyKnockbackForce);
         }
         else
         {
@@ -182,4 +197,6 @@ public class PlayerRangedWeapon : MonoBehaviour
     public void SetSpreadAngle(float angle) => spreadAngle = Mathf.Clamp(angle, 0f, 180f);
     public void SetFireSound(AudioClip clip) => fireSound = clip;
     public void SetCanFire(bool value) => canFire = value;
+    public void SetWeaponKickbackForce(float force) => weaponKickbackForce = Mathf.Max(0f, force);
+    public void SetEnemyKnockbackForce(float force) => enemyKnockbackForce = Mathf.Max(0f, force);
 }

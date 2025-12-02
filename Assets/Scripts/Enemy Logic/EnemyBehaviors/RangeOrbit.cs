@@ -40,7 +40,14 @@ public class RangeOrbit : IBehavior
     public void OnEnter(Transform _self, Animator _anim)
     {
         // Initialize context with all the shared data
-        ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
+        Transform raftTarget = GameServices.GetRaft();
+        if (raftTarget == null)
+        {
+            Debug.LogError("RangeOrbit behavior: Could not find Raft. Disabling behavior.");
+            return;
+        }
+        
+        ctx = new BehaviorContext(_self, raftTarget, _anim);
         ctx.hittable = true;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
@@ -58,6 +65,8 @@ public class RangeOrbit : IBehavior
         }
         else circleDirection = config.direction;
         orbit = config.OrbitDistance + (UnityEngine.Random.Range(0.2f, 0.2f+config.OrbitRange)*circleDirection);
+        // Speed variance per instance
+        EnemySpeedVariance.ApplySpeedVariance(ctx, 0.12f);
         ActionNodes.Attack(ctx);
     }
     

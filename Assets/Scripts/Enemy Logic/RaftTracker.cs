@@ -1,24 +1,54 @@
 using UnityEngine;
 using System.Collections.Generic;
 
+/// <summary>
+/// Wrapper around AttackQueue for backward compatibility.
+/// New code should use AttackQueue directly.
+/// </summary>
 public static class RaftTracker
 {
-    public static List<IBehavior> Braft = new List<IBehavior>();
-     public static bool addSelf(IBehavior B)
+    /// <summary>Adds a behavior to the attack queue. Returns true if successful.</summary>
+    public static bool addSelf(IBehavior B)
     {
-        if (Braft.Contains(B)) return true;
-        else if (Braft.Count < 3)
+        var queue = AttackQueue.Instance ?? AttackQueue.EnsureExists();
+        if (queue == null)
         {
-            Braft.Add(B);
-            return true;
+            Debug.LogError("RaftTracker: AttackQueue could not be initialized.");
+            return false;
         }
-        return false;
-
+        return queue.TryAddAttacker(B);
     }
 
+    /// <summary>Removes a behavior from the attack queue.</summary>
     public static void removeSelf(IBehavior B)
     {
-        Braft.Remove(B);
-        Debug.Log("Removed from Raft Tracker");
+        var queue = AttackQueue.Instance;
+        if (queue == null)
+        {
+            Debug.LogWarning("RaftTracker: AttackQueue Instance was null, attempting to create...");
+            queue = AttackQueue.EnsureExists();
+        }
+        
+        if (queue == null)
+        {
+            Debug.LogError("RaftTracker: Failed to initialize AttackQueue even after EnsureExists()");
+            return;
+        }
+        queue.RemoveAttacker(B);
+    }
+
+    /// <summary>Gets the legacy Braft list for backward compatibility (discouraged).</summary>
+    [System.Obsolete("Use AttackQueue.Instance directly instead.")]
+    public static List<IBehavior> Braft
+    {
+        get
+        {
+            if (AttackQueue.Instance == null)
+            {
+                Debug.LogError("RaftTracker: AttackQueue singleton not initialized.");
+                return new List<IBehavior>();
+            }
+            return new List<IBehavior>();
+        }
     }
 }

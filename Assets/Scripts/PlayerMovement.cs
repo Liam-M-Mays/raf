@@ -96,9 +96,22 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector2 input = moveAction.ReadValue<Vector2>();
         if (rowing)
         {
+            // Acceleration and drag
             HandleRaftPhysics();
+        }
+        else
+        {
+            // Only apply drag/deceleration when not rowing
+            // Deceleration phase (natural water drag)
+            raftRB.AddForce(-raftRB.linearVelocity * waterDrag * deceleration * Time.fixedDeltaTime);
+            // Cap max speed
+            if (raftRB.linearVelocity.magnitude > maxSpeed)
+            {
+                raftRB.linearVelocity = raftRB.linearVelocity.normalized * maxSpeed;
+            }
         }
     }
 
@@ -168,8 +181,12 @@ public class PlayerMovement : MonoBehaviour
         raftRB.GetComponent<Health>().SetMaxHealth(frameHealthEffect);
     }
 
-    public void Heal() {
-        matressHealth.Heal(sheetsHealthEffect);
+    public void HealBetweenWaves(float healPercent = 0.25f)
+    {
+        if (matressHealth == null) return;
+        float maxHealth = matressHealth.GetMaxHealth();
+        float healAmount = maxHealth * healPercent;
+        matressHealth.Heal(healAmount);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -219,46 +236,35 @@ public class PlayerMovement : MonoBehaviour
     void HandleRowingMode(Vector2 input)
     {
         //playerSprite.SetActive(false);
-        //raftAnim.SetBool("Paddle", true);
-        if (input == Vector2.zero)
+        // Only set triggers on state transitions
+        bool wasRowing = anim.GetBool("Rowing");
+        bool nowRowing = input != Vector2.zero;
+        if (!wasRowing && nowRowing)
+        {
+            anim.SetTrigger("Row");
+        }
+        else if (wasRowing && !nowRowing)
         {
             anim.SetTrigger("StopRow");
         }
-        else
-        {
-            anim.SetTrigger("Row");
-            anim.speed = Mathf.Max(0.5f, currentSpeed);
-        }
+        anim.SetBool("Rowing", nowRowing);
+        anim.speed = Mathf.Max(0.5f, currentSpeed);
         transform.position = raftRB.transform.position + new Vector3(0f, 0.005f, 0f);
         //vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomOut, zoomSpeed * Time.deltaTime);
-        
         // Sync player to raft
         rb.linearVelocity = raftRB.linearVelocity;
         anim.SetBool("Moving", false);
-        
-        // Paddle animations
-        if (input.x > 0) 
-            //raftAnim.SetTrigger("PaddleRight");
-            anim.SetBool("Rowing", true);
-        else if (input.x < 0) 
-            //raftAnim.SetTrigger("PaddleLeft");
-            anim.SetBool("Rowing", true);
-        else if (input.y != 0) 
-            //raftAnim.SetTrigger("PaddleRight");
-            anim.SetBool("Rowing", true);
     }
 
     void HandleWalkingMode(Vector2 input)
     {
         anim.speed = 1f;
         playerSprite.SetActive(true);
-        raftAnim.SetBool("Paddle", false);
-        anim.SetTrigger("StopROW");
+        anim.SetTrigger("StopRow");
+        anim.SetBool("Rowing", false);
         //vcam.Lens.OrthographicSize = Mathf.Lerp(vcam.Lens.OrthographicSize, zoomIn, zoomSpeed * Time.deltaTime);
-        
         // Walk relative to raft
         rb.linearVelocity = (input * walkSpeed) + raftRB.linearVelocity;
-        
         // Animation & flip
         anim.SetBool("Moving", input != Vector2.zero);
         /*if (input.x > 0 && !isFacingRight) 
@@ -329,5 +335,30 @@ public class PlayerMovement : MonoBehaviour
     public bool IsPlayerRowing()
     {
         return rowing;
+    }
+
+    /// <summary>
+    /// Applies an impact force to the raft from an external source (e.g., tank charge, projectile).
+    /// Direction should be normalized.
+    /// </summary>
+    public void ApplyRaftImpact(Vector3 direction, float force)
+    {
+        if (raftRB == null) return;
+        raftRB.AddForce((Vector2)direction.normalized * force, ForceMode2D.Impulse);
+    }
+
+    /// <summary>
+    /// Applies a knockback impulse to an enemy.
+    /// Used for weapon kickback effects.
+    /// </summary>
+    public static void ApplyEnemyKnockback(Transform enemy, Vector3 knockbackDirection, float force)
+    {
+        if (enemy == null) return;
+        
+        Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
+        if (rb != null)
+        {
+            rb.AddForce((Vector2)knockbackDirection.normalized * force, ForceMode2D.Impulse);
+        }
     }
 }

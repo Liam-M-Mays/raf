@@ -70,7 +70,14 @@ public class HammerDefault : IBehavior
     {
 
         // Initialize context
-        ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
+        Transform raftTarget = GameServices.GetRaft();
+        if (raftTarget == null)
+        {
+            Debug.LogError("HammerDefault behavior: Could not find Raft. Disabling behavior.");
+            return;
+        }
+        
+        ctx = new BehaviorContext(_self, raftTarget, _anim);
         ctx.hittable = false;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
@@ -92,6 +99,8 @@ public class HammerDefault : IBehavior
         }
         else circleDirection = config.direction;
         orbit = config.OrbitDistance + (UnityEngine.Random.Range(0.2f, 0.2f+config.OrbitRange)*circleDirection);
+        // Apply per-instance speed variance
+        EnemySpeedVariance.ApplySpeedVariance(ctx, 0.15f);
     }
     
     public void OnExit()
@@ -110,13 +119,14 @@ public class HammerDefault : IBehavior
             case ChargeState.Positioning:
                 // Move to charging position
                 //RaftTracker.removeSelf(this);
+                ctx.hittable = false;
                 CircleMovement.Execute(ctx, orbit, config.OrbitMax, circleDirection);
                 if(ctx.distanceToTarget < config.OrbitMax && !UtilityNodes.Obstructed(ctx, 2)) attackTimer -= ctx.deltaTime;
                 if (attackTimer <= 0f && RaftTracker.addSelf(this))
                 {
                     attackTimer = config.attackTimer;
-                    ctx.anim.SetBool("Lurk", true);
-                    ctx.anim.SetBool("Moving", false);
+                    AnimatorUtils.SafeSetBool(ctx.anim, "Lurk", true);
+                    AnimatorUtils.SafeSetBool(ctx.anim, "Moving", false);
                     currentState = ChargeState.WindingUp;
                 }
                 break;
@@ -124,12 +134,13 @@ public class HammerDefault : IBehavior
             case ChargeState.WindingUp:
                 // Wind up for charge
                 ChargeMovement.PositionForCharge(ctx, ctx.distanceToTarget + 0.5f);
+                ctx.hittable = true;
                 if (ChargeMovement.Windup(ctx, config.chargeWindupTime) && !UtilityNodes.Obstructed(ctx))
                 {
-                    ctx.anim.SetBool("Lurk", false);
-                    ctx.anim.SetBool("Moving", true);
+                    AnimatorUtils.SafeSetBool(ctx.anim, "Lurk", false);
+                    AnimatorUtils.SafeSetBool(ctx.anim, "Moving", true);
                     chargeDistance = ctx.distanceToTarget;
-                    ctx.hittable = true;
+                    ctx.hittable = false;
                     currentState = ChargeState.Charging;
                 }
                 break;
@@ -141,25 +152,31 @@ public class HammerDefault : IBehavior
                 // Check if hit player
                 if (UtilityNodes.IsInAttackRange(ctx))
                 {
-                    ctx.hittable = false;
                     ctx.anim.SetBool("Moving", false);
                     ctx.anim.SetBool("Dazed", true);
                     ctx.anim.SetTrigger("Hit");
+                    ctx.hittable = true;
                     currentState = ChargeState.Cooldown;
                 }
                 else if (chargeComplete)
                 {
+                    // MISS - Charge completed without hitting target
+                    ctx.anim.SetBool("Moving", false);
+                    ctx.anim.SetBool("Dazed", true);
+                    ctx.hittable = true;
                     RaftTracker.removeSelf(this);
-                    currentState = ChargeState.Positioning;
+                    // Extended cooldown for missed charges (1.5x normal)
+                    cooldown = config.chargeCooldown * 1.5f;
+                    currentState = ChargeState.Cooldown;
                 }
                 break;
 
             case ChargeState.Cooldown:
                 cooldown -= ctx.deltaTime;
+                ctx.hittable = true;
                 if (!UtilityNodes.IsInAttackMax(ctx)) RaftTracker.removeSelf(this);
                 if (cooldown <= 0f)
                 {
-                    ctx.hittable = true;
                     cooldown = config.chargeCooldown;
                     ctx.anim.SetBool("Moving", true);
                     ctx.anim.SetBool("Dazed", false);

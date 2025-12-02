@@ -34,11 +34,20 @@ public class Direct : IBehavior
     public void OnEnter(Transform _self, Animator _anim)
     {
         // Initialize context with all the shared data
-        ctx = new BehaviorContext(_self, GameObject.FindGameObjectWithTag("Raft").transform, _anim);
+        Transform raftTarget = GameServices.GetRaft();
+        if (raftTarget == null)
+        {
+            Debug.LogError("Direct behavior: Could not find Raft. Disabling behavior.");
+            return;
+        }
+        
+        ctx = new BehaviorContext(_self, raftTarget, _anim);
         ctx.hittable = true;
         // Copy config values to context
         ctx.maxSpeed = config.maxSpeed;
         ctx.speed = config.speed;
+        // Apply per-instance speed variance
+        EnemySpeedVariance.ApplySpeedVariance(ctx, 0.15f);
         ctx.attackRange = config.attackRange;
         ctx.attackRangeMax = config.attackRangeMax;
         ctx.outOfRange = config.outOfRange;
@@ -56,6 +65,12 @@ public class Direct : IBehavior
     {
         // Update per-frame data
         ctx.UpdateFrame();
+        // Update tactical decision based on player health
+        var pm = GameServices.GetPlayerMovement();
+        if (pm != null && pm.matressHealth != null)
+        {
+            ctx.tacticalDecision.UpdateTactic(ctx, pm.matressHealth.GetCurrentHealth(), pm.matressHealth.GetMaxHealth());
+        }
 
         // Check if out of range first
         if (UtilityNodes.IsOutOfRange(ctx))

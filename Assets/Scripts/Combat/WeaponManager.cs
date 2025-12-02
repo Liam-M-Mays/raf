@@ -7,6 +7,9 @@ public class WeaponManager : MonoBehaviour
     [Header("Weapon List")]
     [SerializeField] public List<WeaponSO> availableWeapons = new List<WeaponSO>();
     
+    [Header("Starting Weapon")]
+    [SerializeField] private WeaponSO startingWeapon; // Drag a weapon here to start with it
+    
     [Header("References")]
     [SerializeField] private Transform weaponHoldPoint; // Where the weapon visual appears (for WeaponAiming.weaponTransform)
     [SerializeField] private Transform firePoint; // Where projectiles spawn (ranged)
@@ -42,6 +45,24 @@ public class WeaponManager : MonoBehaviour
             Debug.LogWarning("WeaponManager: No WeaponAiming component found!");
         }
         
+        // If a specific starting weapon is assigned, add it to availableWeapons if not already there
+        if (startingWeapon != null)
+        {
+            if (!availableWeapons.Contains(startingWeapon))
+            {
+                availableWeapons.Insert(0, startingWeapon);
+            }
+            
+            // Find the index of the starting weapon
+            int startIndex = availableWeapons.IndexOf(startingWeapon);
+            if (startIndex >= 0)
+            {
+                EquipWeapon(startIndex);
+                return;
+            }
+        }
+        
+        // Fallback: equip first weapon if available
         if (availableWeapons.Count > 0)
         {
             EquipWeapon(0);
@@ -150,9 +171,9 @@ public class WeaponManager : MonoBehaviour
         }
         
         // Spawn new weapon visual
-        if (weaponData.weaponPrefab != null && weaponHoldPoint != null)
+        if (weaponData.weaponVisualPrefab != null && weaponHoldPoint != null)
         {
-            currentWeaponInstance = Instantiate(weaponData.weaponPrefab, weaponHoldPoint);
+            currentWeaponInstance = Instantiate(weaponData.weaponVisualPrefab, weaponHoldPoint);
             animator = currentWeaponInstance.GetComponent<Animator>();
             weaponAiming.weaponSpriteRenderer = currentWeaponInstance.GetComponent<SpriteRenderer>();
             currentWeaponInstance.transform.localPosition = Vector3.zero;
@@ -197,20 +218,15 @@ public class WeaponManager : MonoBehaviour
         rangedWeaponScript.SetBulletsPerShot(data.bulletsPerShot);
         rangedWeaponScript.SetSpreadAngle(data.spreadAngle);
         rangedWeaponScript.SetFireSound(data.primarySound);
+        rangedWeaponScript.SetWeaponKickbackForce(data.weaponKickbackForce);
+        rangedWeaponScript.SetEnemyKnockbackForce(data.enemyKnockbackForce);
         
         // Update ammo system if present
         AmmoSystem ammoSystem = GetComponent<AmmoSystem>();
-        if (ammoSystem != null && data.usesAmmo)
+        if (ammoSystem != null)
         {
-            // TODO: Add these setter methods to your AmmoSystem script:
-            // public void SetMagazineSize(int size) => magazineSize = size;
-            // public void SetMaxReserveAmmo(int ammo) => maxReserveAmmo = ammo;
-            // public void ReloadFull() { currentAmmo = magazineSize; reserveAmmo = maxReserveAmmo; }
-            
-            // Uncomment these once you add the setter methods to AmmoSystem:
-            // ammoSystem.SetMagazineSize(data.magazineSize);
-            // ammoSystem.SetMaxReserveAmmo(data.maxReserveAmmo);
-            // ammoSystem.ReloadFull();
+            ammoSystem.SetInfiniteAmmo(!data.usesAmmo);
+            ammoSystem.ConfigureFromWeapon(data);
         }
     }
 
